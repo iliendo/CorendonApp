@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.Supervisor_manage_airportController">
+   <children>
+      <BorderPane layoutX="137.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <AnchorPane prefHeight="415.0" prefWidth="511.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="211.0" prefWidth="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="509.0">
+                           <children>
+                              <TableView fx:id="tblView" onMouseClicked="#on_table_click" prefHeight="385.0" prefWidth="509.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="tblC_id" prefWidth="107.0" text="ID" />
+                                    <TableColumn fx:id="tblC_Airport" prefWidth="239.0" text="Airport" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </right>
+         <left>
+            <AnchorPane prefHeight="415.0" prefWidth="325.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="txtnew" labelFloat="true" layoutX="15.0" layoutY="195.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="new airport (only by update)" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
+                  <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="246.0" onAction="#on_Add" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #676060;" text="Add" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="338.0" onAction="#on_Delete" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #8c8;" text="Delete" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="290.0" onAction="#on_Update" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #556;" text="Update" textFill="WHITE" />
+                  <JFXTextField fx:id="txtold" labelFloat="true" layoutX="15.0" layoutY="135.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="airport" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

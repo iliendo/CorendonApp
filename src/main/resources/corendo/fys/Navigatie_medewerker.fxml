@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.Navigatie_medewerkerController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane minWidth="238.0" onMouseClicked="#dashbord_medewerker" prefHeight="720.0" prefWidth="238.0" style="-fx-background-color: #235061;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="167.0" onAction="#on_Zoeken" prefHeight="32.0" prefWidth="167.0" text="Search" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="258.0" onAction="#on_verloren_bagage" prefHeight="32.0" prefWidth="167.0" text="Luggage Lost" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="36.0" layoutY="223.0" text="Register" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="290.0" prefHeight="32.0" prefWidth="167.0" text="Damage" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="322.0" onAction="#on_Gevonden_bagage" prefHeight="32.0" prefWidth="167.0" text="Luggage Found" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="473.0" prefHeight="32.0" prefWidth="167.0" text="Settings" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="WRENCH" />
+                     </graphic>
+                  </JFXButton>
+                  <Label layoutX="36.0" layoutY="438.0" text="Settings" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="show_me_user_info" layoutX="7.0" layoutY="411.0" prefHeight="237.0" prefWidth="225.0" style="-fx-background-color: #FFF; -fx-background-radius: 0.5em;" visible="false" AnchorPane.bottomAnchor="70.0">
+                     <children>
+                        <FontAwesomeIconView fill="#235061" glyphName="DESKTOP" layoutX="14.0" layoutY="37.0" size="20" text="" />
+                        <Label layoutX="51.0" layoutY="17.0" text="Home">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="62.0" text="RECENT">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="87.0" text="Keep in touch with " />
+                        <Label layoutX="60.0" layoutY="104.0" text="Corendon" />
+                        <Label fx:id="lblMedewerkerCountry" layoutX="60.0" layoutY="128.0" />
+                        <FontAwesomeIconView fill="#235061" glyphName="LOCATION_ARROW" layoutX="38.0" layoutY="141.0" size="14.0" />
+                        <FontAwesomeIconView fill="#235061" glyphName="BOOKMARK_ALT" layoutX="38.0" layoutY="100.0" />
+                        <Label layoutX="13.0" layoutY="157.0" text="Account">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMedewerkerName" layoutX="60.0" layoutY="182.0" text="John Doe" />
+                        <FontAwesomeIconView fill="#235061" glyphName="USER" layoutX="41.0" layoutY="195.0" />
+                        <FontAwesomeIconView fill="#235061" glyphName="USER_TIMES" layoutX="40.0" layoutY="219.0" />
+                        <Hyperlink layoutX="59.0" layoutY="203.0" onAction="#on_logOut" text="Log out" />
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="meOption" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#on_Me_User" prefHeight="66.0" prefWidth="235.0" style="-fx-background-color: #1c3944;" text="Me" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="MENU" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <Label layoutX="37.0" layoutY="147.0" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="130.0" fitWidth="183.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/corendon.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <StackPane fx:id="all_content" prefHeight="700.0" prefWidth="974.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="WELCOME">
+                     <font>
+                        <Font name="System Italic" size="50.0" />
+                     </font>
+                  </Label>
+               </children></StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

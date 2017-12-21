@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1151.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.ZoekenController">
+   <children>
+      <BorderPane layoutX="69.0" layoutY="44.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #becfea;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="700.0" prefWidth="289.0" style="-fx-background-color: #4f5256;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="txt_zoek_status" layoutX="16.0" layoutY="55.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Status" unFocusColor="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txt_zoek_name" layoutX="16.0" layoutY="96.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Name" unFocusColor="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txt_zoek_luggageType" layoutX="16.0" layoutY="137.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Luggage type" unFocusColor="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txt_zoek_brand" layoutX="16.0" layoutY="178.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Brand" unFocusColor="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="25.0" layoutY="14.0" prefHeight="23.0" prefWidth="68.0" text="Zoek op ..." textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="700.0" prefWidth="775.0" style="-fx-background-color: #92b3e8;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblLuggage" onMouseClicked="#on_table_click" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="regisNr" prefWidth="73.0" text="Regis.Nr" />
+                      <TableColumn fx:id="dateFound" prefWidth="118.0" text="Date Found" />
+                        <TableColumn fx:id="timeFound" prefWidth="125.0" text="Time Found" />
+                        <TableColumn fx:id="luggageType" prefWidth="120.0" text="Luggage Type" />
+                        <TableColumn fx:id="brand" prefWidth="120.0" text="Brand" />
+                        <TableColumn fx:id="Firstname" prefWidth="203.0" text="Passenger" />
+                        <TableColumn fx:id="status" prefWidth="103.0" text="Status" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="fullStatusDetailsContent" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox layoutY="1.0" prefHeight="539.0" prefWidth="293.0">
+                                 <children>
+                                    <Label fx:id="lblRegisNr" prefHeight="45.0" prefWidth="293.0" text="Label">
+                                       <font>
+                                          <Font name="System Bold" size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblDateFound" prefHeight="34.0" prefWidth="320.0" text="Date Found" />
+                                    <Label fx:id="lblTimeFound" prefHeight="34.0" prefWidth="320.0" text="Time Found" />
+                                    <Label fx:id="lblLuggageType" prefHeight="34.0" prefWidth="320.0" text="Luggage Type" />
+                                    <Label fx:id="lblBrand" prefHeight="34.0" prefWidth="320.0" text="Brand" />
+                                    <Label fx:id="lblPassenger" prefHeight="34.0" prefWidth="320.0" text="Passenger" />
+                                    <Label fx:id="lblStatus" prefHeight="34.0" prefWidth="320.0" text="Status" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                     <top>
+                        <Hyperlink onAction="#on_Close" text="Close" BorderPane.alignment="CENTER" />
+                     </top>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

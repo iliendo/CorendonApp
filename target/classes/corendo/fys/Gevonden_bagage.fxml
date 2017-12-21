@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" prefHeight="641.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.Gevonden_bagageController">
+   <children>
+      <Label layoutX="14.0" layoutY="21.0" text="Logistieke informatie">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="ddlLuchthaven" layoutX="253.0" layoutY="57.0" prefHeight="25.0" prefWidth="215.0" promptText="Luchthaven" />
+      <Label layoutX="16.0" layoutY="61.0" text="Datum:">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="87.0" text="Tijd:">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="136.0" text="Bagage informatie">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="ddlMainColor" layoutX="343.0" layoutY="166.0" prefHeight="25.0" prefWidth="134.0" promptText="Primaire kleur" />
+      <JFXComboBox fx:id="ddlSecondColor" layoutX="343.0" layoutY="206.0" prefHeight="25.0" prefWidth="134.0" promptText="Secondaire kleur" />
+      <JFXTextArea fx:id="txt_area_bijzonder_merken" labelFloat="true" layoutX="20.0" layoutY="295.0" maxWidth="506.0" minWidth="397.0" prefHeight="100.0" prefWidth="397.0" promptText="Bijzondere kenmerken" style="-fx-background-color: #ccc;" />
+      <JFXTextField fx:id="txtArrivedFlight" layoutX="368.0" layoutY="80.0" maxWidth="215.0" minWidth="102.0" prefHeight="31.0" prefWidth="102.0" />
+      <Label layoutX="251.0" layoutY="87.0" text="Gearriveerd vlucht">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtLuggageTag" layoutX="20.0" layoutY="200.0" maxWidth="215.0" minWidth="160.0" prefHeight="33.0" prefWidth="167.0" promptText="Bagage Tag" />
+      <JFXComboBox fx:id="ddlWeight" layoutX="211.0" layoutY="241.0" prefHeight="25.0" prefWidth="120.0" promptText="Gewicht" />
+      <JFXComboBox fx:id="ddlLuggageType" layoutX="19.0" layoutY="166.0" prefHeight="27.0" prefWidth="311.0" promptText="Type Bagage" />
+      <ImageView fx:id="imgLuggage" fitHeight="329.0" fitWidth="276.0" layoutX="679.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton buttonType="RAISED" layoutX="22.0" layoutY="589.0" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: #235061;" text="Reset" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="835.0" layoutY="589.0" onAction="#on_Opslaan" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: #235061;" text="Opslaan" textFill="WHITE" />
+      <JFXTextField fx:id="txtTimeFound" disable="true" layoutX="65.0" layoutY="75.0" maxWidth="215.0" minWidth="149.0" prefHeight="33.0" prefWidth="149.0" />
+      <JFXComboBox fx:id="ddlStatus" layoutX="343.0" layoutY="241.0" prefHeight="27.0" prefWidth="134.0" promptText="Status" />
+      <JFXTextField fx:id="txtDatum" disable="true" layoutX="64.0" layoutY="50.0" />
+      <JFXComboBox fx:id="ddlMerk" layoutX="212.0" layoutY="206.0" prefHeight="25.0" prefWidth="120.0" promptText="Merk" />
+      <JFXButton buttonType="RAISED" layoutX="679.0" layoutY="487.0" onAction="#on_Foto_bestand" prefHeight="49.0" prefWidth="113.0" style="-fx-background-color: #235061;" text="Foto bestand" textFill="WHITE" />
+      <JFXTextArea fx:id="txtImagePath" layoutX="679.0" layoutY="417.0" maxWidth="311.0" minWidth="265.0" prefHeight="31.0" prefWidth="276.0" />
+      <JFXComboBox fx:id="ddlSize" layoutX="19.0" layoutY="241.0" prefHeight="27.0" prefWidth="167.0" promptText="Size" />
+      <JFXComboBox fx:id="ddlLocationFound" layoutX="494.0" layoutY="57.0" prefHeight="25.0" prefWidth="149.0" promptText="Location found" />
+   </children>
+   <effect>
+      <Blend mode="OVERLAY" />
+   </effect>
+</AnchorPane>

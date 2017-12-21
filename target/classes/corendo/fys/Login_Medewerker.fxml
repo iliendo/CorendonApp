@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="939.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.Login_MedewerkerController">
+   <children>
+      <AnchorPane prefHeight="146.0" prefWidth="939.0" style="-fx-background-color: #235061;" />
+      <AnchorPane layoutX="250.0" layoutY="65.0" prefHeight="375.0" prefWidth="439.0" style="-fx-background-color: #fff; -fx-background-radius: 0.5em;">
+         <children>
+            <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="165.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/login_logo.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtEmail" layoutX="71.0" layoutY="157.0" maxWidth="303.0" minWidth="303.0" prefHeight="31.0" prefWidth="303.0" promptText="E-mail">
+               <font>
+                  <Font name="Bell MT" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" layoutX="74.0" layoutY="207.0" maxWidth="303.0" minWidth="303.0" prefHeight="31.0" prefWidth="303.0" promptText="Password">
+               <font>
+                  <Font name="Bell MT" size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="275.0" onAction="#on_Login_medewerker" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #235061;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblMessage" layoutX="9.0" layoutY="339.0" prefHeight="17.0" prefWidth="291.0" textFill="#eb0000" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
