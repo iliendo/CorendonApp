@@ -32,6 +32,7 @@ import java.math.*;
 
 /**
  * FXML Controller class
+ * Hierin kan je medewerkers toevoegen
  *
  * @author Ilias Azagagh
  */
