@@ -1,10 +1,5 @@
 package corendo.fys.controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import corendo.fys.jdbcDBconnection;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -104,7 +99,7 @@ public class Login_MedewerkerController implements Initializable {
         }
 
     }
-
+// get firstname of employee
     public String medewerkerName() {
         String firstname = null;
         try {

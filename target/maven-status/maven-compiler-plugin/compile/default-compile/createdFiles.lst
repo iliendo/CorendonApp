@@ -1,4 +1,5 @@
 corendo\fys\controller\Navigatie_medewerkerController.class
+corendo\fys\controller\SchadeClaimController.class
 corendo\fys\controller\Navigatie_supervisorController.class
 corendo\fys\controller\Gevonden_bagageController.class
 supervisor\Brand.class
