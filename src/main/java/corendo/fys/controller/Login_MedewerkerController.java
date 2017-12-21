@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
+ *Ricardo eet pasta. Koeskoes is sws gaande
  * @author Gabriel
  */
 public class Login_MedewerkerController implements Initializable {
