@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *Ricardo eet pasta. Koeskoes is sws gaande
+ * Ricardo eet pasta. Couscous is sws gaande. Bitcoins 
  * @author Gabriel
  */
 public class Login_MedewerkerController implements Initializable {
