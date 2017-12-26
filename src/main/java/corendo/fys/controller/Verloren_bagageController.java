@@ -10,9 +10,6 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.mysql.jdbc.Statement;
 import corendo.fys.jdbcDBconnection;
-import java.awt.Desktop;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -28,7 +25,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,11 +33,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
 
 /**
  * FXML Controller class
@@ -56,7 +48,6 @@ public class Verloren_bagageController implements Initializable {
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement stmt = null;
     ResultSet rs = null;
-
 
     @FXML
     private JFXTextField txtDatum;
@@ -102,7 +93,7 @@ public class Verloren_bagageController implements Initializable {
 
     @FXML
     private JFXComboBox ddlLuggageType;
-    
+
     @FXML
     private JFXTextField txtTimeFound;
 
@@ -128,7 +119,7 @@ public class Verloren_bagageController implements Initializable {
 
         // insert de verloren bagage maar eerst check of de ingevulde waardes al bestaan in de database
         // InsertLuggageInfo();
-        machting();
+        machting_and_insert();
 
         // maak alle velden leeg
         clear_tekstVelden();
@@ -143,11 +134,45 @@ public class Verloren_bagageController implements Initializable {
         app_stage.show();
     }
 
-
     /**
      * het insert de ingevulde waardes naar de database
      */
-    public void machting() {
+    public void machting_and_insert() {
+        int m_LuggageType = 0;
+        int m_Brand = 0;
+        String m_MainColor = null;
+        String m_Size = null;
+        String m_Weight = null;
+        String m_SecondColor = null;
+        String m_LuggageTag = null;
+        String m_ArrivedFlight = null;
+
+        try {
+            String query = "SELECT * FROM luggage";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                m_LuggageType = rs.getInt("LuggageType_id");
+                m_Brand = rs.getInt("Brand_id");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (get_LuggageType_id().equals(m_LuggageType)
+                && get_Brand_id().equals(m_Brand)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("The data you have entered shows that your baggage is already registered in our database.");
+            alert.showAndWait();
+        } else {
+            InsertLuggageInfo();
+        }
+
+    }
+
+    /*
+    public void machting_and_insert() {
         try {
             String m_Firstname = null;
             String query = "SELECT * FROM luggage INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id";
@@ -174,8 +199,9 @@ public class Verloren_bagageController implements Initializable {
         }
     }
 
-    /*
-    public void machting() {
+     */
+ /*
+    public void machting_and_insert() {
         try {
             String m_Firstname = null;
             String m_Lastname = null;

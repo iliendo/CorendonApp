@@ -44,8 +44,7 @@ public class ZoekenController implements Initializable {
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement stmt = null;
     ResultSet rs = null;
-    
-    
+
     @FXML
     private TableView<zoek_luggage> tblLuggage;
 
@@ -69,10 +68,10 @@ public class ZoekenController implements Initializable {
 
     @FXML
     private TableColumn status;
-    
+
     @FXML
     private JFXComboBox<?> ddlStatus;
-    
+
     @FXML
     private JFXTextField txt_zoek_status;
 
@@ -84,8 +83,7 @@ public class ZoekenController implements Initializable {
 
     @FXML
     private JFXTextField txt_zoek_brand;
-    
-    
+
     @FXML
     private BorderPane fullStatusDetailsContent;
 
@@ -114,65 +112,61 @@ public class ZoekenController implements Initializable {
     void on_Close(ActionEvent event) {
         fullStatusDetailsContent.setVisible(false);
     }
-    
+
     @FXML
     void on_table_click(MouseEvent event) {
-        fullStatusDetailsContent.setVisible(true);
-        try{
-            zoek_luggage zoek = (zoek_luggage)tblLuggage.getSelectionModel().getSelectedItem();
-            String query = "SELECT * FROM luggage "
-                    + "INNER JOIN luggagetype ON luggage.LuggageType_id = luggagetype.LuggageType_id "
-                    + "INNER JOIN brand ON luggage.Brand_id = brand.Brand_id "
-                    + "INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id "
-                    + "INNER JOIN status ON luggage.Status_id = status.Status_id "
-                    + "WHERE Luggage_id = ?";
-            
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, zoek.getLuggage_id());
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                lblRegisNr.setText(rs.getString("Luggage_id"));
-                lblDateFound.setText(rs.getString("DateFound"));
-                lblTimeFound.setText(rs.getString("TimeFound"));
-                lblLuggageType.setText(rs.getString("LuggageType"));
-                lblBrand.setText(rs.getString("Brand"));
-                lblPassenger.setText(rs.getString("Firstname"));
-                lblStatus.setText(rs.getString("Status"));
-                
+        if (event.getClickCount() > 1) {
+            fullStatusDetailsContent.setVisible(true);
+            try {
+                zoek_luggage zoek = (zoek_luggage) tblLuggage.getSelectionModel().getSelectedItem();
+                String query = "SELECT * FROM luggage "
+                        + "INNER JOIN luggagetype ON luggage.LuggageType_id = luggagetype.LuggageType_id "
+                        + "INNER JOIN brand ON luggage.Brand_id = brand.Brand_id "
+                        + "INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id "
+                        + "INNER JOIN status ON luggage.Status_id = status.Status_id "
+                        + "WHERE Luggage_id = ?";
+
+                stmt = conn.prepareStatement(query);
+                stmt.setString(1, zoek.getLuggage_id());
+                rs = stmt.executeQuery();
+                while (rs.next()) {
+                    lblRegisNr.setText(rs.getString("Luggage_id"));
+                    lblDateFound.setText(rs.getString("DateFound"));
+                    lblTimeFound.setText(rs.getString("TimeFound"));
+                    lblLuggageType.setText(rs.getString("LuggageType"));
+                    lblBrand.setText(rs.getString("Brand"));
+                    lblPassenger.setText(rs.getString("Firstname"));
+                    lblStatus.setText(rs.getString("Status"));
+
+                }
+                stmt.close();
+
+            } catch (SQLException e) {
+                System.err.println(e);
             }
-            stmt.close();
-            
-        }catch(SQLException e){
-            System.err.println(e);
         }
     }
-    
-    
+
     final ObservableList<zoek_luggage> data = FXCollections.observableArrayList();
     FilteredList<zoek_luggage> filteredData = new FilteredList<>(data);
-    
-    
-    
+
     @FXML
     void on_zoek_status(KeyEvent event) {
-        
+
     }
-    
-    
-    
-    
-    public void FillTable(){
-        try{
+
+    public void FillTable() {
+        try {
             String query_luggage = "SELECT * FROM luggage "
                     + "INNER JOIN luggagetype ON luggage.LuggageType_id = luggagetype.LuggageType_id "
                     + "INNER JOIN brand ON luggage.Brand_id = brand.Brand_id "
                     + "INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id "
                     + "INNER JOIN status ON luggage.Status_id = status.Status_id";
-            
+
             stmt = conn.prepareStatement(query_luggage);
             rs = stmt.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 data.add(new zoek_luggage(
                         rs.getString("Luggage_id"),
                         rs.getString("DateFound"),
@@ -190,15 +184,15 @@ public class ZoekenController implements Initializable {
                 brand.setCellValueFactory(new PropertyValueFactory("Brand"));
                 Firstname.setCellValueFactory(new PropertyValueFactory("Firstname"));
                 status.setCellValueFactory(new PropertyValueFactory("Status"));
-                
+
             }
-            
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             System.err.println(e);
         }
     }
-    
-     public void zoekStatus(){
+
+    public void zoekStatus() {
         FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
         txt_zoek_status.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
@@ -212,17 +206,17 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getStatus().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } 
+                }
                 return false; // Does not match.
             });
         });
-        
+
         SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
         tblLuggage.setItems(sortedData);
     }
-    
-    public void zoekName(){
+
+    public void zoekName() {
         FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
         txt_zoek_name.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
@@ -236,17 +230,17 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getFirstname().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } 
+                }
                 return false; // Does not match.
             });
         });
-        
+
         SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
         tblLuggage.setItems(sortedData);
     }
-    
-    public void zoekLuggage(){
+
+    public void zoekLuggage() {
         FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
         txt_zoek_luggageType.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
@@ -260,18 +254,17 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getLuggageType().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } 
+                }
                 return false; // Does not match.
             });
         });
-        
+
         SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
         tblLuggage.setItems(sortedData);
     }
-    
-    
-    public void zoekBrand(){
+
+    public void zoekBrand() {
         FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
         txt_zoek_brand.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
@@ -285,11 +278,11 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getBrand().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } 
+                }
                 return false; // Does not match.
             });
         });
-        
+
         SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
         tblLuggage.setItems(sortedData);
@@ -298,10 +291,9 @@ public class ZoekenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FillTable();
-        
+
         FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
-        
-        
+
         txt_zoek_status.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -312,11 +304,11 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getStatus().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } 
+                }
                 return false;
             });
         });
-        
+
         txt_zoek_name.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -327,11 +319,11 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getFirstname().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } 
+                }
                 return false;
             });
         });
-        
+
         txt_zoek_luggageType.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -342,11 +334,11 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getLuggageType().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } 
+                }
                 return false;
             });
         });
-        
+
         txt_zoek_brand.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(luggage -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -357,11 +349,11 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getBrand().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                } 
+                }
                 return false;
             });
         });
-        
+
         SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
         tblLuggage.setItems(sortedData);
