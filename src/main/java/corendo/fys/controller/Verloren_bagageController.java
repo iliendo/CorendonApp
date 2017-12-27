@@ -138,121 +138,29 @@ public class Verloren_bagageController implements Initializable {
      * het insert de ingevulde waardes naar de database
      */
     public void machting_and_insert() {
-        int m_LuggageType = 0;
-        int m_Brand = 0;
-        String m_MainColor = null;
-        String m_Size = null;
-        String m_Weight = null;
-        String m_SecondColor = null;
-        String m_LuggageTag = null;
-        String m_ArrivedFlight = null;
-
+        String query = "SELECT * FROM luggage WHERE LuggageType_id='" + get_LuggageType_id() + "'"
+                + "AND Brand_id='" + get_Brand_id() + "'"
+                + "AND LuggageTag='" + txtLuggageTag.getText() + "'"
+                + "AND Flight='" + txtArrivedFlight.getText() + "'";
         try {
-            String query = "SELECT * FROM luggage";
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
-            while (rs.next()) {
-                m_LuggageType = rs.getInt("LuggageType_id");
-                m_Brand = rs.getInt("Brand_id");
+            if (rs.next() == true) {
+                String matchLuggageId = rs.getString("Luggage_id");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("The following information shows that there is match in the database. \n(Registration number: " + matchLuggageId + ")!");
+                alert.showAndWait();
+            }else{
+                InsertLuggageInfo();
             }
         } catch (SQLException ex) {
             Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (get_LuggageType_id().equals(m_LuggageType)
-                && get_Brand_id().equals(m_Brand)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("The data you have entered shows that your baggage is already registered in our database.");
-            alert.showAndWait();
-        } else {
-            InsertLuggageInfo();
-        }
 
     }
 
-    /*
-    public void machting_and_insert() {
-        try {
-            String m_Firstname = null;
-            String query = "SELECT * FROM luggage INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                m_Firstname = rs.getString("Firstname");
-
-                if (m_Firstname.equals(txtFirstname.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information Dialog");
-                    alert.setHeaderText(null);
-                    alert.setContentText("The data you have entered shows that your baggage is already registered in our database.");
-                    alert.showAndWait();
-
-                    break;
-                } else {
-                    InsertLuggageInfo();
-                }
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-     */
- /*
-    public void machting_and_insert() {
-        try {
-            String m_Firstname = null;
-            String m_Lastname = null;
-            String m_Country = null;
-            String m_Email = null;
-            String m_TypeBagage = null;
-            String m_Color = null;
-            String m_Merk = null;
-
-            String query = "SELECT * FROM luggage "
-                    + "INNER JOIN passenger ON luggage.Passenger_id = passenger.Passenger_id "
-                    + "INNER JOIN luggagetype ON luggage.LuggageType_id = luggagetype.LuggageType_id "
-                    + "INNER JOIN maincolor ON luggage.MainColor_id = maincolor.MainColor_id "
-                    + "INNER JOIN brand ON luggage.Brand_id = brand.Brand_id";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                m_Firstname = rs.getString("Firstname");
-                m_Lastname = rs.getString("Lastname");
-                m_Country = rs.getString("Country_name");
-                m_Email = rs.getString("Email");
-
-                m_TypeBagage = rs.getString("LuggageType");
-                m_Color = rs.getString("Color");
-                m_Merk = rs.getString("Brand");
-
-                if (m_Firstname.equals(txtFirstname.getText())
-                       /* && m_Lastname.equals(txtLastname.getText())
-                        && m_Country.equals(txtCountry.getText())
-                        && m_Email.equals(txtEmail.getText())
-                        && m_TypeBagage.equals(ddlLuggageType.getSelectionModel().getSelectedItem().toString())
-                        && m_Color.equals(ddlMainColor.getSelectionModel().getSelectedItem().toString())
-                        && m_Merk.equals(ddlMerk.getSelectionModel().getSelectedItem().toString()) )  {
-                    
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information Dialog");
-                    alert.setHeaderText(null);
-                    alert.setContentText("The data you have entered shows that your baggage is already registered in our database.");
-                    alert.showAndWait();
-                    break;
-                } else {
-                    InsertLuggageInfo();
-                }
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-     */
     private void InsertLuggageInfo() {
         try {
             String query_passenger = "INSERT INTO passenger (Firstname,Lastname,Email,"
