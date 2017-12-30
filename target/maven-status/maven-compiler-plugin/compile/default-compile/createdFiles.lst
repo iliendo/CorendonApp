@@ -20,4 +20,5 @@ medewerkers\zoek_luggage.class
 medewerkers\medewerker_login.class
 corendo\fys\controller\Supervisor_manage_luggageTypeController.class
 supervisor\Employee.class
+corendo\fys\controller\Change_PasswordController.class
 corendo\fys\MainApp.class

@@ -41,10 +41,10 @@ public class Navigatie_medewerkerController implements Initializable {
 
     @FXML
     private StackPane all_content;
-    
+
     @FXML
     private Label lblMedewerkerName;
-    
+
     @FXML
     private Label lblMedewerkerCountry;
 
@@ -54,23 +54,26 @@ public class Navigatie_medewerkerController implements Initializable {
             show_me_user_info.setVisible(true);
         }
     }
-    
+
     @FXML
     void on_logOut(ActionEvent event) throws IOException {
         Parent parent1 = FXMLLoader.load(getClass().getResource("/corendo/fys/Login_Medewerker.fxml"));
         Scene scene = new Scene(parent1);
-        Stage app_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene);
         app_stage.show();
     }
-    
-    
+
+    @FXML
+    void on_change_password(ActionEvent event) {
+        veranderContentNode("Change_Password.fxml");
+    }
 
     @FXML
     void dashbord_medewerker(MouseEvent event) {
         show_me_user_info.setVisible(false);
     }
-    
+
     @FXML
     void on_Gevonden_bagage(ActionEvent event) {
         veranderContentNode("Gevonden_bagage.fxml");
@@ -80,13 +83,13 @@ public class Navigatie_medewerkerController implements Initializable {
     void on_verloren_bagage(ActionEvent event) {
         veranderContentNode("Verloren_bagage.fxml");
     }
-    
+
     @FXML
     void on_Zoeken(ActionEvent event) {
         veranderContentNode("Zoeken.fxml");
     }
-    
-    public void setInfo(String name, String country){
+
+    public void setInfo(String name, String country) {
         this.lblMedewerkerName.setText(name);
         this.lblMedewerkerCountry.setText(country);
     }

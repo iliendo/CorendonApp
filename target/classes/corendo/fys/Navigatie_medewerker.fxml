@@ -123,6 +123,11 @@
                         <Image url="@../../images/corendon.jpg" />
                      </image>
                   </ImageView>
+                  <JFXButton layoutX="50.0" layoutY="505.0" onAction="#on_change_password" text="Change Password" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </AnchorPane>
          </left>

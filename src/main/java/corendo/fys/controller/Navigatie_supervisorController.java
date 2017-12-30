@@ -40,11 +40,10 @@ public class Navigatie_supervisorController implements Initializable {
 
     @FXML
     private StackPane all_content_supervisor;
-    
+
     @FXML
     private JFXButton formulier_wijziging;
 
-    
     @FXML
     void on_Me_User(ActionEvent event) {
         if (event.getSource() == meOption) {
@@ -56,30 +55,36 @@ public class Navigatie_supervisorController implements Initializable {
     void on_log_out(ActionEvent event) throws IOException {
         Parent parent1 = FXMLLoader.load(getClass().getResource("/corendo/fys/Login_Medewerker.fxml"));
         Scene scene = new Scene(parent1);
-        Stage app_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene);
         app_stage.show();
     }
-    
-    
+
     @FXML
     void dashbord_medewerker(MouseEvent event) {
 
     }
     
+        @FXML
+    void on_change_password(ActionEvent event) {
+        veranderContentNode("Change_Password.fxml");
+    }
+
     @FXML
     void on_formulier_wijzig(ActionEvent event) {
         veranderContentNode("Supervisor_Formulier_wijzigen.fxml");
     }
+
     @FXML
     void on_medewerker_toevoegen(ActionEvent event) {
         veranderContentNode("Supervisor_medewerker_toevoegen.fxml");
     }
-    
+
     @FXML
     void on_statistic(ActionEvent event) {
         veranderContentNode("supervisor_statictiek.fxml");
     }
+
     @FXML
     void on_update_brands(ActionEvent event) {
         veranderContentNode("supervisor_manage_brand.fxml");
@@ -89,21 +94,20 @@ public class Navigatie_supervisorController implements Initializable {
     void on_update_employee(ActionEvent event) {
         veranderContentNode("Supervisor_medewerker_updaten.fxml");
     }
-    
+
     @FXML
     void on_add_brands(ActionEvent event) {
         veranderContentNode("supervisor_add_brand.fxml");
     }
-    
+
     @FXML
     void on_airport(ActionEvent event) {
         veranderContentNode("supervisor_manage_airport.fxml");
     }
-    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
     }
 
     public void veranderContentNode(String schermFileName) {
