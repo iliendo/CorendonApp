@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class MainApp extends Application {
 
     public static Stage mainStage;
@@ -18,24 +17,24 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/corendo/fys/Login_Medewerker.fxml"));
-        
+
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
-        
+
         stage.setTitle("Corendon Luggage Tracer");
         stage.setScene(scene);
         stage.show();
     }
-    
+
     public void naarDeScherm(String schermNaam) {
 
         try {
             Parent screen = AppUtilities.loadScreen(schermNaam);
-            
+
             Scene scene = new Scene(screen);
             mainStage.setScene(scene);
             mainStage.show();
-            
+
         } catch (IOException ex) {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
         }

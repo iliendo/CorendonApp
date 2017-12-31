@@ -65,11 +65,6 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void on_change_password(ActionEvent event) {
-        veranderContentNode("Change_Password.fxml");
-    }
-
-    @FXML
     void dashbord_medewerker(MouseEvent event) {
         show_me_user_info.setVisible(false);
     }
@@ -87,6 +82,16 @@ public class Navigatie_medewerkerController implements Initializable {
     @FXML
     void on_Zoeken(ActionEvent event) {
         veranderContentNode("Zoeken.fxml");
+    }
+    
+    @FXML
+    void on_import_register(ActionEvent event) {
+        veranderContentNode("Excel_Importeren.fxml");
+    }
+
+    @FXML
+    void on_change_password(ActionEvent event) {
+        veranderContentNode("Change_Password.fxml");
     }
 
     public void setInfo(String name, String country) {

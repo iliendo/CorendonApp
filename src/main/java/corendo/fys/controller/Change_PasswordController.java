@@ -17,7 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 
 /**
- * FXML Controller class
+ * Laat de ingelogde medewerker het huidig wachtwoord aanpassen
  *
  * @author Ilias Azagagh
  */
