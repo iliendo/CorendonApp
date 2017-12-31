@@ -12,13 +12,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Excel_ImporterenController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Excel_ImporterenController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Excel_ImporterenController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
               <folding>
                 <marker date="1514748258436" expanded="true" signature="2289:2331" ph="insert INTO luggage... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExcelReader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/Workshop libraries/ExcelReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#3451#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -237,12 +249,12 @@
       <option name="presentableId" value="Default" />
       <updated>1514732209369</updated>
       <workItem from="1514732226105" duration="3783000" />
-      <workItem from="1514744548433" duration="4494000" />
+      <workItem from="1514744548433" duration="5193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8277000" />
+    <option name="totallyTimeSpent" value="8976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -383,6 +395,16 @@
           <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
           <folding>
             <marker date="1514748258436" expanded="true" signature="2289:2331" ph="insert INTO luggage... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Workshop libraries/ExcelReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#3451#0" expanded="true" />
           </folding>
         </state>
       </provider>
