@@ -24,9 +24,6 @@ import javafx.scene.control.Alert;
 public class Change_PasswordController implements Initializable {
 
     @FXML
-    private JFXTextField txtEmail;
-
-    @FXML
     private JFXPasswordField txtOldPassword;
 
     @FXML
@@ -34,6 +31,8 @@ public class Change_PasswordController implements Initializable {
 
     @FXML
     private JFXPasswordField txtNewPasswordRepeat;
+    
+    Login_MedewerkerController employeeEmail = new Login_MedewerkerController();
 
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement stmt = null;
@@ -43,11 +42,12 @@ public class Change_PasswordController implements Initializable {
     void on_change_password(ActionEvent event) {
 
         if (txtNewPassword.getText().equals(txtNewPasswordRepeat.getText())) {
-            String query = "UPDATE employee SET Password=? WHERE Email=?";
+            String query = "UPDATE employee SET Password=? WHERE Email=? AND Password=?";
             try {
                 stmt = conn.prepareStatement(query);
                 stmt.setString(1, txtNewPassword.getText());
-                stmt.setString(2, txtEmail.getText());
+                stmt.setString(2, employeeEmail.getEmail());
+                stmt.setString(3, txtOldPassword.getText());
 
                 stmt.executeUpdate();
                 stmt.close();
@@ -57,18 +57,18 @@ public class Change_PasswordController implements Initializable {
 
                 System.out.println("\n" + query);
             }
-        } else {
+        } else if (!txtNewPassword.getText().equals(txtNewPasswordRepeat)){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("The new passwords didn't match!");
-        }
+        } 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information");
         alert.setContentText("Your password has been changed!");
 
     }
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

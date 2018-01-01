@@ -26,8 +26,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- * Ricardo eet pasta. Couscous is sws gaande. Bitcoins 
+ * FXML Controller class 
+ *
  * @author Gabriel
  */
 public class Login_MedewerkerController implements Initializable {
@@ -50,6 +50,8 @@ public class Login_MedewerkerController implements Initializable {
 
     private ResourceBundle resources;
     
+    private static String email;
+
     @FXML
     void on_Login_medewerker(ActionEvent event) throws IOException {
 
@@ -59,6 +61,7 @@ public class Login_MedewerkerController implements Initializable {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, txtEmail.getText());
             pstmt.setString(2, txtPassword.getText());
+            email = txtEmail.getText();
             // pstmt.setString(2, hash());
 
             rs = pstmt.executeQuery();
@@ -77,7 +80,7 @@ public class Login_MedewerkerController implements Initializable {
 
                     Navigatie_medewerkerController displayEmployeeDetails = loader.getController();
                     displayEmployeeDetails.setInfo(medewerkerName(), medewerkerCountry());
-
+                    
                     Parent parent1 = loader.getRoot();
                     Scene scene = new Scene(parent1);
                     Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -124,8 +127,8 @@ public class Login_MedewerkerController implements Initializable {
         try {
             pstmt = conn.prepareStatement(query);
             rs = pstmt.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 country = rs.getString("Country_name");
             }
         } catch (SQLException ex) {
@@ -135,6 +138,10 @@ public class Login_MedewerkerController implements Initializable {
         return country;
     }
 
+    public String getEmail () {
+        return email;
+    }
+    
     public int function_id() {
         int id = 0;
         try {

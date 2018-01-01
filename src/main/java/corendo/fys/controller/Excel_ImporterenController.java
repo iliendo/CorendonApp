@@ -75,7 +75,7 @@ public class Excel_ImporterenController implements Initializable {
         // Starts at row 5 and prints every first value from each row from the first column
         for (int i = 4; i < rowCount; i++) {
             try {
-                String query = "insert INTO luggage (luggage_id) VALUES(?)";
+                String query = "insert INTO luggage_import (luggage_id) VALUES(?)";
                 
                 stmt = conn.prepareStatement(query);
                 stmt.setString(1, sheet1.getRow(i).getCell(0).getStringCellValue().toString());
