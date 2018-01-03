@@ -1,7 +1,7 @@
 package corendo.fys.controller;
 
-
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import corendo.fys.jdbcDBconnection;
 import java.net.URL;
@@ -10,7 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -18,9 +19,11 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -105,6 +108,18 @@ public class ZoekenController implements Initializable {
     private Label lblStatus;
 
     @FXML
+    private ToggleGroup luggaga_status;
+
+    @FXML
+    private JFXRadioButton luggage_status_1;
+
+    @FXML
+    private JFXRadioButton luggage_status_2;
+
+    @FXML
+    private JFXRadioButton luggage_status_3;
+
+    @FXML
     void on_Close(ActionEvent event) {
         fullStatusDetailsContent.setVisible(false);
     }
@@ -141,6 +156,76 @@ public class ZoekenController implements Initializable {
                 System.err.println(e);
             }
         }
+    }
+
+    private String onWorkStatus;
+
+    @FXML
+    void on_status_text_1(ActionEvent event) {
+        onWorkStatus = luggage_status_1.getText();
+    }
+
+    @FXML
+    void on_status_text_2(ActionEvent event) {
+        onWorkStatus = luggage_status_2.getText();
+    }
+
+    @FXML
+    void on_status_text_3(ActionEvent event) {
+        onWorkStatus = luggage_status_3.getText();
+    }
+
+    @FXML
+    void on_Work_status(ActionEvent event) {
+
+        try {
+
+            String lug_Status = null;
+
+            String query = "SELECT OnWorkStatus FROM luggage WHERE Luggage_id='" + lblRegisNr.getText() + "'";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                lug_Status = rs.getString("OnWorkStatus");
+                if(lug_Status == null){
+                    String query2 = "INSERT INTO luggage (OnWorkStatus) VALUES (?) WHERE Luggage_id='" + lblRegisNr.getText() + "'";
+                    PreparedStatement stmt2 = conn.prepareStatement(query2);
+                    stmt2.setString(1, onWorkStatus);
+                    
+                    stmt2.execute();
+                    
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Dialog");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Update executed");
+                    
+                }else{
+                    String query3 = "UPDATE luggage SET OnWorkStatus=? WHERE Luggage_id='" + lblRegisNr.getText() + "'";
+
+                    try {
+                        try (PreparedStatement stmt3 = conn.prepareStatement(query3)) {
+                            stmt3.setString(1, onWorkStatus);
+                            
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Information Dialog");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Update executed");
+                            
+                            stmt3.execute();
+                        }
+
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ZoekenController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ZoekenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+
     }
 
     final ObservableList<zoek_luggage> data = FXCollections.observableArrayList();

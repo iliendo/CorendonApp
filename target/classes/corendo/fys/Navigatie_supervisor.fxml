@@ -40,7 +40,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="15.0" layoutY="142.0" onAction="#on_add_brands" opacity="0.5" text="Luggage brands" textFill="WHITE">
+                        <JFXButton layoutX="15.0" layoutY="172.0" onAction="#on_add_brands" opacity="0.5" text="Luggage brands" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -70,7 +70,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="15.0" layoutY="172.0" opacity="0.5" text="Luggage type" textFill="WHITE">
+                        <JFXButton layoutX="16.0" layoutY="142.0" onAction="#on_Airports" opacity="0.5" text="Airports" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>

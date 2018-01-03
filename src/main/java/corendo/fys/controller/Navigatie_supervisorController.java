@@ -69,6 +69,11 @@ public class Navigatie_supervisorController implements Initializable {
     void on_change_password(ActionEvent event) {
         veranderContentNode("Change_Password.fxml");
     }
+    
+    @FXML
+    void on_Airports(ActionEvent event) {
+        veranderContentNode("supervisor_add_airport.fxml");
+    }
 
     @FXML
     void on_formulier_wijzig(ActionEvent event) {

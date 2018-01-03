@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1151.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.ZoekenController">
@@ -60,7 +65,7 @@
       </BorderPane>
       <BorderPane fx:id="fullStatusDetailsContent" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d84559;" BorderPane.alignment="CENTER">
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <center>
@@ -79,13 +84,34 @@
                                     <Label fx:id="lblBrand" prefHeight="34.0" prefWidth="320.0" text="Brand" />
                                     <Label fx:id="lblPassenger" prefHeight="34.0" prefWidth="320.0" text="Passenger" />
                                     <Label fx:id="lblStatus" prefHeight="34.0" prefWidth="320.0" text="Status" />
+                                    <Label prefHeight="40.0" prefWidth="297.0" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="436.0" layoutY="38.0" prefHeight="502.0" prefWidth="554.0">
+                                 <children>
+                                    <JFXRadioButton fx:id="luggage_status_1" onAction="#on_status_text_1" prefHeight="40.0" prefWidth="128.0" text="In progress">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="luggaga_status" />
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton fx:id="luggage_status_2" onAction="#on_status_text_2" prefHeight="40.0" prefWidth="128.0" text="Found by corendon" toggleGroup="$luggaga_status" />
+                                    <JFXRadioButton fx:id="luggage_status_3" onAction="#on_status_text_3" prefHeight="40.0" prefWidth="128.0" text="Collected by traveller" toggleGroup="$luggaga_status" />
+                                    <JFXButton buttonType="RAISED" onAction="#on_Work_status" ripplerFill="WHITE" style="-fx-background-color: #9e2a3a; -fx-background-radius: 0.5em;" text="Save onWork status" />
                                  </children>
                               </VBox>
                            </children>
                         </AnchorPane>
                      </center>
                      <top>
-                        <Hyperlink onAction="#on_Close" text="Close" BorderPane.alignment="CENTER" />
+                        <Hyperlink onAction="#on_Close" style="-fx-background-color: #9e2a3a;" text="Close" BorderPane.alignment="CENTER">
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#ffdede" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill></Hyperlink>
                      </top>
                   </BorderPane>
                </children>

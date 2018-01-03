@@ -5,7 +5,6 @@ package corendo.fys.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import com.jfoenix.controls.JFXTextField;
 import corendo.fys.jdbcDBconnection;
 import java.net.URL;
@@ -21,11 +20,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import supervisor.Airport;
+import supervisor.Brand;
 
 /**
  * FXML Controller class
@@ -37,15 +38,14 @@ public class Supervisor_manage_airportController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
     final ObservableList<Airport> data = FXCollections.observableArrayList();
-    
+
     @FXML
-    private TableView tblView;
+    private TableView<Airport> tblAirport;
 
     @FXML
     private TableColumn tblC_id;
@@ -54,65 +54,36 @@ public class Supervisor_manage_airportController implements Initializable {
     private TableColumn tblC_Airport;
 
     @FXML
-    private JFXTextField txtnew;
+    private JFXTextField txtAirportNew;
 
     @FXML
-    private JFXTextField txtold;
-
-    
-    
-    @FXML
-    void on_Add(ActionEvent event) {
-        
-    }
-
-    @FXML
-    void on_Delete(ActionEvent event) {
-
-    }
+    private JFXTextField txtAirport;
 
     @FXML
     void on_Update(ActionEvent event) {
-
-    }
-
-    
-    
-    @FXML
-    void on_table_click(MouseEvent event) {
-
-    }
-    
-    /**
-     * Tableview vullen met data uit de database
-     */
-    public void FillTable() {
-
+        String query = "UPDATE airport SET Airport_name=? WHERE Airport_name='" + txtAirport.getText() + "'";
         try {
-            String query = "select * from airport";
             stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
+            stmt.setString(1, txtAirportNew.getText());
 
-            while (rs.next()) {
-                data.add(new Airport(
-                        rs.getInt("Airport_id"),
-                        rs.getString("Airport_name")
-                ));
-                tblView.setItems(data);
-                tblC_id.setCellValueFactory(new PropertyValueFactory<>("Airport_id"));
-                tblC_Airport.setCellValueFactory(new PropertyValueFactory<>("Airport_name"));
-            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Update executed");
+
+            stmt.execute();
+            stmt.close();
+
+            txtAirport.setText(null);
+            txtAirportNew.setText(null);
 
         } catch (SQLException ex) {
             Logger.getLogger(Supervisor_manage_airportController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        refreshTable();
     }
 
-    /**
-     * iedere keer als iets wordt toegevoegd, aangepast of verwijderd, wordt de
-     * tableview gerefreshed
-     */
     public void refreshTable() {
         data.clear();
         try {
@@ -125,21 +96,57 @@ public class Supervisor_manage_airportController implements Initializable {
                         rs.getInt("Airport_id"),
                         rs.getString("Airport_name")
                 ));
-                tblView.setItems(data);
+                tblAirport.setItems(data);
                 tblC_id.setCellValueFactory(new PropertyValueFactory<>("Airport_id"));
                 tblC_Airport.setCellValueFactory(new PropertyValueFactory<>("Airport_name"));
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Supervisor_manage_brandController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Supervisor_manage_airportController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
+
+    public void FillTable() {
+
+        try {
+            String query = "select * from airport";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                data.add(new Airport(
+                        rs.getInt("Airport_id"),
+                        rs.getString("Airport_name")
+                ));
+                tblAirport.setItems(data);
+                tblC_id.setCellValueFactory(new PropertyValueFactory<>("Airport_id"));
+                tblC_Airport.setCellValueFactory(new PropertyValueFactory<>("Airport_name"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Supervisor_manage_airportController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void onEdit() {
+        if (tblAirport.getSelectionModel().getSelectedItem() != null) {
+            Airport selectedAirport = tblAirport.getSelectionModel().getSelectedItem();
+            txtAirport.setText(selectedAirport.getAirport_name());
+        }
+
+    }
+
+    @FXML
+    void on_table_click(MouseEvent event) {
+        if (event.getClickCount() > 1) {
+            onEdit();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FillTable();
-    }    
-    
+    }
+
 }
