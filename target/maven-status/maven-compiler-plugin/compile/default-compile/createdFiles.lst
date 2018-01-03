@@ -2,6 +2,7 @@ corendo\fys\controller\SchadeClaimController.class
 corendo\fys\controller\Gevonden_bagageController.class
 corendo\fys\controller\Verloren_bagageController.class
 supervisor\LuggageType.class
+corendo\fys\CellConverter.class
 corendo\fys\controller\Supervisor_medewerker_toevoegenController.class
 corendo\fys\controller\Supervisor_manage_airportController.class
 corendo\fys\controller\Supervisor_statictiekController.class
@@ -13,6 +14,7 @@ medewerkers\zoek_luggage.class
 medewerkers\medewerker_login.class
 corendo\fys\controller\Navigatie_medewerkerController.class
 corendo\fys\controller\Navigatie_supervisorController.class
+corendo\fys\Password.class
 supervisor\Brand.class
 corendo\fys\AppUtilities.class
 corendo\fys\controller\ZoekenController.class
