@@ -18,7 +18,7 @@ public class CellConverter {
 
         Cell cell = currentSheet.getRow(currentRow).getCell(currentCell, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
         if (cell == null) {
-            return "nullieo";
+            return null;
         }
         if (cell.getCellTypeEnum() == CellType.NUMERIC) {
             String numberString = NumberToTextConverter.toText(cell.getNumericCellValue());
@@ -51,7 +51,7 @@ public class CellConverter {
     public String getPassengerCellString(XSSFSheet currentSheet, int currentCell, int currentRow) {
         Cell cell = currentSheet.getRow(currentRow).getCell(currentCell, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
         if (cell == null) {
-            return "nullieo";
+            return null;
         } else {
             return cell.toString().substring(0, cell.toString().indexOf(","));
         }
@@ -60,7 +60,7 @@ public class CellConverter {
     public String getCityCellString(XSSFSheet currentSheet, int currentCell, int currentRow) {
         Cell cell = currentSheet.getRow(currentRow).getCell(currentCell, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
         if (cell == null) {
-            return "nullieo";
+            return null;
         } else {
             return cell.toString().substring(cell.toString().indexOf(",") + 1, cell.toString().length()).trim();
         }
