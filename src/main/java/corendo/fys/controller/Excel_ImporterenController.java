@@ -1,7 +1,9 @@
 package corendo.fys.controller;
 
 import com.jfoenix.controls.JFXListView;
+import corendo.fys.CellConverter;
 import corendo.fys.jdbcDBconnection;
+import corendo.fys.IdChecker;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,11 +39,9 @@ public class Excel_ImporterenController implements Initializable {
     @FXML
     private JFXListView listView;
 
-    private String fileLocation;
-
     private String filePath;
 
-    XSSFSheet currentSheet;
+    private int tempSheetCounter = 100;
 
     @FXML
     void on_choose_file(ActionEvent event) {
@@ -64,74 +64,87 @@ public class Excel_ImporterenController implements Initializable {
         // Specified which file to open
         XSSFWorkbook workbook = new XSSFWorkbook(file);
 
-        int sheetCount = workbook.getNumberOfSheets();
+        CellConverter cellConverter = new CellConverter();
+
+        IdChecker idChecker = new IdChecker();
 
         int k = 0;
 
-        for (int j = 0; j < sheetCount; j++) {
+        for (int j = 0; j < tempSheetCounter; j++) {
 
-            currentSheet = workbook.getSheetAt(j);
-            // Checks what the last filled row is in the file
-            int rowCount = currentSheet.getLastRowNum();
-            System.out.println(rowCount);
+            // Tallies what the current sheet is that is imported
+            XSSFSheet currentSheet = workbook.getSheetAt(j);
+
+            // Checks what the last filled row is in the workbook
+            int totalRowCount = currentSheet.getLastRowNum();
+
+            // Checks what the last sheet in the workbook is
+            int totalSheetCount = workbook.getNumberOfSheets();
+
+            tempSheetCounter = totalSheetCount;
+
+            System.out.println(totalRowCount);
 
             // Starts at row 5 and prints every first value from each row from the first column
-            for (int i = 4; i < rowCount; i++) {
-                String luggageId = currentSheet.getRow(i).getCell(0).toString();
-                String dateFound = currentSheet.getRow(i).getCell(1).toString();
-//                String timeFound = currentSheet.getRow(i).getCell(2).toString();
-//                String luggageType = currentSheet.getRow(i).getCell(3).toString();
-//                String brand = currentSheet.getRow(i).getCell(4).toString();
-//                String arrivedFlight = currentSheet.getRow(i).getCell(5).toString();
-//                String luggageTag = currentSheet.getRow(i).getCell(6).toString();
-//                String locationFound = currentSheet.getRow(i).getCell(7).toString();
-//                String mainColor = currentSheet.getRow(i).getCell(8).toString();
-//                String secondColor = currentSheet.getRow(i).getCell(9).toString();
-//                String size = currentSheet.getRow(i).getCell(10).toString();
-//                String weight = currentSheet.getRow(i).getCell(11).toString();
-//                String passengerName = currentSheet.getRow(i).getCell(12).toString().substring(0, currentSheet.getRow(i).getCell(12).toString().indexOf(","));
-//                String city = currentSheet.getRow(i).getCell(12).toString().substring(currentSheet.getRow(i).getCell(12).toString().indexOf(",") + 1, currentSheet.getRow(i).getCell(12).toString().length()).trim();
-//                String otherCharacteristics = currentSheet.getRow(i).getCell(13).toString();
+            for (int i = 0; i < totalRowCount; i++) {
+                String luggageId = cellConverter.getCellString(currentSheet, 0, i);
+                String dateFound = cellConverter.getCellString(currentSheet, 1, i);
+                String timeFound = cellConverter.getCellString(currentSheet, 2, i);
+                String luggageType = cellConverter.getCellString(currentSheet, 3, i);
+                String brand = cellConverter.getCellString(currentSheet, 4, i);
+                String arrivedFlight = cellConverter.getCellString(currentSheet, 5, i);
+                String luggageTag = cellConverter.getCellString(currentSheet, 6, i);
+                String locationFound = cellConverter.getCellString(currentSheet, 7, i);
+                String mainColor = cellConverter.getCellString(currentSheet, 8, i);
+                String secondColor = cellConverter.getCellString(currentSheet, 9, i);
+                String size = cellConverter.getCellString(currentSheet, 10, i);
+                String weight = cellConverter.getCellString(currentSheet, 11, i);
+                String passengerName = cellConverter.getPassengerCellString(currentSheet, 12, i);
+                String city = cellConverter.getCityCellString(currentSheet, 12, i);
+                String otherCharacteristics = cellConverter.getCellString(currentSheet, 13, i);
 
                 try {
-                    String insertQuery = "INSERT INTO luggage_import (luggage_id, DateFound) VALUES(?,?)";
+                    String insertQuery = "INSERT INTO luggage_import (luggage_id, DateFound, TimeFound, LuggageType, Brand, ArrivedFlight, LuggageTag, LocationFound, MainColor, SecondColor, Size, Weight, PassengerName, City, OtherCharacteristics) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                     String selectQuery = "SELECT luggage_id FROM luggage_import WHERE luggage_id='" + luggageId + "'";
 
                     stmt = conn.prepareStatement(selectQuery);
                     rs = stmt.executeQuery();
-
-                    if (rs.next()) {
+                    if (luggageId.isEmpty()) {
+                        System.out.println("Value is empty!");
+                    } else if (!idChecker.isCharacter(luggageId)) {
+                        System.out.println("Not an ID");
+                    } else if (rs.next()) {
                         System.out.println(k++ + " Entry already exists!!!");
-                    } else if(luggageId.isEmpty()){
+                    } else if (luggageId.isEmpty()) {
                         System.out.println("Value is empty!");
                     } else {
                         stmt = conn.prepareStatement(insertQuery);
                         stmt.setString(1, luggageId);
                         stmt.setString(2, dateFound);
-//                        stmt.setString(3, currentSheet.getRow(i).getCell(2).toString());
-//                        stmt.setString(4, currentSheet.getRow(i).getCell(3).toString());
-//                        stmt.setString(5, currentSheet.getRow(i).getCell(4).toString());
-//                        stmt.setString(6, currentSheet.getRow(i).getCell(5).toString());
-//                        stmt.setString(7, currentSheet.getRow(i).getCell(6).toString());
-//                        stmt.setString(8, currentSheet.getRow(i).getCell(7).toString());
-//                        stmt.setString(9, currentSheet.getRow(i).getCell(8).toString());
-//                        stmt.setString(10, currentSheet.getRow(i).getCell(9).toString());
-//                        stmt.setString(11, currentSheet.getRow(i).getCell(10).toString());
-//                        stmt.setString(12, currentSheet.getRow(i).getCell(11).toString());
-//                        stmt.setString(13, currentSheet.getRow(i).getCell(12).toString().substring(0, currentSheet.getRow(i).getCell(12).toString().indexOf(",")));
-//                        stmt.setString(14, currentSheet.getRow(i).getCell(12).toString().substring(currentSheet.getRow(i).getCell(12).toString().indexOf(",") + 1, currentSheet.getRow(i).getCell(12).toString().length()).trim());
-//                        stmt.setString(15, currentSheet.getRow(i).getCell(13).toString());
+                        stmt.setString(3, timeFound);
+                        stmt.setString(4, luggageType);
+                        stmt.setString(5, brand);
+                        stmt.setString(6, arrivedFlight);
+                        stmt.setString(7, luggageTag);
+                        stmt.setString(8, locationFound);
+                        stmt.setString(9, mainColor);
+                        stmt.setString(10, secondColor);
+                        stmt.setString(11, size);
+                        stmt.setString(12, weight);
+                        stmt.setString(13, passengerName);
+                        stmt.setString(14, city);
+                        stmt.setString(15, otherCharacteristics);
 
                         stmt.execute();
                         stmt.close();
                     }
-
                 } catch (SQLException ex) {
                     Logger.getLogger(Excel_ImporterenController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
 
+        // Clears the file picker
         listView.getItems().clear();
     }
 
