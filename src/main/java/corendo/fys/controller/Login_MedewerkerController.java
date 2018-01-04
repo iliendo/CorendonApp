@@ -33,7 +33,7 @@ import javafx.stage.Stage;
 public class Login_MedewerkerController implements Initializable {
 
     /**
-     * Initializes the controller class.
+     * Initializes the controller class  .
      */
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement pstmt = null;

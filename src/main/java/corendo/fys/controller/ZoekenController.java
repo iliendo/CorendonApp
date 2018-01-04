@@ -180,45 +180,18 @@ public class ZoekenController implements Initializable {
 
         try {
 
-            String lug_Status = null;
+            String query = "UPDATE luggage SET OnWorkStatus=? WHERE Luggage_id='" + lblRegisNr.getText() + "'";
 
-            String query = "SELECT OnWorkStatus FROM luggage WHERE Luggage_id='" + lblRegisNr.getText() + "'";
             stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-            while(rs.next()){
-                lug_Status = rs.getString("OnWorkStatus");
-                if(lug_Status == null){
-                    String query2 = "INSERT INTO luggage (OnWorkStatus) VALUES (?) WHERE Luggage_id='" + lblRegisNr.getText() + "'";
-                    PreparedStatement stmt2 = conn.prepareStatement(query2);
-                    stmt2.setString(1, onWorkStatus);
-                    
-                    stmt2.execute();
-                    
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information Dialog");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Update executed");
-                    
-                }else{
-                    String query3 = "UPDATE luggage SET OnWorkStatus=? WHERE Luggage_id='" + lblRegisNr.getText() + "'";
+            
+            stmt.setString(1, onWorkStatus);
+            
+            stmt.execute();
+            
+            stmt.close();
+            
+            System.out.println("yay");
 
-                    try {
-                        try (PreparedStatement stmt3 = conn.prepareStatement(query3)) {
-                            stmt3.setString(1, onWorkStatus);
-                            
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Information Dialog");
-                            alert.setHeaderText(null);
-                            alert.setContentText("Update executed");
-                            
-                            stmt3.execute();
-                        }
-
-                    } catch (SQLException ex) {
-                        Logger.getLogger(ZoekenController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            }
         } catch (SQLException ex) {
             Logger.getLogger(ZoekenController.class.getName()).log(Level.SEVERE, null, ex);
         }

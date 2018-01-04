@@ -23,6 +23,7 @@ corendo\fys\controller\Supervisor_manage_brandController.class
 corendo\fys\controller\Excel_ImporterenController.class
 corendo\fys\controller\Login_MedewerkerController.class
 corendo\fys\IdChecker.class
+corendo\fys\controller\Supervisor_add_airportController.class
 corendo\fys\controller\Supervisor_manage_luggageTypeController.class
 supervisor\Employee.class
 corendo\fys\controller\Change_PasswordController.class
