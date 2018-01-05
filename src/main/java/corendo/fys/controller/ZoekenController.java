@@ -128,6 +128,10 @@ public class ZoekenController implements Initializable {
     void on_table_click(MouseEvent event) {
         if (event.getClickCount() > 1) {
             fullStatusDetailsContent.setVisible(true);
+            String eerste_luggage_status = "In progress",
+                    tweede_luggage_status = "Found by corendon",
+                    derde_luggage_status = "Collected by traveller";
+
             try {
                 zoek_luggage zoek = (zoek_luggage) tblLuggage.getSelectionModel().getSelectedItem();
                 String query = "SELECT * FROM luggage "
@@ -148,6 +152,18 @@ public class ZoekenController implements Initializable {
                     lblBrand.setText(rs.getString("Brand"));
                     lblPassenger.setText(rs.getString("Firstname"));
                     lblStatus.setText(rs.getString("Status"));
+
+                    if (eerste_luggage_status.equals(rs.getString("OnWorkStatus"))) {
+                        luggage_status_1.setSelected(true);
+                    }else if (tweede_luggage_status.equals(rs.getString("OnWorkStatus"))) {
+                        luggage_status_2.setSelected(true);
+                    }else if (derde_luggage_status.equals(rs.getString("OnWorkStatus"))) {
+                        luggage_status_3.setSelected(true);
+                    }else{
+                        luggage_status_1.setSelected(false);
+                        luggage_status_2.setSelected(false);
+                        luggage_status_3.setSelected(false);
+                    }
 
                 }
                 stmt.close();
@@ -183,21 +199,18 @@ public class ZoekenController implements Initializable {
             String query = "UPDATE luggage SET OnWorkStatus=? WHERE Luggage_id='" + lblRegisNr.getText() + "'";
 
             stmt = conn.prepareStatement(query);
-            
+
             stmt.setString(1, onWorkStatus);
-            
+
             stmt.execute();
-            
+
             stmt.close();
-            
-            System.out.println("yay");
+
+            System.out.println("Update executed!");
 
         } catch (SQLException ex) {
             Logger.getLogger(ZoekenController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
 
     }
 

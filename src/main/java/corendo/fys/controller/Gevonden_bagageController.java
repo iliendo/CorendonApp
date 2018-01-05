@@ -584,7 +584,7 @@ public class Gevonden_bagageController implements Initializable {
         String id = null;
         try {
 
-            String query = "Select Flight_id from flight where Flight_number ='" + ddlWeight.getSelectionModel().getSelectedItem().toString() + "'";
+            String query = "Select Flight_id from flight where Flight_number ='" + ddlLuchthaven.getSelectionModel().getSelectedItem().toString() + "'";
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
