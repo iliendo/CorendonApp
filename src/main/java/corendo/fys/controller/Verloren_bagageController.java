@@ -614,21 +614,21 @@ public class Verloren_bagageController implements Initializable {
         return id;
     }
 
-    public String get_Flight_id() {
-        String id = null;
-        try {
-
-            String query = "Select Flight_id from flight where Flight_number ='" + ddlWeight.getSelectionModel().getSelectedItem().toString() + "'";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                id = rs.getString("Flight_id");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return id;
-    }
+//    public String get_Flight_id() {
+//        String id = null;
+//        try {
+//
+//            String query = "Select Flight_id from flight where Flight_number ='" + ddlLuchthaven.getSelectionModel().getSelectedItem().toString() + "'";
+//            stmt = conn.prepareStatement(query);
+//            rs = stmt.executeQuery();
+//            while (rs.next()) {
+//                id = rs.getString("Flight_id");
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        return id;
+//    }
 
     public String get_SecondColor_id() {
         String id = null;
