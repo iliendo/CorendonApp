@@ -11,82 +11,63 @@
 
 <AnchorPane id="AnchorPane" focusTraversable="true" prefHeight="641.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.Verloren_bagageController">
    <children>
-      <Label layoutX="14.0" layoutY="21.0" text="Logistieke informatie">
-         <font>
-            <Font name="Bell MT Bold" size="14.0" />
-         </font>
-      </Label>
       <JFXComboBox fx:id="ddlLuchthaven" layoutX="320.0" layoutY="53.0" prefHeight="25.0" prefWidth="215.0" promptText="Luchthaven" />
-      <Label layoutX="18.0" layoutY="132.0" text="Reiziger informatie">
-         <font>
-            <Font name="Bell MT Bold" size="14.0" />
-         </font>
-      </Label>
       <JFXTextField fx:id="txtFirstname" layoutX="89.0" layoutY="155.0" maxWidth="215.0" minWidth="215.0" prefHeight="31.0" prefWidth="215.0" />
-      <Label layoutX="16.0" layoutY="61.0" text="Datum:">
+      <Label fx:id="datum" layoutX="16.0" layoutY="61.0" text="%datum">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="87.0" text="Tijd:">
+      <Label fx:id="time" layoutX="16.0" layoutY="87.0" text="%tijd">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="164.0" prefHeight="17.0" prefWidth="73.0" text="Voornaam">
+      <!--<Label fx:id="username" layoutX="18.0" layoutY="164.0" prefHeight="17.0" prefWidth="73.0" text="Voornaam">-->
+      <Label fx:id="username" layoutX="18.0" layoutY="164.0" prefHeight="17.0" prefWidth="73.0" text="%voornaam">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtLastname" layoutX="422.0" layoutY="155.0" maxWidth="357.0" minWidth="215.0" prefHeight="33.0" prefWidth="215.0" />
-      <Label layoutX="320.0" layoutY="166.0" prefHeight="17.0" prefWidth="84.0" text="Achternaam">
+      <Label fx:id="achternaam" layoutX="320.0" layoutY="166.0" prefHeight="17.0" prefWidth="84.0" text="%achternaam">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtAddress" layoutX="91.0" layoutY="189.0" maxWidth="215.0" minWidth="215.0" prefHeight="31.0" prefWidth="215.0" />
-      <Label layoutX="19.0" layoutY="195.0" text="Adres">
+      <Label fx:id="adres" layoutX="19.0" layoutY="195.0" text="%adres">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtCity" layoutX="91.0" layoutY="220.0" maxWidth="215.0" minWidth="215.0" prefHeight="31.0" prefWidth="215.0" />
-      <Label layoutX="20.0" layoutY="227.0" text="Woonplaats">
+      <Label fx:id="woonplaats" layoutX="20.0" layoutY="227.0" text="%woonplaats">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtZipCode" layoutX="422.0" layoutY="220.0" maxWidth="353.0" minWidth="215.0" prefHeight="33.0" prefWidth="215.0" />
-      <Label layoutX="321.0" layoutY="227.0" prefHeight="17.0" prefWidth="63.0" text="Postcode">
+      <Label fx:id="postcode" layoutX="321.0" layoutY="227.0" prefHeight="17.0" prefWidth="63.0" text="%postcode">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="262.0" text="Land">
+      <Label fx:id="land" layoutX="21.0" layoutY="262.0" text="%land">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtPhoneNr" layoutX="421.0" layoutY="255.0" maxWidth="380.0" minWidth="215.0" prefHeight="33.0" prefWidth="215.0" />
-      <Label layoutX="321.0" layoutY="262.0" prefHeight="17.0" prefWidth="58.0" text="Telefoon:">
+      <Label fx:id="telefoon" layoutX="321.0" layoutY="262.0" prefHeight="17.0" prefWidth="58.0" text="%telefoon">
          <font>
             <Font name="Bell MT" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="19.0" layoutY="305.0" text="Bagage informatie">
-         <font>
-            <Font name="Bell MT Bold" size="14.0" />
          </font>
       </Label>
       <JFXComboBox fx:id="ddlMainColor" layoutX="343.0" layoutY="335.0" prefHeight="25.0" prefWidth="134.0" promptText="Primaire kleur" />
       <JFXComboBox fx:id="ddlSecondColor" layoutX="343.0" layoutY="375.0" prefHeight="25.0" prefWidth="134.0" promptText="Secondaire kleur" />
       <JFXTextArea fx:id="txt_area_bijzonder_merken" labelFloat="true" layoutX="18.0" layoutY="473.0" maxWidth="506.0" minWidth="397.0" prefHeight="100.0" prefWidth="397.0" promptText="Bijzondere kenmerken" style="-fx-background-color: #ccc;" />
-      <JFXTextField fx:id="txtArrivedFlight" layoutX="437.0" layoutY="83.0" maxWidth="215.0" minWidth="102.0" prefHeight="31.0" prefWidth="102.0" />
-      <Label layoutX="320.0" layoutY="90.0" text="Gearriveerd vlucht">
-         <font>
-            <Font name="Bell MT" size="13.0" />
-         </font>
-      </Label>
+      <JFXTextField fx:id="txtArrivedFlight" layoutX="439.0" layoutY="83.0" maxWidth="215.0" minWidth="102.0" prefHeight="31.0" prefWidth="102.0" />
       <JFXTextField fx:id="txtLuggageTag" layoutX="20.0" layoutY="369.0" maxWidth="215.0" minWidth="160.0" prefHeight="33.0" prefWidth="167.0" promptText="Bagage Tag" />
       <JFXComboBox fx:id="ddlWeight" layoutX="211.0" layoutY="410.0" prefHeight="25.0" prefWidth="120.0" promptText="Gewicht" />
       <JFXComboBox fx:id="ddlLuggageType" layoutX="19.0" layoutY="335.0" prefHeight="27.0" prefWidth="311.0" promptText="Type Bagage" />
@@ -95,7 +76,7 @@
       <JFXTextField fx:id="txtTimeFound" disable="true" layoutX="65.0" layoutY="75.0" maxWidth="215.0" minWidth="142.0" prefHeight="33.0" prefWidth="149.0" />
       <JFXComboBox fx:id="ddlStatus" layoutX="343.0" layoutY="410.0" prefHeight="27.0" prefWidth="134.0" promptText="Status" />
       <JFXTextField fx:id="txtEmail" layoutX="421.0" layoutY="189.0" maxWidth="355.0" minWidth="215.0" prefHeight="33.0" prefWidth="215.0" />
-      <Label layoutX="321.0" layoutY="196.0" prefHeight="17.0" prefWidth="45.0" text="Email">
+      <Label fx:id="email" layoutX="321.0" layoutY="196.0" prefHeight="17.0" prefWidth="45.0" text="%email">
          <font>
             <Font name="Bell MT" size="13.0" />
          </font>
@@ -104,6 +85,26 @@
       <JFXComboBox fx:id="ddlMerk" layoutX="212.0" layoutY="375.0" prefHeight="25.0" prefWidth="120.0" promptText="Merk" />
       <JFXComboBox fx:id="ddlSize" layoutX="19.0" layoutY="410.0" prefHeight="27.0" prefWidth="167.0" promptText="Size" />
       <JFXTextField fx:id="txtCountry" layoutX="89.0" layoutY="255.0" maxWidth="215.0" minWidth="215.0" prefHeight="31.0" prefWidth="215.0" />
+      <Label fx:id="vlucht" layoutX="320.0" layoutY="91.0" prefHeight="17.0" prefWidth="134.0" text="%vlucht">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="logistieke_info" layoutX="17.0" layoutY="23.0" prefHeight="17.0" prefWidth="149.0" text="%logistieke_info">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="reiziger_info" layoutX="18.0" layoutY="130.0" prefHeight="17.0" prefWidth="149.0" text="%reiziger_info">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="bagage_info" layoutX="21.0" layoutY="311.0" prefHeight="17.0" prefWidth="149.0" text="%bagage_info">
+         <font>
+            <Font name="Bell MT" size="13.0" />
+         </font>
+      </Label>
    </children>
    <effect>
       <Blend mode="OVERLAY" />

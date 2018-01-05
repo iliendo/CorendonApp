@@ -17,11 +17,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.util.Locale;
 
 /**
  * FXML Controller class
@@ -29,7 +32,6 @@ import javafx.stage.Stage;
  * @author Gabriel
  */
 public class Navigatie_medewerkerController implements Initializable {
-
     /**
      * Initializes the controller class.
      */
@@ -49,6 +51,9 @@ public class Navigatie_medewerkerController implements Initializable {
     private Label lblMedewerkerCountry;
 
     @FXML
+    private ComboBox languageBox;
+
+    @FXML
     void on_Me_User(ActionEvent event) {
         if (event.getSource() == meOption) {
             show_me_user_info.setVisible(true);
@@ -62,6 +67,11 @@ public class Navigatie_medewerkerController implements Initializable {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene);
         app_stage.show();
+    }
+
+    @FXML
+    void on_change_password(ActionEvent event) {
+        veranderContentNode("Change_Password.fxml");
     }
 
     @FXML
@@ -83,25 +93,37 @@ public class Navigatie_medewerkerController implements Initializable {
     void on_Zoeken(ActionEvent event) {
         veranderContentNode("Zoeken.fxml");
     }
-    
-    @FXML
-    void on_import_register(ActionEvent event) {
-        veranderContentNode("Excel_Importeren.fxml");
-    }
-
-    @FXML
-    void on_change_password(ActionEvent event) {
-        veranderContentNode("Change_Password.fxml");
-    }
 
     public void setInfo(String name, String country) {
         this.lblMedewerkerName.setText(name);
         this.lblMedewerkerCountry.setText(country);
     }
 
+    @FXML
+    void on_Language(ActionEvent event){
+      if(languageBox.getValue() == "Dutch"){
+        veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
+      } else {
+        veranderContentNodeWithResource("Verloren_bagage.fxml", "en");
+      }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+//        String dutch = "Dutch";
+//        String english = "English";
+        languageBox.getItems().addAll("Dutch", "English");
+    }
+
+    public void veranderContentNodeWithResource(String schermFileName, String language) {
+        Parent parent;
+        try {
+            parent = AppUtilities.loadScreen(schermFileName, language);
+        } catch (IOException ex) {
+            // TODO show error
+            return;
+        }
+        all_content.getChildren().setAll(parent);
     }
 
     public void veranderContentNode(String schermFileName) {
@@ -114,5 +136,4 @@ public class Navigatie_medewerkerController implements Initializable {
         }
         all_content.getChildren().setAll(parent);
     }
-
 }
