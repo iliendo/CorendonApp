@@ -32,6 +32,7 @@ import java.util.Locale;
  * @author Gabriel
  */
 public class Navigatie_medewerkerController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
@@ -94,18 +95,23 @@ public class Navigatie_medewerkerController implements Initializable {
         veranderContentNode("Zoeken.fxml");
     }
 
+    @FXML
+    void on_import_register(ActionEvent event) {
+        veranderContentNode("Excel_Importeren.fxml");
+    }
+
     public void setInfo(String name, String country) {
         this.lblMedewerkerName.setText(name);
         this.lblMedewerkerCountry.setText(country);
     }
 
     @FXML
-    void on_Language(ActionEvent event){
-      if(languageBox.getValue() == "Dutch"){
-        veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
-      } else {
-        veranderContentNodeWithResource("Verloren_bagage.fxml", "en");
-      }
+    void on_Language(ActionEvent event) {
+        if (languageBox.getValue() == "Dutch") {
+            veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Verloren_bagage.fxml", "en");
+        }
     }
 
     @Override

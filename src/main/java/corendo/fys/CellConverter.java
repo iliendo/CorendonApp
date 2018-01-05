@@ -38,12 +38,6 @@ public class CellConverter {
                 }
             }
             return numberString;
-            /*} else if (cell.toString().contains(",")) {
-            if (previousString.equals(cell.toString().indexOf(0, cell.toString().indexOf(",")))) {
-                return cell.toString().substring(cell.toString().indexOf(",") + 1, cell.toString().length()).trim();
-            } else {
-                return cell.toString().substring(0, cell.toString().indexOf(","));
-            }*/
         }
         return cell.toString();
     }
