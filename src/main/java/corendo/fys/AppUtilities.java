@@ -10,17 +10,26 @@ import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  *
  * @author Gabriel
  */
 public class AppUtilities {
-    
+
     public static Parent loadScreen(String schermenFileName) throws IOException {
         String resource = "/corendo/fys/" + schermenFileName;
         URL url = AppUtilities.class.getResource(resource);
-        
-        return FXMLLoader.load(url);
+        ResourceBundle bundle = ResourceBundle.getBundle("message", new Locale("nl"));
+        return FXMLLoader.load(url, bundle);
     }
-    
+
+    public static Parent loadScreen(String schermenFileName, String language) throws IOException {
+        String resource = "/corendo/fys/" + schermenFileName;
+        URL url = AppUtilities.class.getResource(resource);
+        ResourceBundle bundle = ResourceBundle.getBundle("message", new Locale(language));
+        return FXMLLoader.load(url, bundle);
+    }
 }

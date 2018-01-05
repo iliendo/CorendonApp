@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Hyperlink?>
@@ -55,7 +56,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" onAction="#on_import_register" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" />
                      </graphic>
@@ -63,19 +64,12 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="473.0" prefHeight="32.0" prefWidth="167.0" text="Settings" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <MaterialDesignIconView fill="WHITE" glyphName="WRENCH" />
-                     </graphic>
-                  </JFXButton>
                   <Label layoutX="36.0" layoutY="438.0" text="Settings" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <JFXComboBox fx:id="languageBox" layoutX="45.0" layoutY="501.0" onAction="#on_Language" promptText="Language" />
                   <AnchorPane fx:id="show_me_user_info" layoutX="7.0" layoutY="411.0" prefHeight="237.0" prefWidth="225.0" style="-fx-background-color: #FFF; -fx-background-radius: 0.5em;" visible="false" AnchorPane.bottomAnchor="70.0">
                      <children>
                         <FontAwesomeIconView fill="#235061" glyphName="DESKTOP" layoutX="14.0" layoutY="37.0" size="20" text="" />
@@ -123,7 +117,7 @@
                         <Image url="@../../images/corendon.jpg" />
                      </image>
                   </ImageView>
-                  <JFXButton layoutX="50.0" layoutY="505.0" onAction="#on_change_password" text="Change Password" textFill="WHITE">
+                  <JFXButton layoutX="37.0" layoutY="466.0" onAction="#on_change_password" text="Change Password" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
