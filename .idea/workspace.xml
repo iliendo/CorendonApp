@@ -22,23 +22,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZoekenController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ZoekenController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2686">
+            <state relative-caret-position="17">
               <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
               <folding>
+                <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
+                <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
                 <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Verloren_bagageController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Verloren_bagageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Verloren_bagageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="635" column="0" lean-forward="false" selection-start-line="635" selection-start-column="0" selection-end-line="635" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
               <folding>
                 <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
                 <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
@@ -59,6 +61,21 @@
                 <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
                 <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
                 <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login_MedewerkerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding>
+                <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
+                <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
+                <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
+                <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
               </folding>
             </state>
           </provider>
@@ -88,7 +105,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="width" value="1400" />
     <option name="height" value="1047" />
@@ -108,8 +125,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -303,18 +320,21 @@
       <option name="presentableId" value="Default" />
       <updated>1515068854946</updated>
       <workItem from="1515068856335" duration="5972000" />
-      <workItem from="1515173566498" duration="77000" />
+      <workItem from="1515173566498" duration="399000" />
+      <workItem from="1515237348295" duration="1251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6049000" />
+    <option name="totallyTimeSpent" value="7622000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -337,7 +357,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -357,6 +376,67 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3298">
+          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
+          <folding>
+            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
+            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
+            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Verloren_bagageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10931">
+          <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
+          <folding>
+            <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
+            <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
+            <marker date="1515146780777" expanded="true" signature="4710:5049" ph="INSERT INTO luggage... " />
+            <marker date="1515146780777" expanded="true" signature="10114:10139" ph="select * fro... luggagetype" />
+            <marker date="1515146780777" expanded="true" signature="10789:10808" ph="select * fro... brand" />
+            <marker date="1515146780777" expanded="true" signature="11450:11473" ph="select * fro... maincolor" />
+            <marker date="1515146780777" expanded="true" signature="12114:12154" ph="select * fro... status" />
+            <marker date="1515146780777" expanded="true" signature="12789:12807" ph="select * fro... size" />
+            <marker date="1515146780777" expanded="true" signature="13442:13462" ph="select * fro... weight" />
+            <marker date="1515146780777" expanded="true" signature="14111:14136" ph="select * fro... secondcolor" />
+            <marker date="1515146780777" expanded="true" signature="14781:14802" ph="select * fro... airport" />
+            <marker date="1515146780777" expanded="true" signature="16789:16920" ph="Select Lugga... luggagetype" />
+            <marker date="1515146780777" expanded="true" signature="17386:17492" ph="Select Brand... brand" />
+            <marker date="1515146780777" expanded="true" signature="17956:18075" ph="Select MainC... maincolor" />
+            <marker date="1515146780777" expanded="true" signature="18540:18651" ph="Select Statu... status" />
+            <marker date="1515146780777" expanded="true" signature="19111:19214" ph="Select Size_... size" />
+            <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
+            <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
+            <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
+            <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
+            <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
+            <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
@@ -368,6 +448,8 @@
         <state relative-caret-position="3298">
           <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
           <folding>
+            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
+            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
             <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
           </folding>
         </state>
@@ -416,20 +498,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
+        <state relative-caret-position="321">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
-            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
+            <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
+            <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
+            <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
+            <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Verloren_bagageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="635" column="0" lean-forward="false" selection-start-line="635" selection-start-column="0" selection-end-line="635" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
           <folding>
             <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
             <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
@@ -450,6 +535,18 @@
             <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
             <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
             <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
+          <folding>
+            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
+            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
+            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
           </folding>
         </state>
       </provider>
