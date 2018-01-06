@@ -56,7 +56,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" onAction="#on_import_register" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" />
                      </graphic>
