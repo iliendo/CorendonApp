@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fb6a701-4c5a-49a4-9be6-a651c739c527" name="Default" comment="" />
+    <list default="true" id="8fcd4d6f-e41a-4489-9711-cb838e265a7f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,71 +12,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZoekenController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
+      <file leaf-file-name="Gevonden_bagageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Gevonden_bagageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-              <folding>
-                <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
-                <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
-                <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Verloren_bagageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Verloren_bagageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
-              <folding>
-                <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
-                <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
-                <marker date="1515146780777" expanded="true" signature="4710:5049" ph="INSERT INTO luggage... " />
-                <marker date="1515146780777" expanded="true" signature="10114:10139" ph="select * fro... luggagetype" />
-                <marker date="1515146780777" expanded="true" signature="10789:10808" ph="select * fro... brand" />
-                <marker date="1515146780777" expanded="true" signature="11450:11473" ph="select * fro... maincolor" />
-                <marker date="1515146780777" expanded="true" signature="12114:12154" ph="select * fro... status" />
-                <marker date="1515146780777" expanded="true" signature="12789:12807" ph="select * fro... size" />
-                <marker date="1515146780777" expanded="true" signature="13442:13462" ph="select * fro... weight" />
-                <marker date="1515146780777" expanded="true" signature="14111:14136" ph="select * fro... secondcolor" />
-                <marker date="1515146780777" expanded="true" signature="14781:14802" ph="select * fro... airport" />
-                <marker date="1515146780777" expanded="true" signature="16789:16920" ph="Select Lugga... luggagetype" />
-                <marker date="1515146780777" expanded="true" signature="17386:17492" ph="Select Brand... brand" />
-                <marker date="1515146780777" expanded="true" signature="17956:18075" ph="Select MainC... maincolor" />
-                <marker date="1515146780777" expanded="true" signature="18540:18651" ph="Select Statu... status" />
-                <marker date="1515146780777" expanded="true" signature="19111:19214" ph="Select Size_... size" />
-                <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
-                <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
-                <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login_MedewerkerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding>
-                <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
-                <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
-                <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
-                <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,29 +42,22 @@
       <projects_view />
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java" />
-      </list>
-    </option>
-  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="width" value="1400" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="true" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
@@ -125,9 +69,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -136,56 +77,23 @@
               <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fys" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CorendonApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CorendonApp" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -260,6 +168,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Test" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -314,49 +234,65 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3fb6a701-4c5a-49a4-9be6-a651c739c527" name="Default" comment="" />
-      <created>1515068854946</created>
+      <changelist id="8fcd4d6f-e41a-4489-9711-cb838e265a7f" name="Default" comment="" />
+      <created>1514977798734</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1515068854946</updated>
-      <workItem from="1515068856335" duration="5972000" />
-      <workItem from="1515173566498" duration="399000" />
-      <workItem from="1515237348295" duration="1251000" />
+      <updated>1514977798734</updated>
+      <workItem from="1514977804835" duration="30000" />
+      <workItem from="1515068040805" duration="75000" />
+      <workItem from="1515241883880" duration="131000" />
+      <workItem from="1515242050292" duration="1299000" />
+      <workItem from="1515244522090" duration="479000" />
+      <workItem from="1515245020751" duration="5000" />
+      <workItem from="1515245235781" duration="924000" />
+      <workItem from="1515248610654" duration="1901000" />
+      <workItem from="1515250543553" duration="1033000" />
+      <workItem from="1515353985007" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7622000" />
+    <option name="totallyTimeSpent" value="6035000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.50417536" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49356914" sideWeight="0.49582464" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38204592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997879" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -368,17 +304,70 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="3" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Gevonden_bagageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Gevonden_bagageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="51" lean-forward="true" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -386,11 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3298">
           <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-          <folding>
-            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
-            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
-            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -398,27 +382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10931">
           <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
-          <folding>
-            <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
-            <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
-            <marker date="1515146780777" expanded="true" signature="4710:5049" ph="INSERT INTO luggage... " />
-            <marker date="1515146780777" expanded="true" signature="10114:10139" ph="select * fro... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="10789:10808" ph="select * fro... brand" />
-            <marker date="1515146780777" expanded="true" signature="11450:11473" ph="select * fro... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="12114:12154" ph="select * fro... status" />
-            <marker date="1515146780777" expanded="true" signature="12789:12807" ph="select * fro... size" />
-            <marker date="1515146780777" expanded="true" signature="13442:13462" ph="select * fro... weight" />
-            <marker date="1515146780777" expanded="true" signature="14111:14136" ph="select * fro... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="14781:14802" ph="select * fro... airport" />
-            <marker date="1515146780777" expanded="true" signature="16789:16920" ph="Select Lugga... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="17386:17492" ph="Select Brand... brand" />
-            <marker date="1515146780777" expanded="true" signature="17956:18075" ph="Select MainC... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="18540:18651" ph="Select Statu... status" />
-            <marker date="1515146780777" expanded="true" signature="19111:19214" ph="Select Size_... size" />
-            <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
-            <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -426,12 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
-            <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
-            <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
-            <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -439,7 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -447,11 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3298">
           <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-          <folding>
-            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
-            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
-            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -459,27 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10795">
           <caret line="635" column="0" lean-forward="false" selection-start-line="635" selection-start-column="0" selection-end-line="635" selection-end-column="0" />
-          <folding>
-            <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
-            <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
-            <marker date="1515146780777" expanded="true" signature="4710:5049" ph="INSERT INTO luggage... " />
-            <marker date="1515146780777" expanded="true" signature="10114:10139" ph="select * fro... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="10789:10808" ph="select * fro... brand" />
-            <marker date="1515146780777" expanded="true" signature="11450:11473" ph="select * fro... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="12114:12154" ph="select * fro... status" />
-            <marker date="1515146780777" expanded="true" signature="12789:12807" ph="select * fro... size" />
-            <marker date="1515146780777" expanded="true" signature="13442:13462" ph="select * fro... weight" />
-            <marker date="1515146780777" expanded="true" signature="14111:14136" ph="select * fro... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="14781:14802" ph="select * fro... airport" />
-            <marker date="1515146780777" expanded="true" signature="16789:16920" ph="Select Lugga... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="17386:17492" ph="Select Brand... brand" />
-            <marker date="1515146780777" expanded="true" signature="17956:18075" ph="Select MainC... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="18540:18651" ph="Select Statu... status" />
-            <marker date="1515146780777" expanded="true" signature="19111:19214" ph="Select Size_... size" />
-            <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
-            <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -490,24 +420,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <marker date="1515065932204" expanded="true" signature="1420:1471" ph="Select * fro... employee" />
-            <marker date="1515065932204" expanded="true" signature="3448:3519" ph="select First... employee" />
-            <marker date="1515065932204" expanded="true" signature="3912:4049" ph="SELECT Count... employee" />
-            <marker date="1515065932204" expanded="true" signature="4594:4667" ph="select Funct... employee" />
-          </folding>
+        <state relative-caret-position="629">
+          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -515,41 +431,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="643" column="47" lean-forward="false" selection-start-line="643" selection-start-column="47" selection-end-line="643" selection-end-column="47" />
-          <folding>
-            <marker date="1515146780777" expanded="true" signature="3349:3617" ph="SELECT * FRO... luggage" />
-            <marker date="1515146780777" expanded="true" signature="4505:4670" ph="INSERT INTO passenger... " />
-            <marker date="1515146780777" expanded="true" signature="4710:5049" ph="INSERT INTO luggage... " />
-            <marker date="1515146780777" expanded="true" signature="10114:10139" ph="select * fro... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="10789:10808" ph="select * fro... brand" />
-            <marker date="1515146780777" expanded="true" signature="11450:11473" ph="select * fro... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="12114:12154" ph="select * fro... status" />
-            <marker date="1515146780777" expanded="true" signature="12789:12807" ph="select * fro... size" />
-            <marker date="1515146780777" expanded="true" signature="13442:13462" ph="select * fro... weight" />
-            <marker date="1515146780777" expanded="true" signature="14111:14136" ph="select * fro... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="14781:14802" ph="select * fro... airport" />
-            <marker date="1515146780777" expanded="true" signature="16789:16920" ph="Select Lugga... luggagetype" />
-            <marker date="1515146780777" expanded="true" signature="17386:17492" ph="Select Brand... brand" />
-            <marker date="1515146780777" expanded="true" signature="17956:18075" ph="Select MainC... maincolor" />
-            <marker date="1515146780777" expanded="true" signature="18540:18651" ph="Select Statu... status" />
-            <marker date="1515146780777" expanded="true" signature="19111:19214" ph="Select Size_... size" />
-            <marker date="1515146780777" expanded="true" signature="19674:19785" ph="Select Weigh... weight" />
-            <marker date="1515146780777" expanded="true" signature="20866:20991" ph="Select Secon... secondcolor" />
-            <marker date="1515146780777" expanded="true" signature="21459:21582" ph="Select Airpo... airport" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/ZoekenController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-          <folding>
-            <marker date="1515150903998" expanded="true" signature="3207:3654" ph="SELECT * FRO... luggage" />
-            <marker date="1515150903998" expanded="true" signature="5637:5718" ph="UPDATE luggage... " />
-            <marker date="1515150903998" expanded="true" signature="6369:6750" ph="SELECT * FRO... luggage" />
-          </folding>
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Gevonden_bagageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>FysCorendo</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.github.virtuald:curvesapi:1.04</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
