@@ -5,11 +5,20 @@ package corendo.fys.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.mysql.jdbc.Statement;
 import corendo.fys.jdbcDBconnection;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -33,6 +42,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -111,6 +121,8 @@ public class Verloren_bagageController implements Initializable {
 
     @FXML
     private JFXComboBox ddlSize;
+    
+    File file;
 
     @FXML
     void on_Opslaan(ActionEvent event) {
@@ -123,6 +135,28 @@ public class Verloren_bagageController implements Initializable {
 
         // maak alle velden leeg
         clear_tekstVelden();
+    }
+    
+     @FXML
+    void on_pdfexport(ActionEvent event) throws IOException {
+        // alle velden checken of ze ingevuld zijn.
+    
+        if (checkVelden()) {
+
+            FileChooser fileChooser = new FileChooser();
+
+            //filter naar de jpg of png
+            FileChooser.ExtensionFilter extFilterPDF = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.PDF");
+            fileChooser.getExtensionFilters().addAll(extFilterPDF);
+
+            //open save dialog
+            file = fileChooser.showSaveDialog(null);
+            String pdfPath = file.getAbsolutePath();
+
+            pdfexport(pdfPath);
+
+        }
+
     }
 
     @FXML
@@ -227,7 +261,69 @@ public class Verloren_bagageController implements Initializable {
         }
 
     }
+    
+    private void pdfexport(String savePath) throws IOException {
 
+        //String FILE = "/Users/Wouter/Documents/pdfexports/export.pdf";
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(savePath));
+            document.open();
+            Image image = Image.getInstance("$R4E56UO.png");
+            document.add(image);
+            document.add(new Paragraph("Datum en tijd van verloren bagage" + txtDatum.getText() + " " + txtTimeFound.getText()));
+            document.add(Chunk.NEWLINE);
+            document.add(new Paragraph("Reiziger informatie"));
+            document.add(Chunk.NEWLINE);
+            PdfPTable table2 = new PdfPTable(2);
+            table2.addCell("Voornaam");
+            table2.addCell(txtFirstname.getText());
+            table2.addCell("Achternaam");
+            table2.addCell(txtLastname.getText());
+            table2.addCell("Email");
+            table2.addCell(txtEmail.getText());
+            table2.addCell("Telefoonnummer");
+            table2.addCell(txtPhoneNr.getText());
+            table2.addCell("Adres");
+            table2.addCell(txtAddress.getText());
+            table2.addCell("Postcode");
+            table2.addCell(txtZipCode.getText());
+            table2.addCell("Stad");
+            table2.addCell(txtCity.getText());
+            table2.addCell("Land");
+            table2.addCell(txtCountry.getText());
+            document.add(table2);
+            document.add(Chunk.NEWLINE);
+            document.add(new Paragraph("Vlucht informatie"));
+            document.add(Chunk.NEWLINE);
+            PdfPTable table = new PdfPTable(2);
+            table.addCell("Type bagage");
+            table.addCell(ddlLuggageType.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Merk");
+            table.addCell(ddlMerk.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Primaire kleur");
+            table.addCell(ddlMainColor.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Status");
+            table.addCell(ddlStatus.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Groote");
+            table.addCell(ddlSize.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Gewicht");
+            table.addCell(ddlWeight.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Secundaire kleur");
+            table.addCell(ddlSecondColor.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Bagage tag");
+            table.addCell(txtLuggageTag.getText());
+            table.addCell("Luchthaven");
+            table.addCell(ddlLuchthaven.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Geariveerde vlucht");
+            table.addCell(txtArrivedFlight.getText());
+            document.add(table);
+            document.close();
+        } catch (DocumentException ex) {
+            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
     /**
      * ****************************************************************************
      ***********************COMBOBOX VULLEN MET WAARDES
@@ -274,7 +370,7 @@ public class Verloren_bagageController implements Initializable {
         return str == null || str.isEmpty();
     }
 
-    public void checkVelden() {
+    public boolean checkVelden() {
         String flight = txtArrivedFlight.getText();
         String firstname = txtFirstname.getText();
         String lastname = txtLastname.getText();
@@ -297,7 +393,10 @@ public class Verloren_bagageController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Fill all text fields !");
             alert.showAndWait();
+
+            return false;
         }
+        return true;
     }
 
     /**
