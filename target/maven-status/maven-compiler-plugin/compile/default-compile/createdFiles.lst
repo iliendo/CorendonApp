@@ -4,6 +4,7 @@ corendo/fys/AppUtilities.class
 corendo/fys/controller/Supervisor_manage_brandController.class
 supervisor/Airport.class
 corendo/fys/controller/Navigatie_supervisorController.class
+corendo/fys/Language.class
 corendo/fys/controller/Supervisor_medewerker_updatenController.class
 corendo/fys/controller/Excel_ImporterenController.class
 supervisor/Brand.class

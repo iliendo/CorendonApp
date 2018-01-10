@@ -7,6 +7,7 @@ package corendo.fys.controller;
  */
 import com.jfoenix.controls.JFXButton;
 import corendo.fys.AppUtilities;
+import corendo.fys.Language;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -72,7 +73,12 @@ public class Navigatie_medewerkerController implements Initializable {
 
     @FXML
     void on_change_password(ActionEvent event) {
-        veranderContentNode("Change_Password.fxml");
+        if (Language.taal == 1) {
+            veranderContentNodeWithResource("Change_Password.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Change_Password.fxml", "en");
+        }
+        Language.currentPage = "Change_Password.fxml";
     }
 
     @FXML
@@ -82,22 +88,42 @@ public class Navigatie_medewerkerController implements Initializable {
 
     @FXML
     void on_Gevonden_bagage(ActionEvent event) {
-        veranderContentNode("Gevonden_bagage.fxml");
+        if (Language.taal == 1) {
+            veranderContentNodeWithResource("Gevonden_bagage.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Gevonden_bagage.fxml", "en");
+        }
+        Language.currentPage = "Gevonden_bagage.fxml";
     }
 
     @FXML
     void on_verloren_bagage(ActionEvent event) {
-        veranderContentNode("Verloren_bagage.fxml");
+        if (Language.taal == 1) {
+            veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Verloren_bagage.fxml", "en");
+        }
+        Language.currentPage = "Verloren_bagage.fxml";
     }
 
     @FXML
     void on_Zoeken(ActionEvent event) {
-        veranderContentNode("Zoeken.fxml");
+        if (Language.taal == 1) {
+            veranderContentNodeWithResource("Zoeken.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Zoeken.fxml", "en");
+        }
+        Language.currentPage = "Zoeken.fxml";
     }
 
     @FXML
     void on_import_register(ActionEvent event) {
-        veranderContentNode("Excel_Importeren.fxml");
+        if (Language.taal == 1) {
+            veranderContentNodeWithResource("Excel_Importeren.fxml", "nl");
+        } else {
+            veranderContentNodeWithResource("Excel_Importeren.fxml", "en");
+        }
+        Language.currentPage = "Excel_Importeren.fxml";
     }
 
     public void setInfo(String name, String country) {
@@ -108,9 +134,11 @@ public class Navigatie_medewerkerController implements Initializable {
     @FXML
     void on_Language(ActionEvent event) {
         if (languageBox.getValue() == "Dutch") {
-            veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
+            veranderContentNodeWithResource(Language.currentPage, "nl");
+            Language.taal = 1;
         } else {
-            veranderContentNodeWithResource("Verloren_bagage.fxml", "en");
+            veranderContentNodeWithResource(Language.currentPage, "en");
+            Language.taal = 2;
         }
     }
 

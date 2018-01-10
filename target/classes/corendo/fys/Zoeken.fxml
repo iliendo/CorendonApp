@@ -21,27 +21,27 @@
          <left>
             <AnchorPane prefHeight="700.0" prefWidth="289.0" style="-fx-background-color: #4f5256;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTextField fx:id="txt_zoek_status" layoutX="16.0" layoutY="55.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Status" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txt_zoek_status" layoutX="16.0" layoutY="55.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="%status" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txt_zoek_name" layoutX="16.0" layoutY="96.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Name" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txt_zoek_name" layoutX="16.0" layoutY="96.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="%naam" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txt_zoek_luggageType" layoutX="16.0" layoutY="137.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Luggage type" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txt_zoek_luggageType" layoutX="16.0" layoutY="137.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="%bagage_type" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="txt_zoek_brand" layoutX="16.0" layoutY="178.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="Brand" unFocusColor="WHITE">
+                  <JFXTextField fx:id="txt_zoek_brand" layoutX="16.0" layoutY="178.0" maxWidth="258.0" minWidth="258.0" prefHeight="41.0" prefWidth="258.0" promptText="%merk" unFocusColor="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <Label layoutX="25.0" layoutY="14.0" prefHeight="23.0" prefWidth="68.0" text="Zoek op ..." textFill="WHITE" />
+                  <Label layoutX="25.0" layoutY="14.0" prefHeight="23.0" prefWidth="68.0" text="%zoek_op" textFill="WHITE" />
                </children>
             </AnchorPane>
          </left>
@@ -50,13 +50,13 @@
                <children>
                   <TableView fx:id="tblLuggage" onMouseClicked="#on_table_click" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="regisNr" prefWidth="73.0" text="Regis.Nr" />
-                      <TableColumn fx:id="dateFound" prefWidth="118.0" text="Date Found" />
-                        <TableColumn fx:id="timeFound" prefWidth="125.0" text="Time Found" />
-                        <TableColumn fx:id="luggageType" prefWidth="120.0" text="Luggage Type" />
-                        <TableColumn fx:id="brand" prefWidth="120.0" text="Brand" />
-                        <TableColumn fx:id="Firstname" prefWidth="203.0" text="Passenger" />
-                        <TableColumn fx:id="status" prefWidth="103.0" text="Status" />
+                      <TableColumn fx:id="regisNr" prefWidth="73.0" text="%reg_nr" />
+                      <TableColumn fx:id="dateFound" prefWidth="118.0" text="%dag_gevonden" />
+                        <TableColumn fx:id="timeFound" prefWidth="125.0" text="%tijd_gevonden" />
+                        <TableColumn fx:id="luggageType" prefWidth="120.0" text="%bagage_type" />
+                        <TableColumn fx:id="brand" prefWidth="120.0" text="%merk" />
+                        <TableColumn fx:id="Firstname" prefWidth="203.0" text="%reiziger" />
+                        <TableColumn fx:id="status" prefWidth="103.0" text="%status" />
                     </columns>
                   </TableView>
                </children>

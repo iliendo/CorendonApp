@@ -14,12 +14,12 @@
          <bottom>
             <AnchorPane prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton layoutY="161.0" onAction="#on_choose_file" style="-fx-background-color: grey;" text="Choose file..." textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                  <JFXButton layoutY="161.0" onAction="#on_choose_file" style="-fx-background-color: grey;" text="%kies_bestand" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="517.0" layoutY="161.0" onAction="#on_import_file" style="-fx-background-color: green;" text="Import" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                  <JFXButton layoutX="517.0" layoutY="161.0" onAction="#on_import_file" style="-fx-background-color: green;" text="%import" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -28,7 +28,7 @@
             </AnchorPane>
          </bottom>
          <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Import Excel Files" BorderPane.alignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%excel_files" BorderPane.alignment="CENTER">
                <font>
                   <Font size="40.0" />
                </font>
@@ -41,7 +41,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
                   <JFXListView fx:id="listView" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="720.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0" />
-                  <Text layoutX="40.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Excel file to import:" />
+                  <Text layoutX="40.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%selected_file" />
                </children>
             </AnchorPane>
          </center>
