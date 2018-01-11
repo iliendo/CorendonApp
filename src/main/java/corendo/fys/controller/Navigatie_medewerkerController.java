@@ -141,6 +141,11 @@ public class Navigatie_medewerkerController implements Initializable {
             Language.taal = 2;
         }
     }
+    
+    @FXML
+    void on_Damage(ActionEvent event) {
+        veranderContentNode("SchadeClaim.fxml");
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

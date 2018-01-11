@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -59,6 +60,9 @@ public class Supervisor_add_brandController implements Initializable {
 
     @FXML
     private JFXTextField txtBrandNew;
+    
+    @FXML
+    private Label lblDeleteBrand;
 
     /**
      *
@@ -120,7 +124,7 @@ public class Supervisor_add_brandController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("Do you want to delete " + txtBrand.getText() + "?");
+        alert.setContentText("Do you want to delete " + lblDeleteBrand.getText() + "?");
 
         Optional<ButtonType> action = alert.showAndWait();
 
@@ -128,7 +132,7 @@ public class Supervisor_add_brandController implements Initializable {
             try {
                 String query = "delete from brand where Brand = ?";
                 stmt = conn.prepareStatement(query);
-                stmt.setString(1, txtBrand.getText());
+                stmt.setString(1, lblDeleteBrand.getText());
 
                 stmt.executeUpdate();
                 stmt.close();
@@ -161,7 +165,8 @@ public class Supervisor_add_brandController implements Initializable {
     public void onEdit() {
         if (tblBrand.getSelectionModel().getSelectedItem() != null) {
             Brand selectedBrand = tblBrand.getSelectionModel().getSelectedItem();
-            txtBrand.setText(selectedBrand.getBrand());
+            //txtBrand.setText(selectedBrand.getBrand());
+            lblDeleteBrand.setText(selectedBrand.getBrand());
         }
     }
 

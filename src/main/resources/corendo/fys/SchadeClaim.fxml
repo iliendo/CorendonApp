@@ -1,11 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.SchadeClaimController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="855.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="corendo.fys.controller.SchadeClaimController">
+   <children>
+      <BorderPane layoutX="68.0" layoutY="95.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="586.0" prefWidth="514.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="172.0" text="Logistic informations">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="61.0" text="Datum: " />
+                  <JFXTextField fx:id="txtDatum" layoutX="84.0" layoutY="54.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <Label layoutX="14.0" layoutY="92.0" text="Tijd" />
+                  <JFXTextField fx:id="txtTijd" layoutX="84.0" layoutY="85.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXComboBox fx:id="ddlLuchthaven" layoutX="266.0" layoutY="57.0" prefHeight="25.0" prefWidth="193.0" promptText="Luchthaven" />
+                  <JFXComboBox fx:id="ddlLocationFound" layoutX="266.0" layoutY="97.0" prefHeight="25.0" prefWidth="193.0" promptText="Location found" />
+                  <Label layoutX="14.0" layoutY="151.0" text="Gearriveerde vlucht" />
+                  <JFXTextField fx:id="txtGeaariveerdeVlucht" layoutX="144.0" layoutY="144.0" maxWidth="318.0" minWidth="119.0" prefHeight="31.0" prefWidth="318.0" />
+                  <Label layoutX="14.0" layoutY="192.0" prefHeight="33.0" prefWidth="172.0" text="Luggage information">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="ddlTypeBagage" layoutX="14.0" layoutY="235.0" prefHeight="25.0" prefWidth="297.0" promptText="Type bagage" />
+                  <JFXComboBox fx:id="ddlPrimaireKleur" layoutX="330.0" layoutY="235.0" prefHeight="25.0" prefWidth="133.0" promptText="Primaire kleur" />
+                  <JFXComboBox fx:id="ddlSize" layoutX="18.0" layoutY="313.0" prefHeight="25.0" prefWidth="133.0" promptText="Size" />
+                  <JFXComboBox fx:id="ddlGewicht" layoutX="170.0" layoutY="313.0" prefHeight="25.0" prefWidth="133.0" promptText="Gewicht" />
+                  <JFXComboBox fx:id="ddlMerk" layoutX="170.0" layoutY="281.0" prefHeight="25.0" prefWidth="133.0" promptText="Merk" />
+                  <JFXComboBox fx:id="ddlSecondaireKleur" layoutX="326.0" layoutY="281.0" prefHeight="25.0" prefWidth="133.0" promptText="Secondaire kleur" />
+                  <JFXTextField fx:id="txtBagageTag" layoutX="10.0" layoutY="278.0" promptText="Bagage Tag" />
+                  <Label layoutX="14.0" layoutY="375.0" text="Firstname" />
+                  <Label layoutX="12.0" layoutY="416.0" text="Surname" />
+                  <Label layoutX="10.0" layoutY="454.0" text="Email" />
+                  <Label layoutX="11.0" layoutY="488.0" text="PhoneNr" />
+                  <JFXTextField fx:id="txtFirstname" layoutX="85.0" layoutY="368.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtSurname" layoutX="85.0" layoutY="409.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtEmail" layoutX="85.0" layoutY="447.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtPhoneNr" layoutX="84.0" layoutY="481.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <Label layoutX="233.0" layoutY="375.0" text="Address" />
+                  <Label layoutX="231.0" layoutY="416.0" text="Zipcode" />
+                  <Label layoutX="229.0" layoutY="454.0" text="City" />
+                  <Label layoutX="230.0" layoutY="488.0" text="Country" />
+                  <JFXTextField fx:id="txtAddress" layoutX="304.0" layoutY="368.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtZipcode" layoutX="304.0" layoutY="409.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtCity" layoutX="304.0" layoutY="447.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtCountry" layoutX="303.0" layoutY="481.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+               </children>
+            </AnchorPane>
+         </left>
+         <bottom>
+            <HBox prefHeight="73.0" prefWidth="855.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane prefHeight="16.0" prefWidth="855.0">
+                     <left>
+                        <JFXButton buttonType="RAISED" onAction="#on_Reset" prefHeight="34.0" prefWidth="145.0" ripplerFill="#006aff" style="-fx-background-color: #1e517a;" text="Reset" textFill="WHITE" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <JFXButton buttonType="RAISED" onAction="#on_Opslaan" prefHeight="29.0" prefWidth="156.0" ripplerFill="#006aff" style="-fx-background-color: #1e517a;" text="Opslaan" textFill="WHITE" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="596.0" prefWidth="341.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgLuggage" fitHeight="283.0" fitWidth="244.0" layoutX="14.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="193.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="50.0" />
+                  <Label fx:id="lblImagePath" layoutX="50.0" layoutY="362.0" />
+                  <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="441.0" onAction="#on_UploadPhoto" prefHeight="34.0" prefWidth="145.0" ripplerFill="#006aff" style="-fx-background-color: #1e517a;" text="Upload Photo" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
