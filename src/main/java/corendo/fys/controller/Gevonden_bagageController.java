@@ -446,7 +446,7 @@ public class Gevonden_bagageController implements Initializable {
      * the current datum en tijd ophalen
      */
     private void populate_tekstvelden_Date_and_Time() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.now();
         txtDatum.setText(dtf.format(localDate));
 
