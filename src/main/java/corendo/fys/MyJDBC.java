@@ -382,11 +382,11 @@ public class MyJDBC {
         myJDBC.executeUpdateQuery("ALTER TABLE luggage ADD FOREIGN KEY ( Size_id ) REFERENCES size( Size_id )");
 
         myJDBC.executeUpdateQuery("CREATE TABLE IF NOT EXISTS `damagedluggage` (\n"
-                + "  `damagedLuggage_id` int(11) NOT NULL,\n"
+                + "  `damagedLuggage_id` int(11) NOT NULL AUTO_INCREMENT,\n"
                 + "  `Date` varchar(45) DEFAULT NULL,\n"
                 + "  `Time` varchar(45) DEFAULT NULL,\n"
                 + "  `LuggageTag` varchar(45) DEFAULT NULL,\n"
-                + "  `Image` blob,\n"
+                + "  `Image` longblob,\n"
                 + "  `Flight` varchar(45) DEFAULT NULL,\n"
                 + "  `Passenger_id` int(11) NOT NULL,\n"
                 + "  `LuggageType_id` int(11) NOT NULL,\n"

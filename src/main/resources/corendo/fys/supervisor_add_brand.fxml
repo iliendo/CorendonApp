@@ -36,12 +36,17 @@
          <left>
             <AnchorPane prefHeight="415.0" prefWidth="325.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTextField fx:id="txtBrand" labelFloat="true" layoutX="14.0" layoutY="168.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="Nieuw Merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="293.0" onAction="#on_Add" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #676060;" text="Add" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" layoutX="222.0" layoutY="294.0" onAction="#on_Delete" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #8c8;" text="Delete" textFill="WHITE" />
+                  <JFXTextField fx:id="txtBrand" labelFloat="true" layoutX="14.0" layoutY="80.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="228.0" promptText="Nieuw Merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="143.0" onAction="#on_Add" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #676060;" text="Add" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="18.0" layoutY="337.0" onAction="#on_Delete" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #8c8;" text="Delete" textFill="WHITE" />
                   <Label layoutX="14.0" layoutY="14.0" text="Manage Brand">
                      <font>
                         <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDeleteBrand" layoutX="18.0" layoutY="297.0" prefHeight="29.0" prefWidth="221.0" text="dubble click brand">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
                      </font>
                   </Label>
                </children>
