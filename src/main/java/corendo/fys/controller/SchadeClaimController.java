@@ -259,7 +259,13 @@ public class SchadeClaimController implements Initializable {
                 || nullOrEmpty(email) || nullOrEmpty(city)
                 || nullOrEmpty(zipcode) || nullOrEmpty(phoneNr)
                 || nullOrEmpty(luggageTag) || nullOrEmpty(country)
-                || ddlSecondaireKleur.getValue() == null) {
+                || ddlTypeBagage.getValue() == null
+                || ddlPrimaireKleur.getValue() == null
+                || ddlMerk.getValue() == null
+                || ddlSecondaireKleur.getValue() == null
+                || ddlSize.getValue() == null
+                || ddlGewicht.getValue() == null
+                || imgLuggage.getImage() == null) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information Dialog");

@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="855.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="corendo.fys.controller.SchadeClaimController">
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corendo.fys.controller.SchadeClaimController">
    <children>
       <BorderPane layoutX="68.0" layoutY="95.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -23,9 +22,9 @@
                      </font>
                   </Label>
                   <Label layoutX="14.0" layoutY="61.0" text="Datum: " />
-                  <JFXTextField fx:id="txtDatum" layoutX="84.0" layoutY="54.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtDatum" editable="false" layoutX="84.0" layoutY="54.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <Label layoutX="14.0" layoutY="92.0" text="Tijd" />
-                  <JFXTextField fx:id="txtTijd" layoutX="84.0" layoutY="85.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
+                  <JFXTextField fx:id="txtTijd" editable="false" layoutX="84.0" layoutY="85.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXComboBox fx:id="ddlLuchthaven" layoutX="266.0" layoutY="57.0" prefHeight="25.0" prefWidth="193.0" promptText="Luchthaven" />
                   <JFXComboBox fx:id="ddlLocationFound" layoutX="266.0" layoutY="97.0" prefHeight="25.0" prefWidth="193.0" promptText="Location found" />
                   <Label layoutX="14.0" layoutY="151.0" text="Gearriveerde vlucht" />
