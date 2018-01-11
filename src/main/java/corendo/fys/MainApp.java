@@ -17,6 +17,7 @@ public class MainApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        MyJDBC.createTestDatabase(jdbcDBconnection.dbName);
         Parent root = FXMLLoader.load(getClass().getResource("/corendo/fys/Login_Medewerker.fxml"));
 
         Scene scene = new Scene(root);
