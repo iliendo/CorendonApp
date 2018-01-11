@@ -3,6 +3,7 @@ package corendo.fys.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import corendo.fys.Password;
 import corendo.fys.jdbcDBconnection;
 import java.net.URL;
 import java.sql.Connection;
@@ -192,18 +193,19 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
      */
     @FXML
     void on_Create_Employee(ActionEvent event) {
+        Password password = new Password();
         try {
 
             String query = "INSERT INTO employee (Firstname,Lastname,Email,Password,"
                     + "Function_id,Country_id) VALUES(?,?,?,?,?,?)";
 
-            String randomWachtwoord = randomPassword();
+            String randomPassword = password.getRandomPassword();
 
             stmt = conn.prepareStatement(query);
             stmt.setString(1, txtFirstname.getText());
             stmt.setString(2, txtSurname.getText());
             stmt.setString(3, txtEmail.getText());
-            stmt.setString(4, hash(randomWachtwoord));
+            stmt.setString(4, password.getHashedPassword(randomPassword));
             stmt.setString(5, get_Function_id());
             stmt.setString(6, get_Country_id());
 
@@ -212,7 +214,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
             Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
             confirmation.setTitle("Information");
-            confirmation.setContentText("The Password is: " + randomWachtwoord + "\nWrite down Your Password!!!");
+            confirmation.setContentText("The Password is: " + randomPassword + "\nWrite down Your Password!!!");
 
             confirmation.showAndWait();
 
@@ -367,48 +369,6 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         } catch (SQLException ex) {
             ex.getMessage();
         }
-    }
-
-    /**
-     * Encrypt het wachtwoord met MD5 hash
-     *
-     * @return Een random gegenereerd hash wachtwoord
-     */
-    public static String hash(String randomWachtwoord) {
-        String generatePassword = randomWachtwoord;
-        MessageDigest m;
-        try {
-            m = MessageDigest.getInstance("MD5");
-            m.update(generatePassword.getBytes(), 0, generatePassword.length());
-            String hash = new BigInteger(1, m.digest()).toString(16);
-
-            return hash;
-
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
-
-            return null;
-        }
-
-    }
-
-    /**
-     * Genereert een random wachtwoord
-     *
-     * @return het random wachtwoord
-     */
-    public static String randomPassword() {
-        String passwordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()";
-        StringBuilder passwordBuilder = new StringBuilder();
-        Random randomizer = new Random();
-        while (passwordBuilder.length() < 8) {
-            int index = (int) (randomizer.nextFloat() * passwordCharacters.length());
-            passwordBuilder.append(passwordCharacters.charAt(index));
-        }
-        String generatedPassword = passwordBuilder.toString();
-
-        return generatedPassword;
-
     }
 
     @Override

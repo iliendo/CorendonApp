@@ -3,6 +3,7 @@ package corendo.fys.controller;
 import corendo.fys.jdbcDBconnection;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import corendo.fys.Password;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
@@ -26,14 +27,14 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class 
+ * FXML Controller class
  *
  * @author Gabriel
  */
 public class Login_MedewerkerController implements Initializable {
 
     /**
-     * Initializes the controller class  .
+     * Initializes the controller class .
      */
     Connection conn = jdbcDBconnection.ConnectDB();
     PreparedStatement pstmt = null;
@@ -49,20 +50,21 @@ public class Login_MedewerkerController implements Initializable {
     private Label lblMessage;
 
     private ResourceBundle resources;
-    
+
     private static String email;
 
     @FXML
     void on_Login_medewerker(ActionEvent event) throws IOException {
+        Password password = new Password();
 
         String sql = "Select * from employee where Email=? and Password=?";
 
         try {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, txtEmail.getText());
+            //pstmt.setString(2, password.getHashedPassword(txtPassword.getText()));
             pstmt.setString(2, txtPassword.getText());
             email = txtEmail.getText();
-            // pstmt.setString(2, hash());
 
             rs = pstmt.executeQuery();
 
@@ -80,7 +82,7 @@ public class Login_MedewerkerController implements Initializable {
 
                     Navigatie_medewerkerController displayEmployeeDetails = loader.getController();
                     displayEmployeeDetails.setInfo(medewerkerName(), medewerkerCountry());
-                    
+
                     Parent parent1 = loader.getRoot();
                     Scene scene = new Scene(parent1);
                     Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -103,6 +105,7 @@ public class Login_MedewerkerController implements Initializable {
 
     }
 // get firstname of employee
+
     public String medewerkerName() {
         String firstname = null;
         try {
@@ -138,10 +141,10 @@ public class Login_MedewerkerController implements Initializable {
         return country;
     }
 
-    public String getEmail () {
+    public String getEmail() {
         return email;
     }
-    
+
     public int function_id() {
         int id = 0;
         try {
@@ -157,24 +160,6 @@ public class Login_MedewerkerController implements Initializable {
             e.getMessage();
         }
         return id;
-    }
-
-    public String hash() {
-        String generatePassword = txtPassword.getText();
-        MessageDigest m;
-        try {
-            m = MessageDigest.getInstance("MD5");
-            m.update(generatePassword.getBytes(), 0, generatePassword.length());
-            String hash = new BigInteger(1, m.digest()).toString(16);
-
-            return hash;
-
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
-
-            return null;
-        }
-
     }
 
     @Override

@@ -29,6 +29,7 @@ import javafx.scene.layout.AnchorPane;
 import supervisor.Employee;
 import java.security.*;
 import java.math.*;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -68,16 +69,13 @@ public class Supervisor_medewerker_updatenController implements Initializable {
     private TableColumn tblC_Country;
 
     @FXML
-    private JFXTextField txtFirstname;
+    private Text txtFirstname;
 
     @FXML
     private JFXTextField txtSurname;
 
     @FXML
     private JFXTextField txtEmail;
-
-    @FXML
-    private JFXTextField txtPassword;
 
     @FXML
     private JFXComboBox ddlFunction;
