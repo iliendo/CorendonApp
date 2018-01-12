@@ -85,7 +85,6 @@ public class Excel_ImporterenController implements Initializable {
 
             System.out.println(totalRowCount);
 
-            // Starts at row 5 and prints every first value from each row from the first column
             for (int i = 0; i < totalRowCount; i++) {
                 String luggageId = cellConverter.getCellString(currentSheet, 0, i);
                 String dateFound = cellConverter.getCellString(currentSheet, 1, i);
@@ -109,14 +108,12 @@ public class Excel_ImporterenController implements Initializable {
 
                     stmt = conn.prepareStatement(selectQuery);
                     rs = stmt.executeQuery();
-                    if (luggageId.isEmpty()) {
+                    if (luggageId == null) {
                         System.out.println("Value is empty!");
                     } else if (!idChecker.isCharacter(luggageId)) {
                         System.out.println("Not an ID");
                     } else if (rs.next()) {
                         System.out.println(k++ + " Entry already exists!!!");
-                    } else if (luggageId.isEmpty()) {
-                        System.out.println("Value is empty!");
                     } else {
                         stmt = conn.prepareStatement(insertQuery);
                         stmt.setString(1, luggageId);
