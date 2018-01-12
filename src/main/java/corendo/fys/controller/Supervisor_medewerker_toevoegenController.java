@@ -194,34 +194,37 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
     @FXML
     void on_Create_Employee(ActionEvent event) {
         Password password = new Password();
-        if (checkEmail()) {
-            try {
-                String query = "INSERT INTO employee (Firstname,Lastname,Email,Password,"
-                        + "Function_id,Country_id) VALUES(?,?,?,?,?,?)";
+        if (checkInput()) {
+            if (checkEmail()) {
+                try {
+                    String query = "INSERT INTO employee (Firstname,Lastname,Email,Password,"
+                            + "Function_id,Country_id) VALUES(?,?,?,?,?,?)";
 
-                String randomPassword = password.getRandomPassword();
+                    String randomPassword = password.getRandomPassword();
 
-                stmt = conn.prepareStatement(query);
-                stmt.setString(1, txtFirstname.getText());
-                stmt.setString(2, txtSurname.getText());
-                stmt.setString(3, txtEmail.getText());
-                stmt.setString(4, password.getHashedPassword(randomPassword));
-                stmt.setString(5, get_Function_id());
-                stmt.setString(6, get_Country_id());
+                    stmt = conn.prepareStatement(query);
+                    stmt.setString(1, txtFirstname.getText());
+                    stmt.setString(2, txtSurname.getText());
+                    stmt.setString(3, txtEmail.getText());
+                    stmt.setString(4, password.getHashedPassword(randomPassword));
+                    stmt.setString(5, get_Function_id());
+                    stmt.setString(6, get_Country_id());
 
-                stmt.execute();
-                stmt.close();
+                    stmt.execute();
+                    stmt.close();
 
-                Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
-                confirmation.setTitle("Information");
-                confirmation.setContentText("The Password is: " + randomPassword + "\nWrite down Your Password!!!");
-                confirmation.showAndWait();
+                    Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
+                    confirmation.setTitle("Information");
+                    confirmation.setContentText("The Password is: " + randomPassword + "\nWrite down Your Password!!!");
+                    confirmation.showAndWait();
 
-                refreshTable();
-            } catch (SQLException ex) {
-                Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
+                    refreshTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        } 
+        }
+
     }
 
     /**
@@ -364,6 +367,29 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         }
     }
 
+    private boolean checkInput() {
+        boolean state = true;
+        
+        if (txtFirstname.getText().isEmpty()) {
+            missingInfoAlert("Firstname");
+            state = false;
+        } else if (txtSurname.getText().isEmpty()) {
+            missingInfoAlert("Surname");
+            state = false;
+        } else if (txtEmail.getText().isEmpty()) {
+            missingInfoAlert("Email");
+            state = false;
+        } else if (ddlFunction.getValue()== null) {
+            missingInfoAlert("Function");
+            state = false;
+        } else if (ddlCountry.getValue()== null) {
+            missingInfoAlert("Country");
+            state = false;
+        }
+
+        return state;
+    }
+
     /**
      * Controleert of het email adres al bestaat in de database
      *
@@ -396,11 +422,21 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
                 }
             } else {
                 state = true;
+
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Supervisor_medewerker_toevoegenController.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         return state;
+    }
+
+    private void missingInfoAlert(String asset) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(asset + " needs to be filled!");
+        alert.showAndWait();
     }
 
     @Override
