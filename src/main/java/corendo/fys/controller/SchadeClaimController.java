@@ -238,7 +238,7 @@ public class SchadeClaimController implements Initializable {
 
     }
     
-    private static boolean nullOrEmpty(String str) {
+    public static boolean nullOrEmpty(String str) {
         return str == null || str.isEmpty();
     }
 
