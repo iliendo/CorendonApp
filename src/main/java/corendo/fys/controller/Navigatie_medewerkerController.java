@@ -56,7 +56,8 @@ public class Navigatie_medewerkerController implements Initializable {
     private ComboBox languageBox;
 
     @FXML
-    void on_Me_User(ActionEvent event) {
+    void on_Me_User(ActionEvent event
+    ) {
         if (event.getSource() == meOption) {
             show_me_user_info.setVisible(true);
         }
@@ -72,7 +73,8 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void on_change_password(ActionEvent event) {
+    void on_change_password(ActionEvent event
+    ) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Change_Password.fxml", "nl");
         } else {
@@ -82,12 +84,14 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void dashbord_medewerker(MouseEvent event) {
+    void dashbord_medewerker(MouseEvent event
+    ) {
         show_me_user_info.setVisible(false);
     }
 
     @FXML
-    void on_Gevonden_bagage(ActionEvent event) {
+    void on_Gevonden_bagage(ActionEvent event
+    ) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Gevonden_bagage.fxml", "nl");
         } else {
@@ -97,7 +101,8 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void on_verloren_bagage(ActionEvent event) {
+    void on_verloren_bagage(ActionEvent event
+    ) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Verloren_bagage.fxml", "nl");
         } else {
@@ -107,7 +112,8 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void on_Zoeken(ActionEvent event) {
+    void on_Zoeken(ActionEvent event
+    ) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Zoeken.fxml", "nl");
         } else {
@@ -117,7 +123,8 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
-    void on_import_register(ActionEvent event) {
+    void on_import_register(ActionEvent event
+    ) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Excel_Importeren.fxml", "nl");
         } else {
@@ -141,7 +148,7 @@ public class Navigatie_medewerkerController implements Initializable {
             Language.taal = 2;
         }
     }
-    
+
     @FXML
     void on_Damage(ActionEvent event) {
         veranderContentNode("SchadeClaim.fxml");

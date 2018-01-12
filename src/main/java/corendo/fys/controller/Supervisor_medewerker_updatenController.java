@@ -72,16 +72,16 @@ public class Supervisor_medewerker_updatenController implements Initializable {
     private Text txtFirstname;
 
     @FXML
-    private JFXTextField txtSurname;
+    private Text txtSurname;
 
     @FXML
-    private JFXTextField txtEmail;
+    private Text txtEmail;
 
     @FXML
-    private JFXComboBox ddlFunction;
+    private Text txtFunction;
 
     @FXML
-    private JFXComboBox ddlCountry;
+    private Text txtCountry;
 
     @FXML
     private JFXButton meOption;
@@ -194,18 +194,27 @@ public class Supervisor_medewerker_updatenController implements Initializable {
         if (tbl_Employee.getSelectionModel().getSelectedItem() != null) {
             Employee selectedEmployee = tbl_Employee.getSelectionModel().getSelectedItem();
             txtFirstname.setText(selectedEmployee.getFirstname());
+            txtSurname.setText(selectedEmployee.getLastname());
+            txtEmail.setText(selectedEmployee.getEmail());
+            txtFunction.setText(selectedEmployee.getFunction_name());
+            txtCountry.setText(selectedEmployee.getCountry_name());
+            txtFirstnameNew.setText(selectedEmployee.getFirstname());
+            txtSurnameNew.setText(selectedEmployee.getLastname());
+            txtEmailNew.setText(selectedEmployee.getEmail());
         }
     }
 
     @FXML
     void on_Update_Employee(ActionEvent event) {
-        String query = "UPDATE employee WHERE Firstname='" + txtFirstname.getText() + "' , Lastname='" + txtSurname.getText() + "' , Email='" + txtEmail.getText() + "' SET Firstname=? Lastname=? Email=?";
+        String query = "UPDATE employee SET Firstname=?, Lastname=?, Email=?, function_id = ?, country_id = ? WHERE Firstname='" + txtFirstname.getText() + "' AND Lastname='" + txtSurname.getText() + "' AND Email='" + txtEmail.getText() + "'";
 
         try {
             stmt = conn.prepareStatement(query);
             stmt.setString(1, txtFirstnameNew.getText());
             stmt.setString(2, txtSurnameNew.getText());
             stmt.setString(3, txtEmailNew.getText());
+            stmt.setString(4, get_Function_id());
+            stmt.setString(5, get_Country_id());
 
             stmt.executeUpdate();
             stmt.close();
@@ -218,7 +227,7 @@ public class Supervisor_medewerker_updatenController implements Initializable {
         String function = null;
         try {
 
-            String query_get = "Select Function_id from function where Function_name ='" + ddlFunction.getSelectionModel().getSelectedItem().toString() + "'";
+            String query_get = "Select Function_id from function where Function_name ='" + ddlFunctionNew.getSelectionModel().getSelectedItem().toString() + "'";
             stmt_get = conn.prepareStatement(query_get);
             rs_get = stmt_get.executeQuery();
             while (rs_get.next()) {
@@ -235,7 +244,7 @@ public class Supervisor_medewerker_updatenController implements Initializable {
         String country = null;
         try {
 
-            String query_get = "Select Country_id from country where Country_name ='" + ddlCountry.getSelectionModel().getSelectedItem().toString() + "'";
+            String query_get = "Select Country_id from country where Country_name ='" + ddlCountryNew.getSelectionModel().getSelectedItem().toString() + "'";
             stmt_get = conn.prepareStatement(query_get);
             rs_get = stmt_get.executeQuery();
             while (rs_get.next()) {
@@ -262,7 +271,7 @@ public class Supervisor_medewerker_updatenController implements Initializable {
                 //db_LuggageType.add(rs1.getString("LuggageType"));
                 String l_list = rs.getString("Country_Name");
                 ObservableList<String> data_lijst = FXCollections.observableArrayList(l_list);
-                ddlCountry.getItems().addAll(data_lijst);
+                ddlCountryNew.getItems().addAll(data_lijst);
             }
             stmt.close();
             rs.close();
@@ -286,7 +295,7 @@ public class Supervisor_medewerker_updatenController implements Initializable {
                 //db_LuggageType.add(rs1.getString("LuggageType"));
                 String l_list = rs.getString("Function_name");
                 ObservableList<String> data_lijst = FXCollections.observableArrayList(l_list);
-                ddlFunction.getItems().addAll(data_lijst);
+                ddlFunctionNew.getItems().addAll(data_lijst);
             }
             stmt.close();
             rs.close();
@@ -294,43 +303,6 @@ public class Supervisor_medewerker_updatenController implements Initializable {
         } catch (SQLException ex) {
             ex.getMessage();
         }
-    }
-
-    public static String hash() {
-        String generatePassword = randomPassword();
-        MessageDigest m;
-        try {
-            m = MessageDigest.getInstance("MD5");
-            m.update(generatePassword.getBytes(), 0, generatePassword.length());
-            String hash = new BigInteger(1, m.digest()).toString(16);
-
-            return hash;
-
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
-
-            return null;
-        }
-
-    }
-
-    /**
-     * Genereert een random wachtwoord
-     *
-     * @return het random wachtwoord
-     */
-    public static String randomPassword() {
-        String passwordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()";
-        StringBuilder passwordBuilder = new StringBuilder();
-        Random randomizer = new Random();
-        while (passwordBuilder.length() < 8) {
-            int index = (int) (randomizer.nextFloat() * passwordCharacters.length());
-            passwordBuilder.append(passwordCharacters.charAt(index));
-        }
-        String generatedPassword = passwordBuilder.toString();
-
-        return generatedPassword;
-
     }
 
     @Override

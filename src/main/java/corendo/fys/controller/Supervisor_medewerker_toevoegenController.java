@@ -406,7 +406,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
             if (rs.next()) {
                 email = rs.getString("email");
-                if (!email.contains("@corendon")) {
+                if (!email.contains(txtEmail.getText() + "@corendon")) {
 
                     Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
                     confirmation.setTitle("Information");
