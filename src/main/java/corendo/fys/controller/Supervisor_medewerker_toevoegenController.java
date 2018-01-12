@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
-import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,12 +27,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import supervisor.Employee;
-import java.security.*;
-import java.math.*;
 
 /**
- * FXML Controller class
- * Hierin kan je medewerkers toevoegen
+ * FXML Controller class Hierin kan je medewerkers toevoegen
  *
  * @author Ilias Azagagh
  */
@@ -183,6 +179,10 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         if (tbl_Employee.getSelectionModel().getSelectedItem() != null) {
             Employee selectedEmployee = tbl_Employee.getSelectionModel().getSelectedItem();
             txtFirstname.setText(selectedEmployee.getFirstname());
+            txtSurname.setText(selectedEmployee.getFirstname());
+            txtEmail.setText(selectedEmployee.getEmail());
+            ddlFunction.setValue(selectedEmployee.getFunction_name());
+            ddlCountry.setValue(selectedEmployee.getCountry_name());
         }
     }
 
@@ -194,40 +194,34 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
     @FXML
     void on_Create_Employee(ActionEvent event) {
         Password password = new Password();
-        try {
+        if (checkEmail()) {
+            try {
+                String query = "INSERT INTO employee (Firstname,Lastname,Email,Password,"
+                        + "Function_id,Country_id) VALUES(?,?,?,?,?,?)";
 
-            String query = "INSERT INTO employee (Firstname,Lastname,Email,Password,"
-                    + "Function_id,Country_id) VALUES(?,?,?,?,?,?)";
+                String randomPassword = password.getRandomPassword();
 
-            String randomPassword = password.getRandomPassword();
+                stmt = conn.prepareStatement(query);
+                stmt.setString(1, txtFirstname.getText());
+                stmt.setString(2, txtSurname.getText());
+                stmt.setString(3, txtEmail.getText());
+                stmt.setString(4, password.getHashedPassword(randomPassword));
+                stmt.setString(5, get_Function_id());
+                stmt.setString(6, get_Country_id());
 
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, txtFirstname.getText());
-            stmt.setString(2, txtSurname.getText());
-            stmt.setString(3, txtEmail.getText());
-            stmt.setString(4, password.getHashedPassword(randomPassword));
-            stmt.setString(5, get_Function_id());
-            stmt.setString(6, get_Country_id());
+                stmt.execute();
+                stmt.close();
 
-            stmt.execute();
-            stmt.close();
+                Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
+                confirmation.setTitle("Information");
+                confirmation.setContentText("The Password is: " + randomPassword + "\nWrite down Your Password!!!");
+                confirmation.showAndWait();
 
-            Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
-            confirmation.setTitle("Information");
-            confirmation.setContentText("The Password is: " + randomPassword + "\nWrite down Your Password!!!");
-
-            confirmation.showAndWait();
-
-            refreshTable();
-        } catch (SQLException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText(txtFirstname.getText() + " " + txtSurname.getText()
-                + "has been added to " + ddlFunction.getSelectionModel().getSelectedItem().toString());
-
+                refreshTable();
+            } catch (SQLException ex) {
+                Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
     }
 
     /**
@@ -274,7 +268,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
     }
 
-    @FXML
+    /*@FXML
     void on_Update_Employee(ActionEvent event) {
         String query = "UPDATE employee WHERE Firstname='" + txtFirstname.getText() + "' SET Firstname=? ";
 
@@ -287,8 +281,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         } catch (SQLException ex) {
             Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
+    }*/
     public String get_Function_id() {
         String function = null;
         try {
@@ -369,6 +362,45 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         } catch (SQLException ex) {
             ex.getMessage();
         }
+    }
+
+    /**
+     * Controleert of het email adres al bestaat in de database
+     *
+     * @return true als het email adres bestaat anders false
+     */
+    private boolean checkEmail() {
+        boolean state = false;
+        try {
+            String email;
+
+            String controlQuery = "SELECT email FROM employee WHERE email = '" + txtEmail.getText() + "'";
+            stmt = conn.prepareStatement(controlQuery);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                email = rs.getString("email");
+                if (!email.contains("@corendon")) {
+
+                    Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
+                    confirmation.setTitle("Information");
+                    confirmation.setContentText(email + " is not a valid @corendon emailadres!");
+
+                    confirmation.showAndWait();
+                } else if (email.equals(txtEmail.getText())) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Dialog");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Email already exists!");
+                    alert.showAndWait();
+                }
+            } else {
+                state = true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return state;
     }
 
     @Override
