@@ -383,7 +383,7 @@ public class MyJDBC {
 
         myJDBC.executeUpdateQuery("CREATE TABLE IF NOT EXISTS `damagedluggage` (\n"
                 + "  `damagedLuggage_id` int(11) NOT NULL AUTO_INCREMENT,\n"
-                + "  `Date` varchar(45) DEFAULT NULL,\n"
+                + "  `Date` DATE NULL,\n"
                 + "  `Time` varchar(45) DEFAULT NULL,\n"
                 + "  `LuggageTag` varchar(45) DEFAULT NULL,\n"
                 + "  `Image` longblob,\n"

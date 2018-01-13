@@ -34,6 +34,24 @@ public class Supervisor_statictiekController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
+    private Label aantalDamagedLabel;
+    
+    @FXML
+    private Label aantalVerlorenLabel;
+    
+    @FXML
+    private Label aantalGevondenLabel;
+    
+    @FXML
+    private Label statistiekenLabel;
+    
+    @FXML
+    private Label statistiekenLabel2;
+    
+    @FXML
+    private Label statistiekenLabel3;
+    
+    @FXML
     private PieChart pieChartDrieDagen;
     
     @FXML
@@ -98,6 +116,23 @@ public class Supervisor_statictiekController implements Initializable {
         return count;
     }
     
+    public int getTotalDamagedDrieDagen() {
+        int count = 0;
+        String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+drieDagen+"'";
+        System.out.println(query);
+        try {
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Supervisor_statictiekController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+    
     public int getTotalLostEenWeek() {
         int count = 0;
         String query = "SELECT COUNT(Status_id) FROM luggage where Status_id='1' AND DateFound > '"+eenWeek+"'";
@@ -130,6 +165,23 @@ public class Supervisor_statictiekController implements Initializable {
         return count;
     }
     
+    public int getTotalDamagedEenWeek() {
+        int count = 0;
+        String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+eenWeek+"'";
+        System.out.println(query);
+        try {
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Supervisor_statictiekController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+    
     public int getTotalLostEenMaand() {
         String minMaand;
         if(minMonth == 0){
@@ -146,6 +198,7 @@ public class Supervisor_statictiekController implements Initializable {
             while (rs.next()) {
                 count = rs.getInt(1);
             }
+            System.out.println("Aantal damaged = " + count);
 
         } catch (SQLException ex) {
             Logger.getLogger(Supervisor_statictiekController.class.getName()).log(Level.SEVERE, null, ex);
@@ -175,12 +228,36 @@ public class Supervisor_statictiekController implements Initializable {
         }
         return count;
     }
+    
+    public int getTotalDamagedEenMaand() {
+        String minMaand;
+        if(minMonth == 0){
+            minMaand = "01";
+        }else{
+            minMaand = String.valueOf(minMonth);
+        }
+        String eenMaand = jaar + "-" + minMaand;
+        int count = 0;
+        String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+eenMaand+"'";
+        System.out.println(query);
+        try {
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Supervisor_statictiekController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
 
     ObservableList<PieChart.Data> pieChartDataEenWeek
             = FXCollections.observableArrayList(
                     new PieChart.Data("Lost", getTotalLostEenWeek()),
                     new PieChart.Data("Found", getTotalFoundEenWeek()),
-                    new PieChart.Data("Dammaged", 15));
+                    new PieChart.Data("Dammaged", getTotalDamagedEenWeek()));
     final PieChart chart2 = new PieChart(pieChartDataEenWeek);
     
     
@@ -188,7 +265,7 @@ public class Supervisor_statictiekController implements Initializable {
             = FXCollections.observableArrayList(
                     new PieChart.Data("Lost", getTotalLostDrieDagen()),
                     new PieChart.Data("Found", getTotalFoundDrieDagen()),
-                    new PieChart.Data("Dammaged", 15));
+                    new PieChart.Data("Dammaged", getTotalDamagedDrieDagen()));
     final PieChart chart = new PieChart(pieChartData);
   
     
@@ -196,11 +273,21 @@ public class Supervisor_statictiekController implements Initializable {
             = FXCollections.observableArrayList(
                     new PieChart.Data("Lost", getTotalLostEenMaand()),
                     new PieChart.Data("Found", getTotalFoundEenMaand()),
-                    new PieChart.Data("Dammaged", 15));
+                    new PieChart.Data("Dammaged", getTotalDamagedEenMaand()));
     final PieChart chart3 = new PieChart(pieChartDataEenMaand);
+    
     
     @FXML
     private void drieDagen(ActionEvent event) {
+        statistiekenLabel.setVisible(true);
+        statistiekenLabel2.setVisible(true);
+        statistiekenLabel3.setVisible(true);
+        String aantalDamaged = String.valueOf(getTotalDamagedDrieDagen());
+        String aantalVerloren = String.valueOf(getTotalLostDrieDagen());
+        String aantalGevonden = String.valueOf(getTotalFoundDrieDagen());
+        aantalDamagedLabel.setText(aantalDamaged);
+        aantalVerlorenLabel.setText(aantalVerloren);
+        aantalGevondenLabel.setText(aantalGevonden);
         pieChartName.setText("Drie dagen");
         pieChartDrieDagen.setVisible(true);
         pieChartEenWeek.setVisible(false);
@@ -211,8 +298,18 @@ public class Supervisor_statictiekController implements Initializable {
     
     @FXML
     private void eenWeek(ActionEvent event) {
+        statistiekenLabel.setVisible(true);
+        statistiekenLabel2.setVisible(true);
+        statistiekenLabel3.setVisible(true);
+        String aantalDamaged = String.valueOf(getTotalDamagedEenWeek());
+        String aantalVerloren = String.valueOf(getTotalLostEenWeek());
+        String aantalGevonden = String.valueOf(getTotalFoundEenWeek());
+        aantalDamagedLabel.setText(aantalDamaged);
+        aantalVerlorenLabel.setText(aantalVerloren);
+        aantalGevondenLabel.setText(aantalGevonden);
         pieChartName.setText("Zeven dagen");
         pieChartDrieDagen.setVisible(false);
+        pieChartEenMaand.setVisible(false);
         pieChartEenWeek.setVisible(true);
         pieChartEenWeek.setData(this.pieChartDataEenWeek);
       
@@ -220,6 +317,15 @@ public class Supervisor_statictiekController implements Initializable {
     
     @FXML
     private void eenMaand(ActionEvent event) {
+        statistiekenLabel.setVisible(true);
+        statistiekenLabel2.setVisible(true);
+        statistiekenLabel3.setVisible(true);
+        String aantalDamaged = String.valueOf(getTotalDamagedEenMaand());
+        String aantalVerloren = String.valueOf(getTotalLostEenMaand());
+        String aantalGevonden = String.valueOf(getTotalFoundEenMaand());
+        aantalDamagedLabel.setText(aantalDamaged);
+        aantalVerlorenLabel.setText(aantalVerloren);
+        aantalGevondenLabel.setText(aantalGevonden);
         pieChartName.setText("Een maand");
         pieChartDrieDagen.setVisible(false);
         pieChartEenWeek.setVisible(false);
