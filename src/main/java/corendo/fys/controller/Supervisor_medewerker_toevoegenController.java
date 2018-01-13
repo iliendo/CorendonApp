@@ -179,7 +179,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         if (tbl_Employee.getSelectionModel().getSelectedItem() != null) {
             Employee selectedEmployee = tbl_Employee.getSelectionModel().getSelectedItem();
             txtFirstname.setText(selectedEmployee.getFirstname());
-            txtSurname.setText(selectedEmployee.getFirstname());
+            txtSurname.setText(selectedEmployee.getLastname());
             txtEmail.setText(selectedEmployee.getEmail());
             ddlFunction.setValue(selectedEmployee.getFunction_name());
             ddlCountry.setValue(selectedEmployee.getCountry_name());
@@ -231,27 +231,36 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
      * Verwijderd een medewerker mits alle benodigde velden zijn ingevuld
      */
     @FXML
-    void on_Delete_Employee(ActionEvent event) {
+    void on_archive_employee(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Warning");
-        alert.setContentText("Are you sure you want to delete: " + txtEmail.getText() + " ? \nThis action CANNOT be undone!");
+        alert.setContentText("Are you sure you want to archive: " + txtEmail.getText() + " ? \nThis action CANNOT be undone!");
 
         Optional<ButtonType> action = alert.showAndWait();
 
         if (action.get() == ButtonType.OK) {
             try {
-                String query = "DELETE FROM employee WHERE Firstname=? AND Lastname=? AND Email=?";
-                stmt = conn.prepareStatement(query);
+                String insert = "INSERT INTO employee_archive (Firstname, Lastname, Email, function_id, country_id) VALUES (?,?,?,?,?)";
+                String delete = "DELETE FROM employee WHERE Email=?";
+
+                stmt = conn.prepareStatement(insert);
                 stmt.setString(1, txtFirstname.getText());
                 stmt.setString(2, txtSurname.getText());
                 stmt.setString(3, txtEmail.getText());
+                stmt.setString(4, get_Function_id());
+                stmt.setString(5, get_Country_id());
+
+                stmt.executeUpdate();
+
+                stmt = conn.prepareStatement(delete);
+                stmt.setString(1, txtEmail.getText());
 
                 stmt.executeUpdate();
                 stmt.close();
 
                 Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
                 confirmation.setTitle("Information");
-                confirmation.setContentText(txtEmail.getText() + " is deleted!");
+                confirmation.setContentText(txtEmail.getText() + " is archived!");
 
                 confirmation.showAndWait();
 
@@ -271,20 +280,6 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
     }
 
-    /*@FXML
-    void on_Update_Employee(ActionEvent event) {
-        String query = "UPDATE employee WHERE Firstname='" + txtFirstname.getText() + "' SET Firstname=? ";
-
-        try {
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, txtFirstname.getText());
-
-            stmt.executeUpdate();
-            stmt.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Supervisor_medewerker_toevoegenController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
     public String get_Function_id() {
         String function = null;
         try {
@@ -369,7 +364,7 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
     private boolean checkInput() {
         boolean state = true;
-        
+
         if (txtFirstname.getText().isEmpty()) {
             missingInfoAlert("Firstname");
             state = false;
@@ -379,10 +374,10 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
         } else if (txtEmail.getText().isEmpty()) {
             missingInfoAlert("Email");
             state = false;
-        } else if (ddlFunction.getValue()== null) {
+        } else if (ddlFunction.getValue() == null) {
             missingInfoAlert("Function");
             state = false;
-        } else if (ddlCountry.getValue()== null) {
+        } else if (ddlCountry.getValue() == null) {
             missingInfoAlert("Country");
             state = false;
         }
@@ -406,19 +401,19 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
 
             if (rs.next()) {
                 email = rs.getString("email");
-                if (!email.contains(txtEmail.getText() + "@corendon")) {
+                if (email.equals(txtEmail.getText())) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Dialog");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Email already exists!");
+                    alert.showAndWait();
+                } else if (!email.contains(txtEmail.getText() + "@corendon")) {
 
                     Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
                     confirmation.setTitle("Information");
                     confirmation.setContentText(email + " is not a valid @corendon emailadres!");
 
                     confirmation.showAndWait();
-                } else if (email.equals(txtEmail.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information Dialog");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Email already exists!");
-                    alert.showAndWait();
                 }
             } else {
                 state = true;
