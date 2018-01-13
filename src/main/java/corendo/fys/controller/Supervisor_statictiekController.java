@@ -87,6 +87,7 @@ public class Supervisor_statictiekController implements Initializable {
     public int getTotalLostDrieDagen() {
         int count = 0;
         String query = "SELECT COUNT(Status_id) FROM luggage where Status_id='1' AND DateFound > '"+drieDagen+"'";
+        System.out.println(query);
         try {
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
@@ -119,7 +120,6 @@ public class Supervisor_statictiekController implements Initializable {
     public int getTotalDamagedDrieDagen() {
         int count = 0;
         String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+drieDagen+"'";
-        System.out.println(query);
         try {
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
@@ -167,8 +167,7 @@ public class Supervisor_statictiekController implements Initializable {
     
     public int getTotalDamagedEenWeek() {
         int count = 0;
-        String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+eenWeek+"'";
-        System.out.println(query);
+        String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+eenWeek+"'";    
         try {
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
@@ -198,7 +197,6 @@ public class Supervisor_statictiekController implements Initializable {
             while (rs.next()) {
                 count = rs.getInt(1);
             }
-            System.out.println("Aantal damaged = " + count);
 
         } catch (SQLException ex) {
             Logger.getLogger(Supervisor_statictiekController.class.getName()).log(Level.SEVERE, null, ex);
@@ -239,7 +237,6 @@ public class Supervisor_statictiekController implements Initializable {
         String eenMaand = jaar + "-" + minMaand;
         int count = 0;
         String query = "SELECT COUNT(damagedLuggage_id) FROM damagedluggage where Date > '"+eenMaand+"'";
-        System.out.println(query);
         try {
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();

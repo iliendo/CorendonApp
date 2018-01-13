@@ -21,7 +21,7 @@
                               <TableView fx:id="tblBrand" onMouseClicked="#on_table_click" prefHeight="413.0" prefWidth="350.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn fx:id="tblC_id" prefWidth="107.0" text="ID" />
-                                  <TableColumn fx:id="tblC_Brand" prefWidth="239.0" text="Brand" />
+                                  <TableColumn fx:id="tblC_Brand" prefWidth="239.0" text="%merk" />
                                 </columns>
                               </TableView>
                            </children>
@@ -34,9 +34,9 @@
          <left>
             <AnchorPane prefHeight="415.0" prefWidth="325.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTextField fx:id="txtBrandNew" labelFloat="true" layoutX="14.0" layoutY="228.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="Nieuw merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
+                  <JFXTextField fx:id="txtBrandNew" labelFloat="true" layoutX="14.0" layoutY="228.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="%nieuw_merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
                   <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="323.0" onAction="#on_Update" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #556;" text="Update" textFill="WHITE" />
-                  <JFXTextField fx:id="txtBrand" labelFloat="true" layoutX="14.0" layoutY="168.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="Oud Merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
+                  <JFXTextField fx:id="txtBrand" labelFloat="true" layoutX="14.0" layoutY="168.0" maxWidth="297.0" minWidth="224.0" prefHeight="40.0" prefWidth="297.0" promptText="%oud_merk" style="-fx-background-color: #d2cbcb;" unFocusColor="#6e6565" />
                </children>
             </AnchorPane>
          </left>

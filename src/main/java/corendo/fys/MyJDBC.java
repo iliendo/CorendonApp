@@ -6,6 +6,7 @@
 package corendo.fys;
 
 import java.sql.*;
+import java.util.Calendar;
 import java.util.Enumeration;
 
 /**
@@ -239,6 +240,16 @@ public class MyJDBC {
      */
     public static void createTestDatabase(String dbName) {
 
+        Calendar cal = Calendar.getInstance();
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int month = cal.get(Calendar.MONTH) + 1;
+        int year = cal.get(Calendar.YEAR);
+        int minDrieDagen = day - 2;
+        String threeDays = String.valueOf(minDrieDagen);
+        String jaar = String.valueOf(year);
+        String maand = String.valueOf(month);
+        String datum = jaar + "-" + maand + "-" + threeDays;
+
         //System.out.println("Creating the " + dbName + " database...");
         // use the sys schema for creating another db
         MyJDBC sysJDBC = new MyJDBC("sys");
@@ -448,7 +459,7 @@ public class MyJDBC {
         } catch (SQLException ex) {
             myJDBC.error(ex);
         }
-        
+
         System.out.println("aantal rows is " + rowTeller);
 
         if (rowTeller == 0) {
@@ -466,9 +477,10 @@ public class MyJDBC {
             myJDBC.executeUpdateQuery("INSERT INTO `size` VALUES (1,'10x10x10'),(2,'20x20x20'),(3,'30x30x30'),(4,'40x40x40')");
             myJDBC.executeUpdateQuery("INSERT INTO `weight` VALUES (1,'5kg'),(2,'10kg'),(3,'15kg'),(4,'20kg'),(5,'25kg'),(6,'30kg')");
             myJDBC.executeUpdateQuery("INSERT INTO `status` VALUES (1,'Lost'),(2,'Found')");
-            myJDBC.executeUpdateQuery("INSERT INTO `luggage` VALUES (1,'2018-01-03','11:50:37',2,3,4,1,2,3,4,'5545895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,20,NULL,NULL,NULL),(2,'2018-01-03','14:24:21',2,2,4,1,3,2,3,'85654545','ImageView[id=imgLuggage, styleClass=image-view]',3,1,21,NULL,NULL,NULL),(3,'2018-01-03','08:55:51',1,6,1,1,1,3,3,'65665452222','ImageView[id=imgLuggage, styleClass=image-view]',2,1,22,NULL,NULL,NULL),(4,'2018-01-03','11:25:55',2,2,1,2,3,3,3,'948895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'idaid','het is een mooie tas!',NULL),(5,'2018-01-03','11:25:55',1,1,2,2,4,6,5,'86894','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'idaid','het is een lelijke tas!',NULL),(12,'2018-01-03','14:19:29',2,3,2,1,2,2,1,'','ImageView[id=imgLuggage, styleClass=image-view]',2,1,29,'ddd','dasdad',NULL),(13,'2018-01-03','14:30:01',1,1,1,2,1,1,1,'dasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'dssadasd','dasdasd',NULL),(14,'2018-01-03','14:30:18',1,1,2,1,1,2,1,'dasdasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,30,'dsadad','asdasd',NULL),(15,'2018-01-03','15:19:36',2,6,2,2,2,2,3,'556552','ImageView[id=imgLuggage, styleClass=image-view]',3,1,-1,'adfaf','afdadfadfafaf',NULL),(16,'2018-01-03','15:42:40',2,1,2,2,3,3,1,'556565','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'hahaha','hahaha',NULL),(17,'2018-01-03','15:43:56',2,3,2,1,1,2,2,'254525445','ImageView[id=imgLuggage, styleClass=image-view]',1,1,31,'hahaha','hahaha Ricardo zegt tegen de chikc',NULL),(18,'2018-01-03','17:07:16',1,2,3,1,2,3,3,'5525','ImageView[id=imgLuggage, styleClass=image-view]',1,1,32,'CAIF89','Abigail is leuk!',NULL)");
+            myJDBC.executeUpdateQuery("INSERT INTO `luggage` VALUES (1,'" + datum + "','11:50:37',2,3,4,1,2,3,4,'5545895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,20,NULL,NULL,NULL),(2,'" + datum + "','14:24:21',2,2,4,1,3,2,3,'85654545','ImageView[id=imgLuggage, styleClass=image-view]',3,1,21,NULL,NULL,NULL),(3,'" + datum + "','08:55:51',1,6,1,1,1,3,3,'65665452222','ImageView[id=imgLuggage, styleClass=image-view]',2,1,22,NULL,NULL,NULL),(4,'" + datum + "','11:25:55',2,2,1,2,3,3,3,'948895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'idaid','het is een mooie tas!',NULL),(5,'" + datum + "','11:25:55',1,1,2,2,4,6,5,'86894','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'idaid','het is een lelijke tas!',NULL),(12,'" + datum + "','14:19:29',2,3,2,1,2,2,1,'','ImageView[id=imgLuggage, styleClass=image-view]',2,1,29,'ddd','dasdad',NULL),(13,'" + datum + "','14:30:01',1,1,1,2,1,1,1,'dasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'dssadasd','dasdasd',NULL),(14,'" + datum + "','14:30:18',1,1,2,1,1,2,1,'dasdasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,30,'dsadad','asdasd',NULL),(15,'" + datum + "','15:19:36',2,6,2,2,2,2,3,'556552','ImageView[id=imgLuggage, styleClass=image-view]',3,1,-1,'adfaf','afdadfadfafaf',NULL),(16,'" + datum + "','15:42:40',2,1,2,2,3,3,1,'556565','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'hahaha','hahaha',NULL),(17,'" + datum + "','15:43:56',2,3,2,1,1,2,2,'254525445','ImageView[id=imgLuggage, styleClass=image-view]',1,1,31,'hahaha','hahaha Ricardo zegt tegen de chikc',NULL),(18,'" + datum + "','17:07:16',1,2,3,1,2,3,3,'5525','ImageView[id=imgLuggage, styleClass=image-view]',1,1,32,'CAIF89','Abigail is leuk!',NULL)");
+           
         }
-        
+
         myJDBC.close();
 
     }

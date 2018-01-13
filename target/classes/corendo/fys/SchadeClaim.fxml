@@ -16,20 +16,20 @@
          <left>
             <AnchorPane prefHeight="586.0" prefWidth="514.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="172.0" text="Logistic informations">
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="172.0" text="%logistieke_info">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="61.0" text="Datum: " />
+                  <Label layoutX="14.0" layoutY="61.0" text="%datum" />
                   <JFXTextField fx:id="txtDatum" editable="false" layoutX="84.0" layoutY="54.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
-                  <Label layoutX="14.0" layoutY="92.0" text="Tijd" />
+                  <Label layoutX="14.0" layoutY="92.0" text="%tijd" />
                   <JFXTextField fx:id="txtTijd" editable="false" layoutX="84.0" layoutY="85.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXComboBox fx:id="ddlLuchthaven" layoutX="266.0" layoutY="57.0" prefHeight="25.0" prefWidth="193.0" promptText="Luchthaven" />
                   <JFXComboBox fx:id="ddlLocationFound" layoutX="266.0" layoutY="97.0" prefHeight="25.0" prefWidth="193.0" promptText="Location found" />
-                  <Label layoutX="14.0" layoutY="151.0" text="Gearriveerde vlucht" />
+                  <Label layoutX="14.0" layoutY="151.0" text="%vlucht" />
                   <JFXTextField fx:id="txtGeaariveerdeVlucht" layoutX="144.0" layoutY="144.0" maxWidth="318.0" minWidth="119.0" prefHeight="31.0" prefWidth="318.0" />
-                  <Label layoutX="14.0" layoutY="192.0" prefHeight="33.0" prefWidth="172.0" text="Luggage information">
+                  <Label layoutX="14.0" layoutY="192.0" prefHeight="33.0" prefWidth="172.0" text="%bagage_info">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -41,18 +41,18 @@
                   <JFXComboBox fx:id="ddlMerk" layoutX="170.0" layoutY="281.0" prefHeight="25.0" prefWidth="133.0" promptText="Merk" />
                   <JFXComboBox fx:id="ddlSecondaireKleur" layoutX="326.0" layoutY="281.0" prefHeight="25.0" prefWidth="133.0" promptText="Secondaire kleur" />
                   <JFXTextField fx:id="txtBagageTag" layoutX="10.0" layoutY="278.0" promptText="Bagage Tag" />
-                  <Label layoutX="14.0" layoutY="375.0" text="Firstname" />
-                  <Label layoutX="12.0" layoutY="416.0" text="Surname" />
-                  <Label layoutX="10.0" layoutY="454.0" text="Email" />
-                  <Label layoutX="11.0" layoutY="488.0" text="PhoneNr" />
+                  <Label layoutX="14.0" layoutY="375.0" text="%voornaam" />
+                  <Label layoutX="12.0" layoutY="416.0" text="%achternaam" />
+                  <Label layoutX="10.0" layoutY="454.0" text="%email" />
+                  <Label layoutX="11.0" layoutY="488.0" text="%telefoon" />
                   <JFXTextField fx:id="txtFirstname" layoutX="85.0" layoutY="368.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXTextField fx:id="txtSurname" layoutX="85.0" layoutY="409.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXTextField fx:id="txtEmail" layoutX="85.0" layoutY="447.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXTextField fx:id="txtPhoneNr" layoutX="84.0" layoutY="481.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
-                  <Label layoutX="233.0" layoutY="375.0" text="Address" />
-                  <Label layoutX="231.0" layoutY="416.0" text="Zipcode" />
-                  <Label layoutX="229.0" layoutY="454.0" text="City" />
-                  <Label layoutX="230.0" layoutY="488.0" text="Country" />
+                  <Label layoutX="233.0" layoutY="375.0" text="%adres" />
+                  <Label layoutX="231.0" layoutY="416.0" text="%postcode" />
+                  <Label layoutX="229.0" layoutY="454.0" text="%woonplaats" />
+                  <Label layoutX="230.0" layoutY="488.0" text="%land" />
                   <JFXTextField fx:id="txtAddress" layoutX="304.0" layoutY="368.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXTextField fx:id="txtZipcode" layoutX="304.0" layoutY="409.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />
                   <JFXTextField fx:id="txtCity" layoutX="304.0" layoutY="447.0" maxWidth="119.0" minWidth="119.0" prefHeight="31.0" prefWidth="119.0" />

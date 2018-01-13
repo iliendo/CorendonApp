@@ -17,25 +17,25 @@
          <left>
             <AnchorPane prefHeight="616.0" prefWidth="380.0" style="-fx-background-color: #2ac6d6;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="32.0" layoutY="14.0" prefHeight="39.0" prefWidth="301.0" text="Update employee data" textFill="WHITE">
+                  <Label layoutX="32.0" layoutY="14.0" prefHeight="39.0" prefWidth="301.0" text="%employee_update_text" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font>
                   </Label>
-                  <Label layoutX="32.0" layoutY="78.0" prefHeight="27.0" prefWidth="135.0" text="Old Firstname" textFill="WHITE" />
-                  <Label layoutX="181.0" layoutY="78.0" prefHeight="27.0" prefWidth="168.0" text="Old Surname" textFill="WHITE" />
-                  <Label layoutX="31.0" layoutY="146.0" prefHeight="27.0" prefWidth="68.0" text="Old Email" textFill="WHITE" />
-                  <Label layoutX="31.0" layoutY="225.0" prefHeight="27.0" prefWidth="78.0" text="Function" textFill="WHITE" />
-                  <Label layoutX="194.0" layoutY="225.0" prefHeight="27.0" prefWidth="78.0" text="Country" textFill="WHITE" />
+                  <Label layoutX="32.0" layoutY="78.0" prefHeight="27.0" prefWidth="135.0" text="%old_firstname" textFill="WHITE" />
+                  <Label layoutX="181.0" layoutY="78.0" prefHeight="27.0" prefWidth="168.0" text="%old_surname" textFill="WHITE" />
+                  <Label layoutX="31.0" layoutY="146.0" prefHeight="27.0" prefWidth="68.0" text="%old_email" textFill="WHITE" />
+                  <Label layoutX="31.0" layoutY="225.0" prefHeight="27.0" prefWidth="78.0" text="%functie" textFill="WHITE" />
+                  <Label layoutX="194.0" layoutY="225.0" prefHeight="27.0" prefWidth="78.0" text="%land" textFill="WHITE" />
                   <JFXButton buttonType="RAISED" layoutX="257.0" layoutY="532.0" onAction="#on_Update_Employee" prefHeight="41.0" prefWidth="90.0" style="-fx-background-color: Grey;" text="Update" textFill="WHITE" />
-                  <Label layoutX="32.0" layoutY="308.0" prefHeight="27.0" prefWidth="132.0" text="New Firstname" textFill="WHITE" />
+                  <Label layoutX="32.0" layoutY="308.0" prefHeight="27.0" prefWidth="132.0" text="%new_firstname" textFill="WHITE" />
                   <JFXTextField fx:id="txtFirstnameNew" layoutX="32.0" layoutY="335.0" maxWidth="318.0" minWidth="142.0" prefHeight="31.0" prefWidth="142.0" promptText="New firstname" unFocusColor="WHITE" />
-                  <Label layoutX="181.0" layoutY="308.0" prefHeight="27.0" prefWidth="78.0" text="New Surname" textFill="WHITE" />
+                  <Label layoutX="181.0" layoutY="308.0" prefHeight="27.0" prefWidth="78.0" text="%new_surname" textFill="WHITE" />
                   <JFXTextField fx:id="txtSurnameNew" layoutX="181.0" layoutY="335.0" maxWidth="318.0" minWidth="153.0" prefHeight="31.0" prefWidth="153.0" promptText="New Surname" unFocusColor="WHITE" />
-                  <Label layoutX="36.0" layoutY="376.0" prefHeight="27.0" prefWidth="108.0" text="New Email" textFill="WHITE" />
+                  <Label layoutX="36.0" layoutY="376.0" prefHeight="27.0" prefWidth="108.0" text="%new_email" textFill="WHITE" />
                   <JFXTextField fx:id="txtEmailNew" layoutX="31.0" layoutY="403.0" maxWidth="318.0" minWidth="167.0" prefHeight="31.0" prefWidth="318.0" promptText="New Email" unFocusColor="WHITE" />
-                  <Label layoutX="35.0" layoutY="455.0" prefHeight="27.0" prefWidth="78.0" text="New Function" textFill="WHITE" />
-                  <Label layoutX="194.0" layoutY="458.0" prefHeight="27.0" prefWidth="78.0" text="New Country" textFill="WHITE" />
+                  <Label layoutX="35.0" layoutY="455.0" prefHeight="27.0" prefWidth="78.0" text="%new_function" textFill="WHITE" />
+                  <Label layoutX="194.0" layoutY="458.0" prefHeight="27.0" prefWidth="78.0" text="%new_country" textFill="WHITE" />
                   <JFXComboBox fx:id="ddlFunctionNew" layoutX="35.0" layoutY="487.0" prefHeight="31.0" prefWidth="145.0" style="-fx-background-color: #fff;" />
                   <JFXComboBox fx:id="ddlCountryNew" layoutX="194.0" layoutY="485.0" prefHeight="31.0" prefWidth="154.0" style="-fx-background-color: #fff;" />
                   <Text fx:id="txtFirstname" fill="WHITE" layoutX="31.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="119.0830078125" />
@@ -51,11 +51,11 @@
                <children>
                   <TableView fx:id="tbl_Employee" onMouseClicked="#on_table_click" prefHeight="616.0" prefWidth="607.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="tblC_FirstName" prefWidth="115.0" text="First Name" />
-                        <TableColumn fx:id="tblC_Surname" prefWidth="115.0" text="Surname" />
-                        <TableColumn fx:id="tblC_Email" prefWidth="115.0" text="Email" />
-                        <TableColumn fx:id="tblC_Function" minWidth="0.0" prefWidth="115.0" text="Function" />
-                        <TableColumn fx:id="tblC_Country" prefWidth="115.0" text="Country" />
+                      <TableColumn fx:id="tblC_FirstName" prefWidth="115.0" text="%voornaam" />
+                        <TableColumn fx:id="tblC_Surname" prefWidth="115.0" text="%achternaam" />
+                        <TableColumn fx:id="tblC_Email" prefWidth="115.0" text="%email" />
+                        <TableColumn fx:id="tblC_Function" minWidth="0.0" prefWidth="115.0" text="%functie" />
+                        <TableColumn fx:id="tblC_Country" prefWidth="115.0" text="%land" />
                     </columns>
                   </TableView>
                </children></AnchorPane>

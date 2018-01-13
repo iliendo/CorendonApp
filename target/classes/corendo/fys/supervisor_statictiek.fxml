@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -15,9 +16,9 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#drieDagen" text="drie dagen" />
-                  <Button mnemonicParsing="false" onAction="#eenWeek" text="een week" />
-                  <Button mnemonicParsing="false" onAction="#eenMaand" text="een maand" />
+                  <Button mnemonicParsing="false" onAction="#drieDagen" text="%drie_dagen" />
+                  <Button mnemonicParsing="false" onAction="#eenWeek" text="%een_week" />
+                  <Button mnemonicParsing="false" onAction="#eenMaand" text="%een_maand" />
                </children>
             </VBox>
          </left>
@@ -27,6 +28,16 @@
                   <PieChart fx:id="pieChartEenWeek" visible="false" />
                   <PieChart fx:id="pieChartDrieDagen" visible="false" />
                   <PieChart fx:id="pieChartEenMaand" visible="false" />
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="statistiekenLabel" layoutX="6.0" layoutY="316.0" text="Gevonden bagage:" visible="false" />
+                        <Label fx:id="statistiekenLabel2" layoutX="6.0" layoutY="342.0" text="Verloren bagage:" visible="false" />
+                        <Label fx:id="statistiekenLabel3" layoutX="6.0" layoutY="370.0" text="Beschadigde bagage:" visible="false" />
+                        <Label fx:id="aantalGevondenLabel" layoutX="145.0" layoutY="316.0" />
+                        <Label fx:id="aantalVerlorenLabel" layoutX="145.0" layoutY="342.0" />
+                        <Label fx:id="aantalDamagedLabel" layoutX="145.0" layoutY="370.0" />
+                     </children>
+                  </Pane>
                </children>
             </StackPane>
          </center>
