@@ -21,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -57,11 +58,11 @@ public class Supervisor_manage_airportController implements Initializable {
     private JFXTextField txtAirportNew;
 
     @FXML
-    private JFXTextField txtAirport;
+    private Label lblOldAirport;
 
     @FXML
     void on_Update(ActionEvent event) {
-        String query = "UPDATE airport SET Airport_name=? WHERE Airport_name='" + txtAirport.getText() + "'";
+        String query = "UPDATE airport SET Airport_name=? WHERE Airport_name='" + lblOldAirport.getText() + "'";
         try {
             stmt = conn.prepareStatement(query);
             stmt.setString(1, txtAirportNew.getText());
@@ -74,7 +75,7 @@ public class Supervisor_manage_airportController implements Initializable {
             stmt.execute();
             stmt.close();
 
-            txtAirport.setText(null);
+            lblOldAirport.setText(null);
             txtAirportNew.setText(null);
 
         } catch (SQLException ex) {
@@ -132,7 +133,7 @@ public class Supervisor_manage_airportController implements Initializable {
     public void onEdit() {
         if (tblAirport.getSelectionModel().getSelectedItem() != null) {
             Airport selectedAirport = tblAirport.getSelectionModel().getSelectedItem();
-            txtAirport.setText(selectedAirport.getAirport_name());
+            lblOldAirport.setText(selectedAirport.getAirport_name());
         }
 
     }
