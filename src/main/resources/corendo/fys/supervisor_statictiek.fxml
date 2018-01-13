@@ -16,9 +16,9 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#drieDagen" text="drie dagen" />
-                  <Button mnemonicParsing="false" onAction="#eenWeek" text="een week" />
-                  <Button mnemonicParsing="false" onAction="#eenMaand" text="een maand" />
+                  <Button mnemonicParsing="false" onAction="#drieDagen" text="%drie_dagen" />
+                  <Button mnemonicParsing="false" onAction="#eenWeek" text="%een_week" />
+                  <Button mnemonicParsing="false" onAction="#eenMaand" text="%een_maand" />
                </children>
             </VBox>
          </left>
