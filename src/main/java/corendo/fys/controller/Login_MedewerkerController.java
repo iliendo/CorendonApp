@@ -68,10 +68,12 @@ public class Login_MedewerkerController implements Initializable {
 
             rs = pstmt.executeQuery();
 
+            FXMLLoader loader = new FXMLLoader();
+            
             if (rs.next()) {
                 if (function_id() == 1) {
 
-                    FXMLLoader loader = new FXMLLoader();
+                    
                     loader.setLocation(getClass().getResource("/corendo/fys/Navigatie_medewerker.fxml"));
                     try {
                         loader.load();
@@ -80,8 +82,8 @@ public class Login_MedewerkerController implements Initializable {
 
                     }
 
-                    Navigatie_medewerkerController displayEmployeeDetails = loader.getController();
-                    displayEmployeeDetails.setInfo(medewerkerName(), medewerkerCountry());
+                    Navigatie_medewerkerController displayEmployeeBalieDetails = loader.getController();
+                    displayEmployeeBalieDetails.setInfo(medewerkerName(), medewerkerCountry());
 
                     Parent parent1 = loader.getRoot();
                     Scene scene = new Scene(parent1);
@@ -89,17 +91,33 @@ public class Login_MedewerkerController implements Initializable {
                     app_stage.setScene(scene);
                     app_stage.show();
                 } else if (function_id() == 2) {
-                    Parent parent1 = FXMLLoader.load(getClass().getResource("/corendo/fys/Navigatie_supervisor.fxml"));
+                    
+                    
+                    loader.setLocation(getClass().getResource("/corendo/fys/Navigatie_supervisor.fxml"));
+                    try {
+                        loader.load();
+
+                    } catch (IOException ex) {
+
+                    }
+
+                    Navigatie_supervisorController displayEmployeeSupervisorDetails = loader.getController();
+                    displayEmployeeSupervisorDetails.setInfo(medewerkerName(), medewerkerCountry());
+                    
+                    Parent parent1 = loader.getRoot();
                     Scene scene = new Scene(parent1);
                     Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     app_stage.setScene(scene);
                     app_stage.show();
+                    
+                    
+                    
                 }
             } else {
                 lblMessage.setVisible(true);
                 lblMessage.setText("Invalid Email or Password!");
             }
-        } catch (IOException | SQLException e) {
+        } catch (SQLException e) {
             e.getMessage();
         }
 

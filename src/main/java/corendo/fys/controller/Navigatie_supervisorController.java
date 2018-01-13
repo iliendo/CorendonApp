@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -45,18 +46,26 @@ public class Navigatie_supervisorController implements Initializable {
 
     @FXML
     private JFXButton formulier_wijziging;
-    
+
+    @FXML
+    private Label lblMedewerkerCountry;
+
+    @FXML
+    private Label lblMedewerkerName;
+
     @FXML
     private ComboBox languageBox;
-   
+
+    @FXML
+    private Label lblWelkom;
+
     @FXML
     void on_Me_User(ActionEvent event) {
         if (event.getSource() == meOption) {
             show_me_user_info.setVisible(true);
         }
     }
-   
-    
+
     @FXML
     void on_Language(ActionEvent event) {
         if (languageBox.getValue() == "Dutch") {
@@ -79,10 +88,10 @@ public class Navigatie_supervisorController implements Initializable {
 
     @FXML
     void dashbord_medewerker(MouseEvent event) {
-
+        show_me_user_info.setVisible(false);
     }
-    
-        @FXML
+
+    @FXML
     void on_change_password(ActionEvent event) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Change_Password.fxml", "nl");
@@ -90,10 +99,10 @@ public class Navigatie_supervisorController implements Initializable {
             veranderContentNodeWithResource("Change_Password.fxml", "en");
         }
         Language.currentPage = "Change_Password.fxml";
-        
+
     }
-    
-    @FXML   
+
+    @FXML
     void on_Airports(ActionEvent event) {
         if (Language.taal == 1) {
             veranderContentNodeWithResource("supervisor_add_airport.fxml", "nl");
@@ -101,7 +110,7 @@ public class Navigatie_supervisorController implements Initializable {
             veranderContentNodeWithResource("supervisor_add_airport.fxml", "en");
         }
         Language.currentPage = "supervisor_add_airport.fxml";
-        
+
     }
 
     @FXML
@@ -112,7 +121,7 @@ public class Navigatie_supervisorController implements Initializable {
             veranderContentNodeWithResource("Supervisor_Formulier_wijzigen.fxml", "en");
         }
         Language.currentPage = "Supervisor_Formulier_wijzigen.fxml";
-        
+
     }
 
     @FXML
@@ -175,12 +184,21 @@ public class Navigatie_supervisorController implements Initializable {
         Language.currentPage = "supervisor_manage_airport.fxml";
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-        languageBox.getItems().addAll("Dutch", "English");
+    public void setInfo(String name, String country) {
+        this.lblMedewerkerName.setText(name);
+        this.lblMedewerkerCountry.setText(country);
+        this.lblWelkom.setText("Welcome, " + name);
     }
     
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        languageBox.getItems().addAll("Dutch", "English");
+        
+        
+    }
+
     public void veranderContentNodeWithResource(String schermFileName, String language) {
         Parent parent;
         try {

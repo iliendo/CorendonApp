@@ -104,7 +104,7 @@
                         </Label>
                         <Label layoutX="60.0" layoutY="87.0" text="Keep in touch with " />
                         <Label layoutX="60.0" layoutY="104.0" text="Corendon" />
-                        <Label layoutX="60.0" layoutY="128.0" text="Nederland" />
+                        <Label fx:id="lblMedewerkerCountry" layoutX="60.0" layoutY="128.0" text="Nederland" />
                         <FontAwesomeIconView fill="#235061" glyphName="LOCATION_ARROW" layoutX="38.0" layoutY="141.0" size="14.0" />
                         <FontAwesomeIconView fill="#235061" glyphName="BOOKMARK_ALT" layoutX="38.0" layoutY="100.0" />
                         <Label layoutX="13.0" layoutY="157.0" text="Account">
@@ -112,7 +112,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="60.0" layoutY="182.0" text="John Doe" />
+                        <Label fx:id="lblMedewerkerName" layoutX="60.0" layoutY="182.0" text="John Doe" />
                         <FontAwesomeIconView fill="#235061" glyphName="USER" layoutX="41.0" layoutY="195.0" />
                         <FontAwesomeIconView fill="#235061" glyphName="USER_TIMES" layoutX="40.0" layoutY="219.0" />
                         <Hyperlink layoutX="59.0" layoutY="203.0" onAction="#on_log_out" text="Log out" />
@@ -130,7 +130,14 @@
             </AnchorPane>
          </left>
          <center>
-            <StackPane fx:id="all_content_supervisor" prefHeight="700.0" prefWidth="974.0" BorderPane.alignment="CENTER" />
+            <StackPane fx:id="all_content_supervisor" prefHeight="700.0" prefWidth="974.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblWelkom">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children></StackPane>
          </center>
       </BorderPane>
    </children>
