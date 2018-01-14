@@ -271,7 +271,7 @@ public class Verloren_bagageController implements Initializable {
             document.open();
             Image image = Image.getInstance("$R4E56UO.png");
             document.add(image);
-            document.add(new Paragraph("Datum en tijd van verloren bagage" + txtDatum.getText() + " " + txtTimeFound.getText()));
+            document.add(new Paragraph("Datum en tijd van verloren bagage " + txtDatum.getText() + " " + txtTimeFound.getText()));
             document.add(Chunk.NEWLINE);
             document.add(new Paragraph("Reiziger informatie"));
             document.add(Chunk.NEWLINE);
@@ -381,17 +381,29 @@ public class Verloren_bagageController implements Initializable {
         String phoneNr = txtPhoneNr.getText();
         String luggageTag = txtLuggageTag.getText();
         String country = txtCountry.getText();
+        boolean luchthaven = ddlLuchthaven.getSelectionModel().isEmpty();
+        boolean mainColor = ddlMainColor.getSelectionModel().isEmpty();
+        boolean secondColor = ddlSecondColor.getSelectionModel().isEmpty();
+        boolean weight = ddlWeight.getSelectionModel().isEmpty();
+        boolean luggageType = ddlLuggageType.getSelectionModel().isEmpty();
+        boolean status = ddlStatus.getSelectionModel().isEmpty();
+        boolean merk = ddlMerk.getSelectionModel().isEmpty();
+        boolean size = ddlSize.getSelectionModel().isEmpty();
+        
+        
 
         if (nullOrEmpty(flight) || nullOrEmpty(firstname)
                 || nullOrEmpty(lastname) || nullOrEmpty(address)
                 || nullOrEmpty(email) || nullOrEmpty(city)
                 || nullOrEmpty(zipcode) || nullOrEmpty(phoneNr)
-                || nullOrEmpty(luggageTag) || nullOrEmpty(country)) {
+                || nullOrEmpty(luggageTag) || nullOrEmpty(country) || luchthaven
+                || mainColor || secondColor || weight || luggageType || status
+                || merk || size) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            alert.setContentText("Fill all text fields !");
+            alert.setContentText("Fill all fields !");
             alert.showAndWait();
 
             return false;

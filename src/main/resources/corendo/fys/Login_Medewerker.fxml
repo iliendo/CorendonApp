@@ -17,13 +17,13 @@
             <AnchorPane prefHeight="108.0" prefWidth="939.0" style="-fx-background-color: #235061;" BorderPane.alignment="CENTER" />
          </top>
          <left>
-            <AnchorPane prefHeight="411.0" prefWidth="251.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="411.0" prefWidth="251.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <AnchorPane prefHeight="411.0" prefWidth="250.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="411.0" prefWidth="250.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </right>
          <center>
-            <AnchorPane prefHeight="375.0" prefWidth="439.0" style="-fx-background-color: #fff; -fx-background-radius: 0.5em;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="430.0" prefWidth="688.0" style="-fx-background-color: #fff; -fx-background-radius: 0.5em;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="165.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,7 +54,7 @@
             </AnchorPane>
          </center>
          <bottom>
-            <AnchorPane prefHeight="85.0" prefWidth="939.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="85.0" prefWidth="939.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
    </children>

@@ -207,6 +207,8 @@ public class Gevonden_bagageController implements Initializable {
         String location = ddlLocationFound.getSelectionModel().getSelectedItem().toString();
         
         
+        
+        
         if (nullOrEmpty(luggageType) || nullOrEmpty(brand)
                 || nullOrEmpty(mainColor) || nullOrEmpty(status)
                 || nullOrEmpty(size) || nullOrEmpty(weight)
@@ -215,7 +217,7 @@ public class Gevonden_bagageController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            alert.setContentText("Fill all text fields !");
+            alert.setContentText("Fill all select fields !");
             alert.showAndWait();
         }
     }

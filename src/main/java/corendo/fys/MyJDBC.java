@@ -33,7 +33,7 @@ public class MyJDBC {
 
     // constructors
     public MyJDBC() {
-        this(DB_DEFAULT_SERVER_URL, DB_DEFAULT_ACCOUNT, DB_DEFAULT_PASSWORD);
+        this("", DB_DEFAULT_SERVER_URL, DB_DEFAULT_ACCOUNT, DB_DEFAULT_PASSWORD);
     }
 
     public MyJDBC(String dbName) {
@@ -250,9 +250,7 @@ public class MyJDBC {
         String maand = String.valueOf(month);
         String datum = jaar + "-" + maand + "-" + threeDays;
 
-        //System.out.println("Creating the " + dbName + " database...");
-        // use the sys schema for creating another db
-        MyJDBC sysJDBC = new MyJDBC("sys");
+        MyJDBC sysJDBC = new MyJDBC();
         sysJDBC.executeUpdateQuery("CREATE DATABASE IF NOT EXISTS " + dbName);
         sysJDBC.close();
 
@@ -465,17 +463,17 @@ public class MyJDBC {
         if (rowTeller == 0) {
             myJDBC.executeUpdateQuery("INSERT INTO `function` VALUES (1,'Balie medewerker'),(2,'Supervisor')");
             myJDBC.executeUpdateQuery("INSERT INTO `country` VALUES (1,'The Netherlands'),(2,'Spain'),(3,'Turkey'),(4,'Germany'),(5,'England')");
-            myJDBC.executeUpdateQuery("INSERT INTO `employee` VALUES (1,'1','1','1','1',1,1),(2,'2','2','2','2',2,2)");
-            myJDBC.executeUpdateQuery("INSERT INTO `brand` VALUES (1,'Gucci'),(2,'Nike'),(3,'Adidas'),(6,'Louis Vuitton'),(7,'Jordans'),(9,'Puma'),(10,'North Face')");
-            myJDBC.executeUpdateQuery("INSERT INTO `airport` VALUES (1,'Schiphol'),(2,'Eindhoven')");
-            myJDBC.executeUpdateQuery("INSERT INTO `location_airport` VALUES (1,'departure hall',1,1),(2,'arrival hall',1,1),(3,'toilet',1,1),(4,'belt-01',1,1),(5,'belt-02',1,1),(6,'belt-03',1,1),(7,'belt-04',1,1),(8,'belt-05',1,1),(9,'belt-06',1,1)");
-            myJDBC.executeUpdateQuery("INSERT INTO `luggagetype` VALUES (1,'Suitcase'),(2,'Bagpack'),(3,'Box')");
-            myJDBC.executeUpdateQuery("INSERT INTO `maincolor` VALUES (1,'Black'),(2,'White'),(3,'Voilet'),(4,'Orange'),(5,'Red'),(6,'Yellow'),(7,'Green'),(8,'Purple')");
+            myJDBC.executeUpdateQuery("INSERT INTO `employee` VALUES (1,'1','1','1','c4ca4238a0b923820dcc509a6f75849b',1,1),(2,'2','2','2','c81e728d9d4c2f636f067f89cc14862c',2,2), (3,'Jane','Smith','Jane.Smith@corendon.nl','c4ca4238a0b923820dcc509a6f75849b',1,1), (4,'John','Doe','John.Doe@corendon.nl','c81e728d9d4c2f636f067f89cc14862c',2,2)");
+            myJDBC.executeUpdateQuery("INSERT INTO `brand` VALUES (1,'N.V.T.'),(2,'Gucci'),(3,'Nike'),(4,'Adidas'),(5,'Louis Vuitton'),(6,'Jordans'),(7,'Puma'),(8,'North Face')");
+            myJDBC.executeUpdateQuery("INSERT INTO `airport` VALUES (1,'N.V.T.'),(2,'Schiphol'),(3,'Eindhoven')");
+            myJDBC.executeUpdateQuery("INSERT INTO `location_airport` VALUES (1,'N.V.T.',1,1),(2,'departure hall',1,1),(3,'arrival hall',1,1),(4,'toilet',1,1),(5,'belt-01',1,1),(6,'belt-02',1,1),(7,'belt-03',1,1),(8,'belt-04',1,1),(9,'belt-05',1,1),(10,'belt-06',1,1)");
+            myJDBC.executeUpdateQuery("INSERT INTO `luggagetype` VALUES (1,'N.V.T.'),(2,'Suitcase'),(3,'Bagpack'),(4,'Box')");
+            myJDBC.executeUpdateQuery("INSERT INTO `maincolor` VALUES (1,'N.V.T.'),(2,'Black'),(3,'White'),(4,'Voilet'),(5,'Orange'),(6,'Red'),(7,'Yellow'),(8,'Green'),(9,'Purple')");
             //myJDBC.executeUpdateQuery("INSERT INTO `passenger` (`Passenger_id`,`Firstname`,`Lastname`,`Email`,`PhoneNr`,`Address`,`Zipcode`,`City`,`Country_name`) VALUES (1,'Wouter','Kloos','whkloos@gmail.com','0612345678','Straatweg 12','1431AA','Uithoorn','Nederland')");
             myJDBC.executeUpdateQuery("INSERT INTO `passenger` VALUES (-1,'Unknown','Unknown','Unknown','Unknown','Unknown','Unknown','Unknown','Unknown'),(20,'Gabriel','Takyie','hva@cor.nl','0585654575','hvaStraat','8565KL','Damsco','Nederland'),(21,'Jan ','van de Boer','boer@boer.nl','0235654574','hahaAdres','2145JH','Amsterdam','Nederland'),(22,'Ricardo','Polenta','ricardo@hva.nl','46566985','hvaStraat 56','5694 UI','Damsco','Nederland'),(23,'Hoi','hoi','hoi','hoi','hoi','hoi','hoi','hoi'),(24,'ri','ri','ri','ri','ri','ri','ri','ri'),(25,'dsad','dd','d','d','d','dd','d','d'),(26,'r','r','r','r','r','r','r','r'),(27,'ddd','dd','dd','ddd','ddd','dd','dd','dd'),(28,'ddd','dd','dd','ddd','d','dd','ddd','dddd'),(29,'ddd','dd','dd','ddd','d','dd','ddd','dddd'),(30,'asdasd','asda','sdasd','asdasda','asdad','asd','asdad','asdasd'),(31,'hahaha','hahaha','hahaha','hahaha','hahaha','hahaha','hahaha','hahaha'),(32,'Abigail','Abigail','Abigail','Abigail','Abigail','Abigail','Abigail','Abigail'),(33,'Nancy','Nancy','Nancy','Nancy','Nancy','Nancy','Nancy','Nancy'),(34,'Anthony','Anthony','Anthony','Anthony','Anthony','Anthony','Anthony','Anthony'),(35,'','','','','','','',''),(36,'','','','','','','',''),(37,'Gabriel','Takyie','Takyie','Takyie','Takyie','Takyie','Takyie','Takyie'),(38,'Gabriel','Fys','Fys','Fys','Fys','Fys','Fys','Fys'),(39,'Ilias','Fys','Fys','Fys','Fys','Fys','Fys','Fys'),(40,'Abigail','Abigail','Abigail','Abigail','Abigail','Abigail','Abigail','Abigail'),(41,'a','a','a','a','a','a','a','a'),(42,'a','a','a','a','a','a','a','a'),(43,'a','a','a','a','a','a','a','a'),(44,'a','a','a','a','a','a','a','a'),(45,'a','a','a','a','a','a','a','a'),(46,'a','a','a','a','a','a','a','a'),(47,'a','a','a','a','a','a','a','a'),(48,'Gabriel','a','a','a','a','a','a','a'),(49,'Ricardo','a','a','a','a','a','a','a'),(50,'Ricardo','a','a','a','a','a','a','a'),(51,'Travis','Greene','bitcoin','bitcoin','bitcoin','bitcoin','bitcoin','bitcoin'),(52,'ga','ga','ga','ga','ga','ga','ga','ga'),(53,'s','s','s','s','s','s','s','g');");
-            myJDBC.executeUpdateQuery("INSERT INTO `secondcolor` VALUES (1,'Red'),(2,'Yellow'),(3,'Green'),(4,'Blue'),(5,'Pink'),(6,'Black'),(7,'Brown'),(8,'White')");
-            myJDBC.executeUpdateQuery("INSERT INTO `size` VALUES (1,'10x10x10'),(2,'20x20x20'),(3,'30x30x30'),(4,'40x40x40')");
-            myJDBC.executeUpdateQuery("INSERT INTO `weight` VALUES (1,'5kg'),(2,'10kg'),(3,'15kg'),(4,'20kg'),(5,'25kg'),(6,'30kg')");
+            myJDBC.executeUpdateQuery("INSERT INTO `secondcolor` VALUES (1,'N.V.T.'),(2,'Red'),(3,'Yellow'),(4,'Green'),(5,'Blue'),(6,'Pink'),(7,'Black'),(8,'Brown'),(9,'White')");
+            myJDBC.executeUpdateQuery("INSERT INTO `size` VALUES (1,'N.V.T.'),(2,'10x10x10'),(3,'20x20x20'),(4,'30x30x30'),(5,'40x40x40')");
+            myJDBC.executeUpdateQuery("INSERT INTO `weight` VALUES (1,'N.V.T.'),(2,'5kg'),(3,'10kg'),(4,'15kg'),(5,'20kg'),(6,'25kg'),(7,'30kg')");
             myJDBC.executeUpdateQuery("INSERT INTO `status` VALUES (1,'Lost'),(2,'Found')");
             myJDBC.executeUpdateQuery("INSERT INTO `luggage` VALUES (1,'" + datum + "','11:50:37',2,3,4,1,2,3,4,'5545895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,20,NULL,NULL,NULL),(2,'" + datum + "','14:24:21',2,2,4,1,3,2,3,'85654545','ImageView[id=imgLuggage, styleClass=image-view]',3,1,21,NULL,NULL,NULL),(3,'" + datum + "','08:55:51',1,6,1,1,1,3,3,'65665452222','ImageView[id=imgLuggage, styleClass=image-view]',2,1,22,NULL,NULL,NULL),(4,'" + datum + "','11:25:55',2,2,1,2,3,3,3,'948895','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'idaid','het is een mooie tas!',NULL),(5,'" + datum + "','11:25:55',1,1,2,2,4,6,5,'86894','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'idaid','het is een lelijke tas!',NULL),(12,'" + datum + "','14:19:29',2,3,2,1,2,2,1,'','ImageView[id=imgLuggage, styleClass=image-view]',2,1,29,'ddd','dasdad',NULL),(13,'" + datum + "','14:30:01',1,1,1,2,1,1,1,'dasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,-1,'dssadasd','dasdasd',NULL),(14,'" + datum + "','14:30:18',1,1,2,1,1,2,1,'dasdasd','ImageView[id=imgLuggage, styleClass=image-view]',1,1,30,'dsadad','asdasd',NULL),(15,'" + datum + "','15:19:36',2,6,2,2,2,2,3,'556552','ImageView[id=imgLuggage, styleClass=image-view]',3,1,-1,'adfaf','afdadfadfafaf',NULL),(16,'" + datum + "','15:42:40',2,1,2,2,3,3,1,'556565','ImageView[id=imgLuggage, styleClass=image-view]',2,1,-1,'hahaha','hahaha',NULL),(17,'" + datum + "','15:43:56',2,3,2,1,1,2,2,'254525445','ImageView[id=imgLuggage, styleClass=image-view]',1,1,31,'hahaha','hahaha Ricardo zegt tegen de chikc',NULL),(18,'" + datum + "','17:07:16',1,2,3,1,2,3,3,'5525','ImageView[id=imgLuggage, styleClass=image-view]',1,1,32,'CAIF89','Abigail is leuk!',NULL)");
            

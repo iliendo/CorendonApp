@@ -62,8 +62,7 @@ public class Login_MedewerkerController implements Initializable {
         try {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, txtEmail.getText());
-            //pstmt.setString(2, password.getHashedPassword(txtPassword.getText()));
-            pstmt.setString(2, txtPassword.getText());
+            pstmt.setString(2, password.getHashedPassword(txtPassword.getText()));
             email = txtEmail.getText();
 
             rs = pstmt.executeQuery();
