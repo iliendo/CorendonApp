@@ -465,7 +465,7 @@ public class MyJDBC {
         if (rowTeller == 0) {
             myJDBC.executeUpdateQuery("INSERT INTO `function` VALUES (1,'Balie medewerker'),(2,'Supervisor')");
             myJDBC.executeUpdateQuery("INSERT INTO `country` VALUES (1,'The Netherlands'),(2,'Spain'),(3,'Turkey'),(4,'Germany'),(5,'England')");
-            myJDBC.executeUpdateQuery("INSERT INTO `employee` VALUES (1,'1','1','1','1',1,1),(2,'2','2','2','2',2,2)");
+            myJDBC.executeUpdateQuery("INSERT INTO `employee` VALUES (1,'1','1','1','c4ca4238a0b923820dcc509a6f75849b',1,1),(2,'2','2','2','c81e728d9d4c2f636f067f89cc14862c',2,2), (3,'Jane','Smith','Jane.Smith@corendon.nl','c4ca4238a0b923820dcc509a6f75849b',1,1), (4,'John','Doe','John.Doe@corendon.nl','c81e728d9d4c2f636f067f89cc14862c',2,2)");
             myJDBC.executeUpdateQuery("INSERT INTO `brand` VALUES (1,'Gucci'),(2,'Nike'),(3,'Adidas'),(6,'Louis Vuitton'),(7,'Jordans'),(9,'Puma'),(10,'North Face')");
             myJDBC.executeUpdateQuery("INSERT INTO `airport` VALUES (1,'Schiphol'),(2,'Eindhoven')");
             myJDBC.executeUpdateQuery("INSERT INTO `location_airport` VALUES (1,'departure hall',1,1),(2,'arrival hall',1,1),(3,'toilet',1,1),(4,'belt-01',1,1),(5,'belt-02',1,1),(6,'belt-03',1,1),(7,'belt-04',1,1),(8,'belt-05',1,1),(9,'belt-06',1,1)");
