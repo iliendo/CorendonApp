@@ -30,7 +30,7 @@ import java.util.Locale;
 /**
  * FXML Controller class
  *
- * @author Gabriel
+ * @author ricardopolenta
  */
 public class Navigatie_medewerkerController implements Initializable {
 

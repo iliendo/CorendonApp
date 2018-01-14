@@ -41,7 +41,7 @@ import javax.imageio.ImageIO;
 /**
  * FXML Controller class
  *
- * @author Gabriel
+ * @author Gabriel & ricardopolenta
  */
 public class Gevonden_bagageController implements Initializable {
 

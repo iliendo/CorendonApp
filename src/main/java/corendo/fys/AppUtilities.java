@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author Gabriel
+ * @author Gabriel & ricardopolenta
  */
 public class AppUtilities {
 
