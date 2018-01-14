@@ -270,7 +270,7 @@ public class SchadeClaimController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            alert.setContentText("Fill all text fields !");
+            alert.setContentText("Fill all fields !");
             alert.showAndWait();
 
             return false;
