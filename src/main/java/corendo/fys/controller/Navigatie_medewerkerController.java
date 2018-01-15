@@ -54,6 +54,9 @@ public class Navigatie_medewerkerController implements Initializable {
 
     @FXML
     private ComboBox languageBox;
+    
+        @FXML
+    private Label lblWelkom;
 
     @FXML
     void on_Me_User(ActionEvent event
@@ -136,6 +139,7 @@ public class Navigatie_medewerkerController implements Initializable {
     public void setInfo(String name, String country) {
         this.lblMedewerkerName.setText(name);
         this.lblMedewerkerCountry.setText(country);
+        this.lblWelkom.setText("Welcome, " + name);
     }
 
     @FXML

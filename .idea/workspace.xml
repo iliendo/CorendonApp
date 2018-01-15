@@ -15,7 +15,7 @@
       <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="0">
               <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
@@ -39,25 +39,8 @@
               <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-                <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-                <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-                <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-                <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-                <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-                <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-                <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-                <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-                <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-                <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-                <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-                <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-                <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-                <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-                <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-                <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-                <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-                <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+                <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+                <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
               </folding>
             </state>
           </provider>
@@ -114,8 +97,8 @@
       <file leaf-file-name="Login_MedewerkerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
               <folding>
                 <marker date="1516010620066" expanded="true" signature="1487:1538" ph="Select * fro... employee" />
                 <marker date="1516010620066" expanded="true" signature="4018:4089" ph="select First... employee" />
@@ -400,12 +383,12 @@
       <workItem from="1515679876187" duration="11095000" />
       <workItem from="1515770808913" duration="6231000" />
       <workItem from="1515868602924" duration="7433000" />
-      <workItem from="1516010709216" duration="1951000" />
+      <workItem from="1516010709216" duration="7399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34417000" />
+    <option name="totallyTimeSpent" value="39865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,6 +401,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -428,7 +412,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.50417536" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33297986" sideWeight="0.49582464" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33297986" sideWeight="0.49582464" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -483,25 +467,8 @@
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-            <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-            <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-            <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-            <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-            <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-            <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-            <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-            <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-            <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-            <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-            <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-            <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+            <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+            <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
           </folding>
         </state>
       </provider>
@@ -593,25 +560,8 @@
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-            <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-            <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-            <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-            <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-            <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-            <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-            <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-            <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-            <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-            <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-            <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-            <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+            <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+            <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
           </folding>
         </state>
       </provider>
@@ -690,25 +640,8 @@
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-            <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-            <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-            <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-            <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-            <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-            <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-            <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-            <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-            <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-            <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-            <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-            <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+            <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+            <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
           </folding>
         </state>
       </provider>
@@ -787,25 +720,8 @@
           <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-            <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-            <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-            <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-            <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-            <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-            <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-            <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-            <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-            <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-            <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-            <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-            <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+            <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+            <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
           </folding>
         </state>
       </provider>
@@ -969,7 +885,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="0">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
@@ -997,25 +913,8 @@
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1516010620140" expanded="true" signature="4353:4621" ph="SELECT * FRO... luggage" />
-            <marker date="1516010620140" expanded="true" signature="5509:5674" ph="INSERT INTO passenger... " />
-            <marker date="1516010620140" expanded="true" signature="5714:6053" ph="INSERT INTO luggage... " />
-            <marker date="1516010620140" expanded="true" signature="14980:15005" ph="select * fro... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="15655:15674" ph="select * fro... brand" />
-            <marker date="1516010620140" expanded="true" signature="16316:16339" ph="select * fro... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="16980:17020" ph="select * fro... status" />
-            <marker date="1516010620140" expanded="true" signature="17655:17673" ph="select * fro... size" />
-            <marker date="1516010620140" expanded="true" signature="18308:18328" ph="select * fro... weight" />
-            <marker date="1516010620140" expanded="true" signature="18977:19002" ph="select * fro... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="19647:19668" ph="select * fro... airport" />
-            <marker date="1516010620140" expanded="true" signature="21655:21786" ph="Select Lugga... luggagetype" />
-            <marker date="1516010620140" expanded="true" signature="22252:22358" ph="Select Brand... brand" />
-            <marker date="1516010620140" expanded="true" signature="22822:22941" ph="Select MainC... maincolor" />
-            <marker date="1516010620140" expanded="true" signature="23406:23517" ph="Select Statu... status" />
-            <marker date="1516010620140" expanded="true" signature="23977:24080" ph="Select Size_... size" />
-            <marker date="1516010620140" expanded="true" signature="24540:24651" ph="Select Weigh... weight" />
-            <marker date="1516010620140" expanded="true" signature="25732:25857" ph="Select Secon... secondcolor" />
-            <marker date="1516010620140" expanded="true" signature="26325:26448" ph="Select Airpo... airport" />
+            <marker date="1516034101425" expanded="true" signature="24300:24425" ph="Select Secon... secondcolor" />
+            <marker date="1516034101425" expanded="true" signature="24893:25016" ph="Select Airpo... airport" />
           </folding>
         </state>
       </provider>
@@ -1072,10 +971,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/MyJDBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="415" column="54" lean-forward="true" selection-start-line="415" selection-start-column="54" selection-end-line="415" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/corendo/fys/controller/Login_MedewerkerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
           <folding>
             <marker date="1516010620066" expanded="true" signature="1487:1538" ph="Select * fro... employee" />
             <marker date="1516010620066" expanded="true" signature="4018:4089" ph="select First... employee" />

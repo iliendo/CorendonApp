@@ -63,9 +63,9 @@
             </AnchorPane>
          </center>
       </BorderPane>
-      <BorderPane fx:id="fullStatusDetailsContent" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+      <BorderPane fx:id="fullStatusDetailsContent" prefHeight="200.0" prefWidth="1050.0" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d84559;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4d6ca5;" BorderPane.alignment="CENTER">
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <center>
@@ -87,7 +87,7 @@
                                     <Label prefHeight="40.0" prefWidth="297.0" />
                                  </children>
                               </VBox>
-                              <VBox layoutX="436.0" layoutY="38.0" prefHeight="502.0" prefWidth="554.0">
+                              <VBox layoutX="436.0" layoutY="38.0" prefHeight="502.0" prefWidth="485.0">
                                  <children>
                                     <JFXRadioButton fx:id="luggage_status_1" onAction="#on_status_text_1" prefHeight="40.0" prefWidth="128.0" text="In progress">
                                        <toggleGroup>
@@ -96,6 +96,7 @@
                                     </JFXRadioButton>
                                     <JFXRadioButton fx:id="luggage_status_2" onAction="#on_status_text_2" prefHeight="40.0" prefWidth="128.0" text="Found by corendon" toggleGroup="$luggaga_status" />
                                     <JFXRadioButton fx:id="luggage_status_3" onAction="#on_status_text_3" prefHeight="40.0" prefWidth="128.0" text="Collected by traveller" toggleGroup="$luggaga_status" />
+                                    <JFXRadioButton fx:id="luggage_status_4" onAction="#on_status_text_4" prefHeight="40.0" prefWidth="128.0" text="Discarded after 1 year" toggleGroup="$luggaga_status" />
                                     <JFXButton buttonType="RAISED" onAction="#on_Work_status" ripplerFill="WHITE" style="-fx-background-color: #9e2a3a; -fx-background-radius: 0.5em;" text="Save onWork status" />
                                  </children>
                               </VBox>

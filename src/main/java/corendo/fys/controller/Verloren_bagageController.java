@@ -107,8 +107,6 @@ public class Verloren_bagageController implements Initializable {
     @FXML
     private JFXTextField txtTimeFound;
 
-    @FXML
-    private JFXComboBox ddlStatus;
 
     @FXML
     private JFXTextField txtEmail;
@@ -121,7 +119,7 @@ public class Verloren_bagageController implements Initializable {
 
     @FXML
     private JFXComboBox ddlSize;
-    
+
     File file;
 
     @FXML
@@ -136,11 +134,11 @@ public class Verloren_bagageController implements Initializable {
         // maak alle velden leeg
         clear_tekstVelden();
     }
-    
-     @FXML
+
+    @FXML
     void on_pdfexport(ActionEvent event) throws IOException {
         // alle velden checken of ze ingevuld zijn.
-    
+
         if (checkVelden()) {
 
             FileChooser fileChooser = new FileChooser();
@@ -186,7 +184,7 @@ public class Verloren_bagageController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("The following information shows that there is match in the database. \n(Registration number: " + matchLuggageId + ")!");
                 alert.showAndWait();
-            }else{
+            } else {
                 InsertLuggageInfo();
             }
         } catch (SQLException ex) {
@@ -236,7 +234,7 @@ public class Verloren_bagageController implements Initializable {
             stmt2.setString(3, get_LuggageType_id());
             stmt2.setString(4, get_Brand_id());
             stmt2.setString(5, get_MainColor_id());
-            stmt2.setString(6, get_Status_id());
+            stmt2.setString(6, "1");
             stmt2.setString(7, get_Size_id());
             stmt2.setString(8, get_Weight_id());
             stmt2.setString(9, get_SecondColor_id());
@@ -261,7 +259,7 @@ public class Verloren_bagageController implements Initializable {
         }
 
     }
-    
+
     private void pdfexport(String savePath) throws IOException {
 
         //String FILE = "/Users/Wouter/Documents/pdfexports/export.pdf";
@@ -304,7 +302,7 @@ public class Verloren_bagageController implements Initializable {
             table.addCell("Primaire kleur");
             table.addCell(ddlMainColor.getSelectionModel().getSelectedItem().toString());
             table.addCell("Status");
-            table.addCell(ddlStatus.getSelectionModel().getSelectedItem().toString());
+            table.addCell("Lost");
             table.addCell("Groote");
             table.addCell(ddlSize.getSelectionModel().getSelectedItem().toString());
             table.addCell("Gewicht");
@@ -324,6 +322,7 @@ public class Verloren_bagageController implements Initializable {
         }
 
     }
+
     /**
      * ****************************************************************************
      ***********************COMBOBOX VULLEN MET WAARDES
@@ -386,18 +385,16 @@ public class Verloren_bagageController implements Initializable {
         boolean secondColor = ddlSecondColor.getSelectionModel().isEmpty();
         boolean weight = ddlWeight.getSelectionModel().isEmpty();
         boolean luggageType = ddlLuggageType.getSelectionModel().isEmpty();
-        boolean status = ddlStatus.getSelectionModel().isEmpty();
+        //    boolean status = ddlStatus.getSelectionModel().isEmpty();
         boolean merk = ddlMerk.getSelectionModel().isEmpty();
         boolean size = ddlSize.getSelectionModel().isEmpty();
-        
-        
 
         if (nullOrEmpty(flight) || nullOrEmpty(firstname)
                 || nullOrEmpty(lastname) || nullOrEmpty(address)
                 || nullOrEmpty(email) || nullOrEmpty(city)
                 || nullOrEmpty(zipcode) || nullOrEmpty(phoneNr)
                 || nullOrEmpty(luggageTag) || nullOrEmpty(country) || luchthaven
-                || mainColor || secondColor || weight || luggageType || status
+                || mainColor || secondColor || weight || luggageType
                 || merk || size) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -478,27 +475,6 @@ public class Verloren_bagageController implements Initializable {
         }
     }
 
-    /**
-     * om de lijst van de Status op te halen uit de database
-     */
-    private void populate_comboBox_Status() {
-        try {
-            String sql = "select * from status where Status='Lost'";
-            stmt = conn.prepareStatement(sql);
-            rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                String l_list = rs.getString("Status");
-                ObservableList<String> data_lijst = FXCollections.observableArrayList(l_list);
-                ddlStatus.getItems().addAll(data_lijst);
-            }
-            stmt.close();
-            rs.close();
-
-        } catch (SQLException ex) {
-            ex.getMessage();
-        }
-    }
 
     /**
      * om de lijst van de Size op te halen uit de database
@@ -605,7 +581,6 @@ public class Verloren_bagageController implements Initializable {
         populate_comboBox_LuggageType();
         populate_comboBox_Brand();
         populate_comboBox_MainColor();
-        populate_comboBox_Status();
         populate_comboBox_Size();
         populate_comboBox_Weight();
         populate_comboBox_SecondColor();
@@ -677,21 +652,6 @@ public class Verloren_bagageController implements Initializable {
         return id;
     }
 
-    public String get_Status_id() {
-        String id = null;
-        try {
-
-            String query = "Select Status_id from status where Status ='" + ddlStatus.getSelectionModel().getSelectedItem().toString() + "'";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                id = rs.getString("Status_id");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Verloren_bagageController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return id;
-    }
 
     public String get_Size_id() {
         String id = null;
@@ -740,7 +700,6 @@ public class Verloren_bagageController implements Initializable {
 //        }
 //        return id;
 //    }
-
     public String get_SecondColor_id() {
         String id = null;
         try {

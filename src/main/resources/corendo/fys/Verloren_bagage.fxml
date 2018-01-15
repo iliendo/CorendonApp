@@ -75,7 +75,6 @@
       <JFXButton buttonType="RAISED" layoutX="500.0" layoutY="589.0" onAction="#on_pdfexport" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: #235061;" text="PDF exporteren" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="835.0" layoutY="589.0" onAction="#on_Opslaan" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: #235061;" text="%opslaan" textFill="WHITE" />
       <JFXTextField fx:id="txtTimeFound" disable="true" layoutX="65.0" layoutY="75.0" maxWidth="215.0" minWidth="142.0" prefHeight="33.0" prefWidth="149.0" />
-      <JFXComboBox fx:id="ddlStatus" layoutX="343.0" layoutY="410.0" prefHeight="27.0" prefWidth="134.0" promptText="Status" />
       <JFXTextField fx:id="txtEmail" layoutX="421.0" layoutY="189.0" maxWidth="355.0" minWidth="215.0" prefHeight="33.0" prefWidth="215.0" />
       <Label fx:id="email" layoutX="321.0" layoutY="196.0" prefHeight="17.0" prefWidth="45.0" text="%email">
          <font>

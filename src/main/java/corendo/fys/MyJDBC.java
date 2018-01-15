@@ -441,6 +441,17 @@ public class MyJDBC {
                 + "  KEY `foreign_key_idx` (`Function_id`),\n"
                 + "  KEY `foreign_key1_idx` (`Country_id`)\n"
                 + ")");
+        
+        myJDBC.executeUpdateQuery("CREATE TABLE IF NOT EXISTS `luggage_archive` (\n"
+                + "  `luggage_archive_id` int(11) NOT NULL AUTO_INCREMENT,\n"
+                + "  `Luggage_id` varchar(70) DEFAULT NULL,\n"
+                + "  `Date` varchar(70) DEFAULT NULL,\n"
+                + "  `Time` varchar(70) DEFAULT NULL,\n"
+                + "  `LuggageType` varchar(70) DEFAULT NULL,\n"
+                + "  `Brand` varchar(70) DEFAULT NULL,\n"
+                + "  `Owner` varchar(70) DEFAULT NULL,\n"
+                + "  PRIMARY KEY (`luggage_archive_id`)\n"
+                + ")");
 
         myJDBC.executeUpdateQuery("ALTER TABLE employee ADD FOREIGN KEY ( Function_id ) REFERENCES function( Function_id )");
         myJDBC.executeUpdateQuery("ALTER TABLE employee ADD FOREIGN KEY ( Country_id ) REFERENCES country( Country_id )");

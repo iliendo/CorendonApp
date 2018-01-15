@@ -128,7 +128,7 @@
          <center>
             <StackPane fx:id="all_content" prefHeight="700.0" prefWidth="974.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="WELCOME">
+                  <Label fx:id="lblWelkom" text="WELCOME">
                      <font>
                         <Font name="System Italic" size="50.0" />
                      </font>
