@@ -87,7 +87,6 @@ public class Supervisor_statictiekController implements Initializable {
     public int getTotalLostDrieDagen() {
         int count = 0;
         String query = "SELECT COUNT(Status_id) FROM luggage where Status_id='1' AND DateFound > '"+drieDagen+"'";
-        System.out.println(query);
         try {
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
