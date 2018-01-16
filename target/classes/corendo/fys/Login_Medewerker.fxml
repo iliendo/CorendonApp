@@ -43,7 +43,7 @@
                         <Font name="Bell MT" size="14.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXButton buttonType="RAISED" layoutX="70.0" layoutY="236.0" onAction="#on_Login_medewerker" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #a61603;" text="Login" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="70.0" layoutY="236.0" onAction="#on_Login_medewerker" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #235061;" text="Login" textFill="WHITE">
                      <font>
                         <Font name="Bell MT" size="14.0" />
                      </font>
