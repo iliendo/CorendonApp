@@ -123,15 +123,11 @@ public class ZoekenController implements Initializable {
 
     @FXML
     private JFXRadioButton luggage_status_4;
-    
-    
 
     @FXML
     void on_Close(ActionEvent event) {
         fullStatusDetailsContent.setVisible(false);
     }
-    
-    
 
     String eerste_luggage_status = "In progress",
             tweede_luggage_status = "Found by corendon",
