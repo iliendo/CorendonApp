@@ -17,44 +17,59 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <AnchorPane minWidth="238.0" onMouseClicked="#dashbord_medewerker" prefHeight="720.0" prefWidth="238.0" style="-fx-background-color: #bf1a04;" BorderPane.alignment="CENTER">
+            <AnchorPane minWidth="238.0" onMouseClicked="#dashbord_medewerker" prefHeight="720.0" prefWidth="238.0" style="-fx-background-color: #235061;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton alignment="TOP_LEFT" layoutX="18.0" layoutY="139.0" onAction="#on_Zoeken" opacity="0.5" prefHeight="32.0" prefWidth="167.0" text="Search" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="167.0" onAction="#on_Zoeken" prefHeight="32.0" prefWidth="167.0" text="Search" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" />
+                     </graphic>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="18.0" layoutY="220.0" onAction="#on_verloren_bagage" opacity="0.5" prefHeight="32.0" prefWidth="167.0" text="Luggage Lost" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="258.0" onAction="#on_verloren_bagage" prefHeight="32.0" prefWidth="167.0" text="Luggage Lost" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="" />
+                     </graphic>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="27.0" layoutY="190.0" text="Register" textFill="WHITE">
+                  <Label layoutX="36.0" layoutY="223.0" text="Register" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton alignment="TOP_LEFT" layoutX="18.0" layoutY="252.0" onAction="#on_Damage" opacity="0.5" prefHeight="32.0" prefWidth="167.0" text="Damage" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="290.0" onAction="#on_Damage" prefHeight="32.0" prefWidth="167.0" text="Damage" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
+                     </graphic>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="18.0" layoutY="284.0" onAction="#on_Gevonden_bagage" opacity="0.5" prefHeight="32.0" prefWidth="167.0" text="Luggage Found" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="322.0" onAction="#on_Gevonden_bagage" prefHeight="32.0" prefWidth="167.0" text="Luggage Found" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" />
+                     </graphic>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="18.0" layoutY="316.0" onAction="#on_import_register" opacity="0.5" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" onAction="#on_import_register" prefHeight="32.0" prefWidth="167.0" text="Import Register" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" />
+                     </graphic>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="27.0" layoutY="372.0" text="Settings" textFill="WHITE">
+                  <Label layoutX="36.0" layoutY="438.0" text="Settings" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <JFXComboBox fx:id="languageBox" layoutX="19.0" layoutY="449.0" onAction="#on_Language" promptText="Language" />
+                  <JFXComboBox fx:id="languageBox" layoutX="45.0" layoutY="501.0" onAction="#on_Language" promptText="Language" />
                   <AnchorPane fx:id="show_me_user_info" layoutX="7.0" layoutY="411.0" prefHeight="237.0" prefWidth="225.0" style="-fx-background-color: #FFF; -fx-background-radius: 0.5em;" visible="false" AnchorPane.bottomAnchor="70.0">
                      <children>
                         <FontAwesomeIconView fill="#235061" glyphName="DESKTOP" layoutX="14.0" layoutY="37.0" size="20" text="" />
@@ -84,7 +99,7 @@
                         <Hyperlink layoutX="59.0" layoutY="203.0" onAction="#on_logOut" text="Log out" />
                      </children>
                   </AnchorPane>
-                  <JFXButton fx:id="meOption" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#on_Me_User" prefHeight="66.0" prefWidth="235.0" style="-fx-background-color: #a61603;" text="Me" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                  <JFXButton fx:id="meOption" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#on_Me_User" prefHeight="66.0" prefWidth="235.0" style="-fx-background-color: #1c3944;" text="Me" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -92,17 +107,21 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="MENU" size="20" />
                      </graphic>
                   </JFXButton>
-                  <Label layoutX="27.0" layoutY="112.0" text="Search" textFill="WHITE">
+                  <Label layoutX="37.0" layoutY="147.0" text="Search" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="19.0" layoutY="401.0" onAction="#on_change_password" opacity="0.5" text="Change Password" textFill="WHITE">
+                  <ImageView fitHeight="130.0" fitWidth="183.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/corendon.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="37.0" layoutY="466.0" onAction="#on_change_password" text="Change Password" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-<<<<<<< HEAD
                   <AnchorPane fx:id="small_search" layoutX="97.0" layoutY="101.0" prefHeight="64.0" prefWidth="124.0" style="-fx-background-color: #fff; -fx-background-radius: 0.3em;" visible="false">
                      <children>
                         <Hyperlink layoutX="3.0" layoutY="3.0" onAction="#_on_damaged" text="Damaged" />
@@ -110,13 +129,6 @@
                         <Hyperlink layoutX="110.0" layoutY="3.0" onAction="#on_close_small" prefHeight="16.0" prefWidth="17.0" text="x" />
                      </children>
                   </AnchorPane>
-=======
-                  <ImageView fitHeight="97.0" fitWidth="202.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" x="2.0" y="11.0">
-                     <image>
-                        <Image url="@../../images/Corendon-Logo.png" />
-                     </image>
-                  </ImageView>
->>>>>>> 1e9c74354f68cf21346c83864145fa53034a3ea0
                </children>
             </AnchorPane>
          </left>

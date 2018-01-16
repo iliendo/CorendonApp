@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -59,14 +58,6 @@ public class Excel_ImporterenController implements Initializable {
 
     @FXML
     void on_import_file(ActionEvent event) throws IOException {
-
-        if (filePath == null) {
-            Alert confirmation = new Alert(Alert.AlertType.ERROR);
-            confirmation.setTitle("Error");
-            confirmation.setContentText("You need to select a file first!");
-
-            confirmation.showAndWait();
-        }
         // Filepath of the selected file
         FileInputStream file = new FileInputStream(new File(filePath));
 
@@ -76,6 +67,8 @@ public class Excel_ImporterenController implements Initializable {
         CellConverter cellConverter = new CellConverter();
 
         IdChecker idChecker = new IdChecker();
+
+        int k = 0;
 
         for (int j = 0; j < tempSheetCounter; j++) {
 
@@ -120,7 +113,7 @@ public class Excel_ImporterenController implements Initializable {
                     } else if (!idChecker.isCharacter(luggageId)) {
                         System.out.println("Not an ID");
                     } else if (rs.next()) {
-                        System.out.println("ID is already imported!");
+                        System.out.println(k++ + " Entry already exists!!!");
                     } else {
                         stmt = conn.prepareStatement(insertQuery);
                         stmt.setString(1, luggageId);
@@ -148,12 +141,6 @@ public class Excel_ImporterenController implements Initializable {
             }
         }
 
-        Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
-        confirmation.setTitle("Information");
-        confirmation.setContentText("The data has been added succesfully!");
-
-        confirmation.showAndWait();
-        
         // Clears the file picker
         listView.getItems().clear();
     }
