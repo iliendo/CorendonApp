@@ -54,9 +54,12 @@ public class Navigatie_medewerkerController implements Initializable {
 
     @FXML
     private ComboBox languageBox;
-    
-        @FXML
+
+    @FXML
     private Label lblWelkom;
+
+    @FXML
+    private AnchorPane small_search;
 
     @FXML
     void on_Me_User(ActionEvent event
@@ -115,8 +118,24 @@ public class Navigatie_medewerkerController implements Initializable {
     }
 
     @FXML
+    void _on_damaged(ActionEvent event) {
+        veranderContentNode("Zoek_damaged.fxml");
+    }
+
+    @FXML
+    void _on_import(ActionEvent event) {
+        veranderContentNode("Zoek_importedFile.fxml");
+    }
+
+    @FXML
+    void on_close_small(ActionEvent event) {
+        small_search.setVisible(false);
+    }
+
+    @FXML
     void on_Zoeken(ActionEvent event
     ) {
+        small_search.setVisible(true);
         if (Language.taal == 1) {
             veranderContentNodeWithResource("Zoeken.fxml", "nl");
         } else {

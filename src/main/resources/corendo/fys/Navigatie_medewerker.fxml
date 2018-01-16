@@ -122,6 +122,13 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
+                  <AnchorPane fx:id="small_search" layoutX="97.0" layoutY="101.0" prefHeight="64.0" prefWidth="124.0" style="-fx-background-color: #fff; -fx-background-radius: 0.3em;" visible="false">
+                     <children>
+                        <Hyperlink layoutX="3.0" layoutY="3.0" onAction="#_on_damaged" text="Damaged" />
+                        <Hyperlink layoutX="3.0" layoutY="26.0" onAction="#_on_import" text="Imported files" />
+                        <Hyperlink layoutX="110.0" layoutY="3.0" onAction="#on_close_small" prefHeight="16.0" prefWidth="17.0" text="x" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </left>
